@@ -917,11 +917,11 @@ var loadCSS = function( href, before, media, attributes ){
 
 <script>
   var GUEST_INFO = ['nick', 'mail', 'link'];
-  var meta = 'nick,sex'.split(',').filter(function (item) {
+  var meta = 'nick'.split(',').filter(function (item) {
     return GUEST_INFO.indexOf(item) > -1
   });
   var REQUIRED_FIELDS = ['nick', 'mail', 'link'];
-  var requiredFields = 'nick,mail'.split(',').filter(function (item) {
+  var requiredFields = 'nick'.split(',').filter(function (item) {
     return REQUIRED_FIELDS.indexOf(item) > -1
   });
 
