@@ -33,10 +33,10 @@
     
     
     
-    <category term="其他" scheme="https://www.oliverbryant.cn/blogs/categories/Other/"/>
+    <category term="其他" scheme="https://www.oliverbryant.cn/categories/Other/"/>
     
     
-    <category term="test" scheme="https://www.oliverbryant.cn/blogs/tags/test/"/>
+    <category term="test" scheme="https://www.oliverbryant.cn/tags/test/"/>
     
   </entry>
   
@@ -57,10 +57,10 @@
     
     
     
-    <category term="其他" scheme="https://www.oliverbryant.cn/blogs/categories/Other/"/>
+    <category term="编程" scheme="https://www.oliverbryant.cn/categories/Programming/"/>
     
     
-    <category term="test" scheme="https://www.oliverbryant.cn/blogs/tags/test/"/>
+    <category term="pro" scheme="https://www.oliverbryant.cn/tags/pro/"/>
     
   </entry>
   
@@ -101,7 +101,7 @@
     
     
     
-    <category term="其他" scheme="https://www.oliverbryant.cn/blogs/categories/Other/"/>
+    <category term="其他" scheme="https://www.oliverbryant.cn/categories/Other/"/>
     
     
   </entry>
