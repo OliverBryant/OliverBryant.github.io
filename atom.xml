@@ -6,7 +6,7 @@
   <link href="https://www.oliverbryant.cn/atom.xml" rel="self"/>
   
   <link href="https://www.oliverbryant.cn/"/>
-  <updated>2021-01-13T12:15:40.833Z</updated>
+  <updated>2021-01-13T13:01:39.000Z</updated>
   <id>https://www.oliverbryant.cn/</id>
   
   <author>
@@ -17,9 +17,33 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>test4</title>
+    <link href="https://www.oliverbryant.cn/2021/01/13/test4/"/>
+    <id>https://www.oliverbryant.cn/2021/01/13/test4/</id>
+    <published>2021-01-13T13:01:39.000Z</published>
+    <updated>2021-01-13T13:01:39.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="测试一下我的标签到底能不能用"><a href="#测试一下我的标签到底能不能用" class="headerlink" title="测试一下我的标签到底能不能用"></a>测试一下我的标签到底能不能用</h2>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;测试一下我的标签到底能不能用&quot;&gt;&lt;a href=&quot;#测试一下我的标签到底能不能用&quot; class=&quot;headerlink&quot; title=&quot;测试一下我的标签到底能不能用&quot;&gt;&lt;/a&gt;测试一下我的标签到底能不能用&lt;/h2&gt;</summary>
+      
+    
+    
+    
+    <category term="其他" scheme="https://www.oliverbryant.cn/categories/Other/"/>
+    
+    
+    <category term="test" scheme="https://www.oliverbryant.cn/tags/test/"/>
+    
+  </entry>
+  
+  <entry>
     <title>test222</title>
-    <link href="https://www.oliverbryant.cn/2021/%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2001/13/test222/"/>
-    <id>https://www.oliverbryant.cn/2021/%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2001/13/test222/</id>
+    <link href="https://www.oliverbryant.cn/2021/01/13/test222/"/>
+    <id>https://www.oliverbryant.cn/2021/01/13/test222/</id>
     <published>2021-01-13T12:15:24.000Z</published>
     <updated>2021-01-13T12:15:40.833Z</updated>
     
@@ -38,10 +62,10 @@
   
   <entry>
     <title>test111</title>
-    <link href="https://www.oliverbryant.cn/2021/%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2001/13/test111/"/>
-    <id>https://www.oliverbryant.cn/2021/%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2001/13/test111/</id>
+    <link href="https://www.oliverbryant.cn/2021/01/13/test111/"/>
+    <id>https://www.oliverbryant.cn/2021/01/13/test111/</id>
     <published>2021-01-13T11:35:33.000Z</published>
-    <updated>2021-01-13T11:35:49.903Z</updated>
+    <updated>2021-01-13T13:07:03.625Z</updated>
     
     <content type="html"><![CDATA[<h1 id="评论测试博客"><a href="#评论测试博客" class="headerlink" title="评论测试博客"></a>评论测试博客</h1>]]></content>
     
@@ -53,13 +77,15 @@
     
     
     
+    <category term="其他" scheme="https://www.oliverbryant.cn/categories/Other/"/>
+    
     
   </entry>
   
   <entry>
     <title>Marxism</title>
-    <link href="https://www.oliverbryant.cn/2021/%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2001/11/Marxism/"/>
-    <id>https://www.oliverbryant.cn/2021/%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2001/11/Marxism/</id>
+    <link href="https://www.oliverbryant.cn/2021/01/11/Marxism/"/>
+    <id>https://www.oliverbryant.cn/2021/01/11/Marxism/</id>
     <published>2021-01-11T12:51:58.000Z</published>
     <updated>2021-01-12T12:14:59.695Z</updated>
     
@@ -78,8 +104,8 @@
   
   <entry>
     <title>politics</title>
-    <link href="https://www.oliverbryant.cn/2021/%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2001/11/politics/"/>
-    <id>https://www.oliverbryant.cn/2021/%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2001/11/politics/</id>
+    <link href="https://www.oliverbryant.cn/2021/01/11/politics/"/>
+    <id>https://www.oliverbryant.cn/2021/01/11/politics/</id>
     <published>2021-01-11T10:52:00.000Z</published>
     <updated>2021-01-12T12:16:27.001Z</updated>
     
@@ -98,8 +124,8 @@
   
   <entry>
     <title>无线网导论笔记</title>
-    <link href="https://www.oliverbryant.cn/2020/%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2012/23/%E6%97%A0%E7%BA%BF%E7%BD%91%E5%AF%BC%E8%AE%BA%E7%AC%94%E8%AE%B0/"/>
-    <id>https://www.oliverbryant.cn/2020/%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2012/23/%E6%97%A0%E7%BA%BF%E7%BD%91%E5%AF%BC%E8%AE%BA%E7%AC%94%E8%AE%B0/</id>
+    <link href="https://www.oliverbryant.cn/2020/12/23/%E6%97%A0%E7%BA%BF%E7%BD%91%E5%AF%BC%E8%AE%BA%E7%AC%94%E8%AE%B0/"/>
+    <id>https://www.oliverbryant.cn/2020/12/23/%E6%97%A0%E7%BA%BF%E7%BD%91%E5%AF%BC%E8%AE%BA%E7%AC%94%E8%AE%B0/</id>
     <published>2020-12-23T11:18:42.000Z</published>
     <updated>2020-12-23T13:47:15.233Z</updated>
     
@@ -118,8 +144,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="https://www.oliverbryant.cn/2020/%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2012/06/hello-world/"/>
-    <id>https://www.oliverbryant.cn/2020/%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2012/06/hello-world/</id>
+    <link href="https://www.oliverbryant.cn/2020/12/06/hello-world/"/>
+    <id>https://www.oliverbryant.cn/2020/12/06/hello-world/</id>
     <published>2020-12-06T09:20:59.654Z</published>
     <updated>2020-11-13T03:35:25.311Z</updated>
     
@@ -129,26 +155,6 @@
       
       
     <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for</summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>&lt;hello.md&gt;</title>
-    <link href="https://www.oliverbryant.cn/2020/%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2012/03/hello-md/"/>
-    <id>https://www.oliverbryant.cn/2020/%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2012/03/hello-md/</id>
-    <published>2020-12-03T08:48:35.000Z</published>
-    <updated>2020-12-03T09:04:26.795Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="博客测试"><a href="#博客测试" class="headerlink" title="博客测试"></a>博客测试</h1><h2 id="能看见吗兄弟们"><a href="#能看见吗兄弟们" class="headerlink" title="能看见吗兄弟们"></a>能看见吗兄弟们</h2>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;博客测试&quot;&gt;&lt;a href=&quot;#博客测试&quot; class=&quot;headerlink&quot; title=&quot;博客测试&quot;&gt;&lt;/a&gt;博客测试&lt;/h1&gt;&lt;h2 id=&quot;能看见吗兄弟们&quot;&gt;&lt;a href=&quot;#能看见吗兄弟们&quot; class=&quot;headerlink&quot; title=&quot;能看见</summary>
       
     
     
