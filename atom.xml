@@ -41,6 +41,30 @@
   </entry>
   
   <entry>
+    <title>test3</title>
+    <link href="https://www.oliverbryant.cn/2021/01/13/test3/"/>
+    <id>https://www.oliverbryant.cn/2021/01/13/test3/</id>
+    <published>2021-01-13T12:58:10.000Z</published>
+    <updated>2021-01-13T12:58:10.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="标签测试"><a href="#标签测试" class="headerlink" title="标签测试"></a>标签测试</h3>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;标签测试&quot;&gt;&lt;a href=&quot;#标签测试&quot; class=&quot;headerlink&quot; title=&quot;标签测试&quot;&gt;&lt;/a&gt;标签测试&lt;/h3&gt;</summary>
+      
+    
+    
+    
+    <category term="其他" scheme="https://www.oliverbryant.cn/categories/Other/"/>
+    
+    
+    <category term="test" scheme="https://www.oliverbryant.cn/tags/test/"/>
+    
+  </entry>
+  
+  <entry>
     <title>test222</title>
     <link href="https://www.oliverbryant.cn/2021/01/13/test222/"/>
     <id>https://www.oliverbryant.cn/2021/01/13/test222/</id>
