@@ -99,7 +99,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zyoushuo/Blog@latest/hexo/css/loading_style_2.css" >
   
 
-<header id="l_header" class="l_header auto shadow " style='opacity: 0' >
+<header id="l_header" class="l_header always shadow show"  >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -240,7 +240,7 @@
       <div class="m_search">
         <form name="searchform" class="form u-search-form">
           <i class="icon fas fa-search fa-fw"></i>
-          <input type="text" class="input u-search-input" placeholder="Search..." />
+          <input type="text" class="input u-search-input" placeholder="Find anything you want…" />
         </form>
       </div>
 
@@ -370,7 +370,7 @@
     <div id="l_cover">
   
     
-        <div id="half" class='cover-wrapper page focus' style="display: ;">
+        <div id="full" class='cover-wrapper page focus' style="display: none;">
           
             <div id='cover-backstretch'></div>
           
@@ -653,7 +653,7 @@
 
   var l_header=document.getElementById("l_header");
   
-  l_header.classList.remove("show");
+  l_header.classList.add("show");
   
 </script>
 
