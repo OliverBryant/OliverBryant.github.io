@@ -517,7 +517,92 @@
 
 
   
-  <h1 id="高等数学"><a href="#高等数学" class="headerlink" title="高等数学"></a>高等数学</h1><h2 id="第一章-函数、极限与连续性"><a href="#第一章-函数、极限与连续性" class="headerlink" title="第一章 函数、极限与连续性"></a>第一章 函数、极限与连续性</h2><h3 id="一、函数"><a href="#一、函数" class="headerlink" title="一、函数"></a>一、函数</h3><p>1.</p>
+  <h1 id="高等数学"><a href="#高等数学" class="headerlink" title="高等数学"></a>高等数学</h1><h2 id="第一章-函数、极限与连续性"><a href="#第一章-函数、极限与连续性" class="headerlink" title="第一章 函数、极限与连续性"></a>第一章 函数、极限与连续性</h2><h3 id="一、函数"><a href="#一、函数" class="headerlink" title="一、函数"></a>一、函数</h3><ol>
+<li><p>概念：</p>
+<ul>
+<li><p>定义：设x，y是两个变量，D是实数集的某个子集，若对于D中的每个值x，按照一定的法则有唯一确定的值y与之对应，则称变量y为变量x的函数，记作y=f(x)，数集D称为函数的定义域，由函数对应法则或实际问题的要求来确定，相应的函数值的集合称为函数的值域。</p>
+</li>
+<li><p>函数的两要素：</p>
+<ul>
+<li><p>定义域<br>  $$<br>  \frac1{f\left(x\right)},f\left(x\right)\neq0;\sqrt[2n]{f\left(x\right)},f(x)\geq0;\ln f(x),\log_af(x),f(x)&gt;0;arc\sin f(s),arc\cos f(x),\left|f(x)\right|\leq1<br>  $$</p>
+</li>
+<li><p>对应法则</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>几何特性：</p>
+<ol>
+<li><p>奇偶性：</p>
+<ul>
+<li><p>定义：</p>
+<ul>
+<li><p>奇函数：<br>  $$<br>  f(-x)=-f(x)<br>  $$</p>
+</li>
+<li><p>偶函数：<br>  $$<br>  f(-x)=f(x)<br>  $$</p>
+</li>
+</ul>
+</li>
+<li><p>常见的奇偶函数：</p>
+<ul>
+<li><p>奇函数：<br>  $$<br>  x^{2n},\left|x\right|,\cos(x),sec(x),e^x+e^{-x}<br>  $$</p>
+</li>
+<li><p>偶函数：<br>  $$<br>  x^{2n+1},\sin x,\tan x,arc\sin x,arc\tan x,e^x-e^{-x},\ln(x+\sqrt{1+x^2})<br>  $$</p>
+</li>
+</ul>
+</li>
+<li><p>注：</p>
+<ul>
+<li>奇函数+奇函数=奇函数；奇函数+偶函数=不一定；偶函数+偶函数=偶函数</li>
+<li>偶函数关于y轴对称。</li>
+<li>奇函数关于原点对称；若在原点有定义，f(0)=0.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>周期性：</p>
+<ul>
+<li><p>定义：<br>  $$<br>  f(x+T)=f(x)<br>  $$</p>
+</li>
+<li><p>常见函数：<br>  $$<br>  \sin x,\cos x,\tan x,cotx,secx,cscx,C(\mathrm{常数函数})<br>  $$</p>
+</li>
+</ul>
+</li>
+<li><p>单调性：</p>
+<ul>
+<li><p>定义：</p>
+<ul>
+<li><p>单调递增：<br>  $$<br>  \forall x_1&lt;x_2\in I,f(x_1)&lt;f(x_2)<br>  $$</p>
+</li>
+<li><p>单调递减：<br>  $$<br>  \forall x_1&lt;x_2\in I,f(x_1)&gt;f(x_2)<br>  $$</p>
+</li>
+</ul>
+</li>
+<li><p>判定：</p>
+<ul>
+<li>若f’(x)&gt;0，则f(x)单调递增，反之递减。</li>
+<li>f’(x)&gt;=0且等号仅在有限个点成立，则f(x)单调递增，反之递减。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>有界性：</p>
+<ul>
+<li><p>定义：<br>  $$<br>  \forall x\in I,\exists M&gt;0,使\left|f(x)\right|\leq M,则I上f(x)\mathrm{有界}<br>  $$</p>
+</li>
+<li><p>常见函数：<br>  $$<br>  sinx,cosx,arctanx,C<br>  $$</p>
+</li>
+<li><p>判定：</p>
+<ul>
+<li>f(x)在</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
 
   
   
@@ -699,6 +784,59 @@
 
 
 
+
+
+  <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
 
 
 
