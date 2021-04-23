@@ -6,7 +6,7 @@
   <link href="https://www.oliverbryant.cn/atom.xml" rel="self"/>
   
   <link href="https://www.oliverbryant.cn/"/>
-  <updated>2021-03-08T02:04:40.000Z</updated>
+  <updated>2021-04-23T02:45:52.000Z</updated>
   <id>https://www.oliverbryant.cn/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Operating_System</title>
+    <link href="https://www.oliverbryant.cn/2021/04/23/Operating-System/"/>
+    <id>https://www.oliverbryant.cn/2021/04/23/Operating-System/</id>
+    <published>2021-04-23T02:45:52.000Z</published>
+    <updated>2021-04-23T02:45:52.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="第一章：计算机系统概述"><a href="#第一章：计算机系统概述" class="headerlink" title="第一章：计算机系统概述"></a>第一章：计算机系统概述</h1><h2 id="一、操作系统的基本概念"><a href="#一、操作系统的基本概念" class="headerlink" title="一、操作系统的基本概念"></a>一、操作系统的基本概念</h2><h3 id="一、操作系统的概念"><a href="#一、操作系统的概念" class="headerlink" title="一、操作系统的概念"></a>一、操作系统的概念</h3><ol><li>计算机系统：自下而上分为：<ul><li>硬件</li><li>操作系统：管理各种计算机硬件，为应用程序提供基础，并充当计算机硬件与用户之间的媒介。</li><li>应用程序</li><li>用户</li></ul></li><li>操作系统的定义：是控制和管理整个计算机系统的硬件与软件资源，合理地组织、调度计算机的工作与资源的分配，进而为用户和其他软件提供方便接口与环境的程序集合。<font color="red">操作系统是计算机系统中最基本的系统软件</font>。</li></ol><h3 id="二、操作系统的特征"><a href="#二、操作系统的特征" class="headerlink" title="二、操作系统的特征"></a>二、操作系统的特征</h3><ul><li>并发：<ul><li>定义：两个或多个事件在<font color="red">同一时间间隔内</font>发生。</li><li>实质：在多道程序环境下，一段时间内，宏观上有多道程序在同时执行，而在每个时刻，单处理机环境下实际仅能有一道程序执行。操作系统的并发性实际是通过<font color="red">分时</font>得以实现的</li><li>并行：<ul><li>定义：系统具有同时进行运算或操作的特性，在同一时刻能完成两种或两种以上的工作。</li><li>需要相关硬件的支持，如多流水线或多处理机硬件环境</li></ul></li></ul></li><li>共享：<ul><li>定义：系统中的资源可供内存中多个并发执行的进程共同使用。</li><li>分类：<ul><li>互斥共享方式：<ul><li>定义：在一段时间内只允许一个进程访问该资源。</li><li>举例：打印机、磁带机</li><li>过程：进程A需要访问某个资源<font color="orange">（称为临界资源或独占资源）</font>，先提出请求。若该资源空闲，则系统将其分配给A使用。此后有其他进程也要访问该资源，只要A没有使用完成就必须等待。仅当A访问完并释放该资源后，才允许另一个进程对该资源进行访问。</li></ul></li><li>同时访问方式：<ul><li>定义：允许在一段时间内由多个进程“同时”访问。</li><li>实质：宏观上“同时”，微观上“分时”</li><li>举例：磁盘设备，一些用重入码编写的文件</li></ul></li></ul></li></ul></li></ul><p><font color="green"><b>并发与共享的关系：两者是操作系统两个最基本的特征，两者之间互为存在的条件</b></font></p><ol><li>资源共享是以程序的并发为条件的，若系统不允许程序并发执行，则自然不存在资源共享问题。</li><li>若系统不能对资源共享实施有效的管理，则必将影响到程序的并发执行，甚至根本无法并发执行。</li></ol><ul><li>虚拟：<ul><li>定义：把一个物理上的实体变为若干逻辑上的对应物。</li><li>举例：<ul><li>虚拟处理器：<ul><li>定义：利用多道程序设计技术把一个物理上的CPU虚拟为多个逻辑上的CPU。</li><li>原理：通过多道程序设计技术，采用让多道程序并发执行的方法，来分时使用一个处理器。</li></ul></li><li>虚拟存储器：<ul><li>定义：用户感觉到的但是实际不存在的存储器</li><li>原理：采用虚拟存储器技术将一台机器的物理存储器变为虚拟存储器，以便从逻辑上扩充存储器的容量。</li></ul></li><li>虚拟外部设备：采用虚拟设备技术将一台物理I/O设备虚拟为多态逻辑上的I/O设备，并允许每个用户占用一台逻辑上的I/O设备。</li></ul></li><li>虚拟技术的分类：<ul><li>时分复用技术：处理器的分时共享</li><li>空分复用技术：虚拟存储器</li></ul></li></ul></li><li>异步：<ul><li>定义：由于资源有限，进程的执行并不是一贯到底的，而是走走停停的，它以不可预知的速度向前推进。</li></ul></li></ul><h3 id="三、操作系统的目的和功能"><a href="#三、操作系统的目的和功能" class="headerlink" title="三、操作系统的目的和功能"></a>三、操作系统的目的和功能</h3><ol><li>操作系统作为计算机系统资源的管理者：<ul><li>处理机管理：<ul><li>进程控制</li><li>进程同步</li><li>进程通信</li><li>死锁处理</li><li>处理机调度</li></ul></li><li>存储器管理：<ul><li>内存分配与回收</li><li>地址映射</li><li>内存保护</li><li>共享和内存扩充</li></ul></li><li>文件管理：<ul><li>文件存储空间的管理</li><li>目录管理</li><li>文件读写管理和保护</li></ul></li><li>设备管理：<ul><li>缓冲管理</li><li>设备分配</li><li>设备处理</li><li>虚拟设备</li></ul></li></ul></li><li>操作系统作为用户与计算机硬件系统之间的接口：<ul><li>命令接口：<ul><li>联机命令接口：</li><li>脱机命令接口：</li></ul></li><li>程序接口：</li></ul></li><li>操作系统用作扩充机器：操作系统所提供的资源管理功能和方便用户的各种服务功能，将裸机改造成功能更强、使用更方便的机器。因此，我们通常把覆盖了软件的机器称为扩充机器或虚拟机。</li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;第一章：计算机系统概述&quot;&gt;&lt;a href=&quot;#第一章：计算机系统概述&quot; class=&quot;headerlink&quot; title=&quot;第一章：计算机系统概述&quot;&gt;&lt;/a&gt;第一章：计算机系统概述&lt;/h1&gt;&lt;h2 id=&quot;一、操作系统的基本概念&quot;&gt;&lt;a href=&quot;#一、操作系统</summary>
+      
+    
+    
+    
+    <category term="考研" scheme="https://www.oliverbryant.cn/categories/Postgraduate/"/>
+    
+    
+    <category term="专业课" scheme="https://www.oliverbryant.cn/tags/%E4%B8%93%E4%B8%9A%E8%AF%BE/"/>
+    
+  </entry>
   
   <entry>
     <title>China-modern-history</title>
