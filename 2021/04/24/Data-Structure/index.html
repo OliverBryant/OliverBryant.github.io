@@ -791,11 +791,807 @@
 </li>
 <li><p>时间复杂度：每次插入O(1)，若单链表长为n，则总时间复杂度为O(n)。</p>
 </li>
-<li><p>代码实现</p>
+<li><p>代码实现：</p>
   <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">LinkList <span class="title">List_TailInsert</span><span class="params">(LinkList L)</span></span>&#123;             <span class="comment">//正向建立单链表</span></span><br><span class="line">    ElemType x;</span><br><span class="line">    L=(LinkList)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(LNode));</span><br><span class="line">    LNode *s,*r=L;                                <span class="comment">//r为表尾指针</span></span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;x);</span><br><span class="line">    <span class="keyword">while</span>(x!=<span class="number">9999</span>)&#123;</span><br><span class="line">        s=(LNode*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(LNode));</span><br><span class="line">        s-&gt;data=x;</span><br><span class="line">        r-&gt;next=s;</span><br><span class="line">        r=s;                                      <span class="comment">//r指向新的表尾结点</span></span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;x);</span><br><span class="line">    &#125;</span><br><span class="line">    r-&gt;next=<span class="literal">NULL</span>;                                 <span class="comment">//表尾置空</span></span><br><span class="line">    <span class="keyword">return</span> L;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>按序号查找结点值：</p>
+<ul>
+<li><p>思想：在单链表中从第一个结点出发，顺指针next域逐个往下搜索，直到找到第i个结点为止，否则返回最后一个结点指针域NULL。</p>
+</li>
+<li><p>时间复杂度：O(n)</p>
+</li>
+<li><p>代码实现：</p>
+  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">LNode* <span class="title">GetElem</span><span class="params">(LinkList L, <span class="keyword">int</span> i)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> j = <span class="number">1</span>;                        <span class="comment">//计数，初始为1</span></span><br><span class="line">    LNode* p = L-&gt;next;               <span class="comment">//头结点指针域给p</span></span><br><span class="line">    <span class="keyword">if</span> (i == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> L;                     <span class="comment">//若i等于0，则返回头结点</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (i &lt; <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">NULL</span>;                  <span class="comment">//若i无效，则返回NULL</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (p &amp;&amp; j != i) &#123;             <span class="comment">//从第1个结点开始找，查找第i个结点</span></span><br><span class="line">        p = p-&gt;next;</span><br><span class="line">        j++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> p;                         <span class="comment">//返回第i个结点的指针，若i大于表长，则返回NULL</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>按值查找结点：</p>
+<ul>
+<li><p>思想：从单链表的第一个结点出发，由前往后依次比较表中各结点数据域的值，若某结点数据域的值等于给定值e，则返回该结点指针；若整个单链表中没有这样的结点，则返回NULL。</p>
+</li>
+<li><p>时间复杂度：O(n)</p>
+</li>
+<li><p>代码实现：</p>
+  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">LNode* <span class="title">LocateElem</span><span class="params">(LinkList L, ElemType e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    LNode* p = L-&gt;next;</span><br><span class="line">    <span class="keyword">while</span> (p != <span class="literal">NULL</span> &amp;&amp; p-&gt;data != e) &#123;        <span class="comment">//从第一个结点开始查找数据域为e的结点</span></span><br><span class="line">        p = p-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> p;                                  <span class="comment">//找到后返回该结点指针，否则返回NULL`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>插入结点操作：</p>
+<ul>
+<li><p>思想：首先调用按序查找找到前驱结点，令新结点的指针域指向前驱结点的指针域，再令前驱结点的指针域指向新结点。</p>
+</li>
+<li><p>时间复杂度：查找元素为O(n)，插入结点为O(1).</p>
+</li>
+<li><p>代码实现：</p>
+  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">LinkList <span class="title">BackInsert</span><span class="params">(LinkList L, LNode* p, <span class="keyword">int</span> i)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    LNode* q;</span><br><span class="line">    q = GetElem(L, i - <span class="number">1</span>);           <span class="comment">//查找插入位置的前驱结点</span></span><br><span class="line">    p-&gt;next = q-&gt;next;</span><br><span class="line">    q-&gt;next = p;</span><br><span class="line">    <span class="keyword">return</span> L;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>删除结点操作：</p>
+<ul>
+<li><p>思想：先检查删除位置的合法性，后查找表中第i-1个结点，即被删除结点的前驱结点，再将其删除。</p>
+</li>
+<li><p>时间复杂度：查找元素为O(n)，插入结点为O(1).</p>
+</li>
+<li><p>代码实现：</p>
+  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">p=GetElem(L,i<span class="number">-1</span>);          <span class="comment">//查找删除位置的前驱结点</span></span><br><span class="line">q=p-&gt;next;                 <span class="comment">//令q指向被删除结点</span></span><br><span class="line">p-&gt;next=q-&gt;next;           <span class="comment">//将*q结点从链中“断开”</span></span><br><span class="line"><span class="built_in">free</span>(q);                   <span class="comment">//释放结点的存储空间</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="三、双链表"><a href="#三、双链表" class="headerlink" title="三、双链表"></a>三、双链表</h3><ol>
+<li><p>定义：结点中有两个指针prior和next，分别指向其前驱结点和后继结点。</p>
+</li>
+<li><p>代码实现：</p>
+ <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">DNode</span>&#123;</span>                <span class="comment">//定义双链表结点类型</span></span><br><span class="line">	ElemType data;                   <span class="comment">//数据域</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">DNode</span> *<span class="title">prior</span>,*<span class="title">next</span>;</span>       <span class="comment">//前驱和后继指针</span></span><br><span class="line">&#125;DNode, *DLinkList;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>优点：插入和删除操作的时间复杂度均为O(1).</p>
+<ul>
+<li><p>插入：在p之前插入结点*s</p>
+  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">s-&gt;next=p-&gt;next;</span><br><span class="line">p-&gt;next-&gt;prior=s;</span><br><span class="line">s-&gt;prior=p;</span><br><span class="line">p-&gt;next=s;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除：删除结点*p的后继结点 *q</p>
+  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p-&gt;next=q-&gt;next;</span><br><span class="line">q-&gt;next-&gt;prior=p;</span><br><span class="line"><span class="built_in">free</span>(q);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="四、循环链表"><a href="#四、循环链表" class="headerlink" title="四、循环链表"></a>四、循环链表</h3><ol>
+<li>循环单链表：<ul>
+<li>定义：表中最后一个结点的指针域不是NULL，而是指向头结点，从而整个链表形成一个环。</li>
+<li>特点：<ul>
+<li>在循环单链表中没有指针域为NULL的结点，因此判空条件是头结点的指针是否等于头指针。</li>
+<li>在循环链表中可以从任意结点开始遍历整个链表。</li>
+<li>循环单链表一般不设头指针而只设尾指针，从而使效率更高。<ul>
+<li>对单链表的操作很多是从表头表尾进行。</li>
+<li>若设头指针，对表尾的操作需要O(n)来遍历，而设尾指针r，r-&gt;next即为头指针，因此对表头表尾操作都是O(1).</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>循环双链表：<ul>
+<li>定义：在循环单链表的基础上增加prior指针。头结点的prior指向尾结点。</li>
+<li>特点：在循环双链表L中，某结点*p为尾结点时，p-&gt;next==L；当表为空表时，其头结点的prior和next都等于L。</li>
+</ul>
+</li>
+</ol>
+<h3 id="五、静态链表"><a href="#五、静态链表" class="headerlink" title="五、静态链表"></a>五、静态链表</h3><ol>
+<li><p>定义：静态链表借助数组来描述线性表的链式结构，结点中也有数据域data和指针域next，在指针域中存放的是下一个结点的相对地址（数组下标），又称游标。</p>
+</li>
+<li><p>特点：</p>
+<ul>
+<li>和顺序表一样，静态链表也要预先分配一块连续的空间。</li>
+<li>静态链表以next==-1作为结束的标志。</li>
+</ul>
+</li>
+<li><p>代码实现：</p>
+ <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MaxSize 50         <span class="comment">//静态链表的最大长度</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span>            <span class="comment">//静态链表结构类型的定义</span></span><br><span class="line">    ElemType data;         <span class="comment">//存储数据元素</span></span><br><span class="line">    <span class="keyword">int</span> next;              <span class="comment">//下一个元素的数组下标</span></span><br><span class="line">&#125; SLinkList[MaxSize];</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="六、顺序表和链表的比较"><a href="#六、顺序表和链表的比较" class="headerlink" title="六、顺序表和链表的比较"></a>六、顺序表和链表的比较</h3><ol>
+<li>比较</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">顺序表</th>
+<th align="center">链表</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">存取（读写）方式</td>
+<td align="center">顺序存取、随机存取</td>
+<td align="center">从表头顺序存取</td>
+</tr>
+<tr>
+<td align="center">逻辑结构与物理结构</td>
+<td align="center">逻辑上相邻的元素，对应的物理存储结构也相邻</td>
+<td align="center">逻辑上相邻的元素，物理存储位置不一定相邻</td>
+</tr>
+<tr>
+<td align="center">按值查找</td>
+<td align="center">无序时O(n),有序时O(log2n)</td>
+<td align="center">O(n)</td>
+</tr>
+<tr>
+<td align="center">按序号查找</td>
+<td align="center">O(1)</td>
+<td align="center">O(n)</td>
+</tr>
+<tr>
+<td align="center">插入和删除</td>
+<td align="center">O(n)</td>
+<td align="center">O(1)</td>
+</tr>
+<tr>
+<td align="center">空间分配</td>
+<td align="center">开始前分配，存满不能扩充，存储密度大</td>
+<td align="center">空间在需要时申请分配，且只要内存有空间就可以分配，存储密度不大</td>
+</tr>
+</tbody></table>
+<ol start="2">
+<li>如何选择存储结构？<ul>
+<li>基于存储的考虑：难以估计线性表长度或存储规模时，不宜采用顺序表。</li>
+<li>基于运算的考虑：<ul>
+<li>若经常做的运算是按序号访问元素，则选择顺序表</li>
+<li>若操作主要是删除或者插入，则选择链表</li>
+</ul>
+</li>
+<li>基于环境的考虑：<ul>
+<li>顺序表容易实现</li>
+<li>链表的操作基于指针</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="第三章：栈和队列"><a href="#第三章：栈和队列" class="headerlink" title="第三章：栈和队列"></a>第三章：栈和队列</h1><h2 id="一、栈"><a href="#一、栈" class="headerlink" title="一、栈"></a>一、栈</h2><h3 id="一、栈的基本概念"><a href="#一、栈的基本概念" class="headerlink" title="一、栈的基本概念"></a>一、栈的基本概念</h3><ol>
+<li><p>栈的定义：</p>
+<ul>
+<li>栈：只允许在一端进行插入或删除操作的线性表。</li>
+<li>栈顶：线性表允许进行插入删除的那一端。</li>
+<li>栈底：固定的，不允许进行插入和删除的另一端。</li>
+<li>空栈：不含任何元素的空表。</li>
+</ul>
+</li>
+<li><p>栈的特点：后进先出（LIFO）</p>
+</li>
+<li><p>栈的数学性质：卡特兰数，n个不同元素进栈，出栈元素不同排列的个数。<br> $$<br> \frac1{n+1}C_{2n}^n<br> $$</p>
+</li>
+<li><p>栈的基本操作：可以直接使用这些基本操作函数。</p>
+<ul>
+<li>InitStack(&amp;S)：初始化一个空栈S</li>
+<li>StackEmpty(S)：判断一个栈是否为空</li>
+<li>Push(&amp;S,x)：进栈，若栈S未满，则将x加入使之成为栈顶</li>
+<li>Pop(&amp;S,&amp;x)：出栈，若栈S非空，则弹出栈顶元素，并用x返回</li>
+<li>GetTop(S,&amp;x)：读栈顶元素，若栈S非空，则用x返回栈顶元素</li>
+<li>DestroyStack(&amp;S)：销毁栈，并释放栈S占用的存储空间</li>
+</ul>
+</li>
+</ol>
+<h3 id="二、栈的顺序存储结构"><a href="#二、栈的顺序存储结构" class="headerlink" title="二、栈的顺序存储结构"></a>二、栈的顺序存储结构</h3><ol>
+<li><p>定义：采用顺序存储结构的栈。它利用一组地址连续的存储单元存放自栈底到栈顶的数据元素，同时附设一个指针(top)指示当前栈顶元素的位置。</p>
+</li>
+<li><p>代码实现：</p>
+ <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MaxSize 50                     <span class="comment">//定义栈中元素的最大个数</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    ElemType data[MaxSize];            <span class="comment">//存放栈中元素</span></span><br><span class="line">    <span class="keyword">int</span> top;                           <span class="comment">//栈顶指针</span></span><br><span class="line">&#125; SqStack;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>栈顶指针：S.top，初始设置S.top=-1；</li>
+<li>栈顶元素：S.data[S.top]</li>
+<li>栈空条件：S.top==-1</li>
+<li>栈满条件：S.top==MaxSize-1</li>
+<li>栈长：S.top+1</li>
+</ul>
+</li>
+<li><p>顺序栈的基本运算：</p>
+<ul>
+<li><p>初始化：</p>
+  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">InitStack</span><span class="params">(SqStack* S)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">S-&gt;top = <span class="number">-1</span>;                  <span class="comment">//初始化栈顶指针</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>判栈空：</p>
+  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">StackEmpty</span><span class="params">(SqStack S)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">if</span> (S.top == <span class="number">-1</span>) &#123;            <span class="comment">//栈空</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;                     <span class="comment">//非空</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
+</li>
+</ul>
+</li>
+</ol>
+<pre><code>- 进栈：
+
+    <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Push</span><span class="params">(SqStack *S,ElemType e)</span></span>&#123;      </span><br><span class="line">    <span class="keyword">if</span>(S-&gt;top==MaxSize<span class="number">-1</span>)&#123;          <span class="comment">//栈满，报错</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    S-&gt;data[++S-&gt;top]=e;            <span class="comment">//指针先+1，再入栈</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+- 出栈：
+
+    <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Pop</span><span class="params">(SqStack* S, ElemType* e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">if</span> (S-&gt;top == <span class="number">-1</span>) &#123;             <span class="comment">//栈空，报错</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    *e = S-&gt;data[S-&gt;top--];         <span class="comment">//先出栈，指针再-1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+- 读栈顶元素：
+
+    <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">GetTop</span><span class="params">(SqStack S, ElemType* e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">if</span> (S.top == <span class="number">-1</span>)               <span class="comment">//栈空，报错</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    *e = S.data[S.top];            <span class="comment">//e记录栈顶元素</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></code></pre>
+<ol start="4">
+<li><p>共享栈：</p>
+<ul>
+<li>定义：让两个顺序栈共享一个一维数组空间，将两个栈的栈底分别设置在共享空间的两端，两个栈顶向共享空间的中间延伸。</li>
+<li>原理：两个栈的栈顶指针都指向栈顶元素，top0==-1是0号栈为空，top1==MaxSize时1号栈为空；仅当(top1-top0==1)时，则为栈满。</li>
+<li>优点：更有效地利用存储空间，两个栈的空间相互调节，只有在整个存储空间被栈满时才发生上溢。</li>
+</ul>
+</li>
+</ol>
+<h3 id="三、栈的链式存储结构"><a href="#三、栈的链式存储结构" class="headerlink" title="三、栈的链式存储结构"></a>三、栈的链式存储结构</h3><ol>
+<li><p>定义：采用链式存储的称为链栈。通常采用单链表实现。</p>
+</li>
+<li><p>优点：便于多个栈共享存储空间和提高其效率，且不存在栈满上溢的情况。</p>
+</li>
+<li><p>代码实现：</p>
+ <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">LinkNode</span>&#123;</span></span><br><span class="line">    ElemType data;                 <span class="comment">//数据域</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">LinkNode</span> *<span class="title">next</span>;</span>         <span class="comment">//指针域</span></span><br><span class="line">&#125; *LiStack;                        <span class="comment">//栈类型定义</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="二、队列"><a href="#二、队列" class="headerlink" title="二、队列"></a>二、队列</h2><h3 id="一、队列的基本概念"><a href="#一、队列的基本概念" class="headerlink" title="一、队列的基本概念"></a>一、队列的基本概念</h3><ol>
+<li>队列的定义：<ul>
+<li>定义：一种操作受限的线性表，只允许在表的一端进行插入，而在表的另一端进行删除。</li>
+<li>入队：向队列中插入元素成为入队，也叫仅队</li>
+<li>出队：删除元素，也叫离队</li>
+<li>队头（Front）：允许删除的一端，又称队首</li>
+<li>队尾（Rear）：允许插入的一端</li>
+<li>空队列：不含任何元素的空表</li>
+</ul>
+</li>
+<li>队列的特点：先进先出（FIFO）</li>
+<li>队列常见的基本操作：<ul>
+<li>InitQueue(&amp;Q)：初始化队列，构造一个空队列Q</li>
+<li>QueueEmpty(Q)：判队列空</li>
+<li>EnQueue(&amp;Q,x)：入队，若队列Q未满，将x加入，使之成为新的队尾</li>
+<li>DeQueue(&amp;Q,&amp;x)：出队，若队列非空，删除队头元素，并用x返回</li>
+<li>GetHead(Q,&amp;x)：读队头元素，若队列Q非空，则将队头元素赋值给x</li>
+</ul>
+</li>
+</ol>
+<h3 id="二、队列的顺序存储结构"><a href="#二、队列的顺序存储结构" class="headerlink" title="二、队列的顺序存储结构"></a>二、队列的顺序存储结构</h3><ol>
+<li><p>队列的顺序存储：</p>
+<ul>
+<li><p>定义：分配一块连续的存储单元存放队列中的元素，并附设两个指针：队头指针front指向队头元素，队尾指针rear指向队尾元素的下一个位置。</p>
+</li>
+<li><p>代码实现：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MaxSize 50                   <span class="comment">//定义队列中元素的最大个数</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span>           </span><br><span class="line">    ElemType data[MaxSize];          <span class="comment">//存放队列元素</span></span><br><span class="line">    <span class="keyword">int</span> front,rear;                  <span class="comment">//队头指针和队尾指针</span></span><br><span class="line">&#125; SqQueue;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>队空条件：Q.front==Q.rear==0</p>
+</li>
+<li><p>缺点：栈满难以判断，容易出现假溢出。</p>
+</li>
+</ul>
+</li>
+<li><p>循环队列：</p>
+<ul>
+<li>定义：把存储队列元素的表从逻辑上视为一个环。当队首指针Q.front==MaxSize-1时，再进一个位置就自动到0.</li>
+<li>队空条件：Q.front==Q.rear==0</li>
+<li>队首指针进1：Q.front=(Q.front+1)%MaxSize</li>
+<li>队尾指针进1：Q.rear=(Q.rear+1)%MaxSize</li>
+<li>队列长度：(Q.rear+MaxSize-Q.front)%MaxSize</li>
+<li>判断队满：<ul>
+<li>牺牲一个单元来区分队满和队空，入队时少用一个队列单元。此时队头指针在队尾指针的下一位置为队满的标志。</li>
+<li>类型中增设表示元素个数的数据成员。</li>
+<li>类型中增设tag数据成员，以区分队满还是队空，此时条件都是Q.front==Q.rear。通过tag判断。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>循环队列的操作：</p>
+<ul>
+<li><p>初始化：</p>
+  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InitQueue</span><span class="params">(SqQueue *Q)</span></span>&#123;</span><br><span class="line">    Q-&gt;rear=Q-&gt;front=<span class="number">0</span>;                 <span class="comment">//初始化队首，队尾指针</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>判队空：</p>
+  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">isEmpty</span><span class="params">(SqQueue Q)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(Q.rear==Q.front)                 <span class="comment">//队空条件</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>入队：</p>
+  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">EnQueue</span><span class="params">(SqQueue *Q,ElemType x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>((Q-&gt;rear+<span class="number">1</span>)%MaxSize==Q-&gt;front)          <span class="comment">//队满，报错</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    Q-&gt;data[Q-&gt;rear]=x;</span><br><span class="line">    Q-&gt;rear=(Q-&gt;rear+<span class="number">1</span>)%MaxSize;               <span class="comment">//队尾指针+1取模</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>出队：</p>
+  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">DeQueue</span><span class="params">(SqQueue *Q,ElemType *x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(Q-&gt;rear==Q-&gt;front)                      <span class="comment">//队空，报错</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    *x=Q-&gt;data[Q-&gt;front];</span><br><span class="line">    Q-&gt;front=(Q-&gt;front+<span class="number">1</span>)%MaxSize;             <span class="comment">//队头指针+1取模</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="三、队列的链式存储结构"><a href="#三、队列的链式存储结构" class="headerlink" title="三、队列的链式存储结构"></a>三、队列的链式存储结构</h3><ol>
+<li><p>队列的链式存储：</p>
+<ul>
+<li><p>定义：一个同时带有队头指针和队尾指针的单链表，也称链队列。</p>
+</li>
+<li><p>代码实现：</p>
+  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span>                         <span class="comment">//链式队列结点</span></span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">LinkNode</span> *<span class="title">next</span>;</span></span><br><span class="line">&#125;LinkNode;</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span>                         <span class="comment">//链式队列</span></span><br><span class="line">    LinkNode *front,*rear;              <span class="comment">//队列的队头和队尾指针</span></span><br><span class="line">&#125;LinkQueue;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>队空条件：Q.front==NULL且Q.rear==NULL</p>
+</li>
+<li><p>一般采用<font color="red">带有头结点</font>的单链表。</p>
+</li>
+</ul>
+</li>
+<li><p>链式队列的基本操作：</p>
+<ul>
+<li><p>初始化：</p>
+  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InitQueue</span><span class="params">(LinkQueue *Q)</span></span>&#123;</span><br><span class="line">    Q-&gt;front=Q-&gt;rear=(LinkNode*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(LinkNode));     <span class="comment">//建立头结点</span></span><br><span class="line">    Q-&gt;front-&gt;next=<span class="literal">NULL</span>;                                      <span class="comment">//初始为空</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>判队空：</p>
+  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">isEmpty</span><span class="params">(LinkQueue Q)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(Q.front==Q.rear)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>入队：</p>
+  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">EnQueue</span><span class="params">(LinkQueue *Q,ElemType x)</span></span>&#123;</span><br><span class="line">    LinkNode *s=(LinkNode*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(LinkNode));</span><br><span class="line">    s-&gt;data=x;s-&gt;next=<span class="literal">NULL</span>;                                <span class="comment">//创建新结点，插入到链尾</span></span><br><span class="line">    Q-&gt;rear-&gt;next=s;</span><br><span class="line">    Q-&gt;rear=s;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>出队：</p>
+  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">DeQueue</span><span class="params">(LinkQueue *Q,ElemType *x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(Q-&gt;front==Q-&gt;rear)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    LinkNode *p=Q-&gt;front-&gt;next;</span><br><span class="line">    *x=p-&gt;data;</span><br><span class="line">    Q-&gt;front-&gt;next=p-&gt;next;</span><br><span class="line">    <span class="keyword">if</span>(Q-&gt;rear==p)&#123;</span><br><span class="line">        Q-&gt;rear=Q-&gt;front;                 <span class="comment">//若原队列中只有一个结点，删除后变空</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">free</span>(p);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="四、双端队列"><a href="#四、双端队列" class="headerlink" title="四、双端队列"></a>四、双端队列</h3><ol>
+<li>定义：允许两端都可以进行入队和出队操作的队列。</li>
+<li>逻辑结构：线性结构</li>
+<li>进队：前端进的元素排列在队列中后端进的元素前面，后端进的元素排列在队列中前端进的元素的后面。</li>
+<li>出队：无论是前端还是后端出队，先出的元素排列在后出的元素的前面。</li>
+<li>输出受限的双端队列：允许在一端进行插入和删除，但在另一端只允许插入的双端队列。</li>
+<li>输入受限的双端队列：允许在一端进行插入和删除，但在另一端只允许删除的双端队列。</li>
+</ol>
+<h2 id="三、栈和队列的应用"><a href="#三、栈和队列的应用" class="headerlink" title="三、栈和队列的应用"></a>三、栈和队列的应用</h2><h3 id="一、栈在括号匹配中的应用"><a href="#一、栈在括号匹配中的应用" class="headerlink" title="一、栈在括号匹配中的应用"></a>一、栈在括号匹配中的应用</h3><ol>
+<li>算法思想：<ul>
+<li>初始设置一个空栈，顺序读入括号</li>
+<li>若是右括号，则或者使置于栈顶的最急迫期待得以消解，或者是不合法的情况（括号序列不匹配，退出程序）</li>
+<li>若是左括号，则作为一个新的更急迫的期待压入栈中，自然使原有的在栈中的所有未消解的期待的急迫性降了一级。</li>
+<li>算法结束时，栈为空，否则括号序列不匹配。</li>
+</ul>
+</li>
+</ol>
+<h3 id="二、栈在表达式求值中的应用"><a href="#二、栈在表达式求值中的应用" class="headerlink" title="二、栈在表达式求值中的应用"></a>二、栈在表达式求值中的应用</h3><ol>
+<li><p>中缀表达式转化为后缀表达式的过程：</p>
+<ul>
+<li><p>运算符优先级表：</p>
+<table>
+<thead>
+<tr>
+<th align="center">操作符</th>
+<th align="center">#</th>
+<th align="center">(</th>
+<th align="center">*,/</th>
+<th align="center">+,-</th>
+<th align="center">)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">isp</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">5</td>
+<td align="center">3</td>
+<td align="center">6</td>
+</tr>
+<tr>
+<td align="center">icp</td>
+<td align="center">0</td>
+<td align="center">6</td>
+<td align="center">4</td>
+<td align="center">2</td>
+<td align="center">1</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>操作方法：a+b-a*((c+d)/e-f)+g——&gt;ab+acd+e/f- *-g+</p>
+<table>
+<thead>
+<tr>
+<th align="center">步骤</th>
+<th align="center">扫描项</th>
+<th align="center">项类型</th>
+<th align="center">动作</th>
+<th align="center">栈内内容</th>
+<th align="center">输出</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">0</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">‘#’进栈，读下一符号</td>
+<td align="center">#</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">a</td>
+<td align="center">操作数</td>
+<td align="center">直接输出</td>
+<td align="center">#</td>
+<td align="center">a</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">+</td>
+<td align="center">操作符</td>
+<td align="center">isp(‘#’)&lt;icp(‘+’)，进栈</td>
+<td align="center">#+</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">b</td>
+<td align="center">操作数</td>
+<td align="center">直接输出</td>
+<td align="center">#+</td>
+<td align="center">b</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">-</td>
+<td align="center">操作符</td>
+<td align="center">isp(‘+’)&gt;icp(‘-‘)，退栈并输出</td>
+<td align="center">#</td>
+<td align="center">+</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">isp(‘#’)&lt;icp(‘-‘)，进栈</td>
+<td align="center">#-</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="center">a</td>
+<td align="center">操作数</td>
+<td align="center">直接输出</td>
+<td align="center">#-</td>
+<td align="center">a</td>
+</tr>
+<tr>
+<td align="center">7</td>
+<td align="center">*</td>
+<td align="center">操作符</td>
+<td align="center">isp(‘-‘)&lt;icp(‘*’)，进栈</td>
+<td align="center">#-*</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">8</td>
+<td align="center">(</td>
+<td align="center">操作符</td>
+<td align="center">isp(‘*’)&lt;icp(‘(‘)，进栈</td>
+<td align="center">#-*(</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">9</td>
+<td align="center">(</td>
+<td align="center">操作符</td>
+<td align="center">isp(‘(‘)&lt;icp(‘(‘)，进栈</td>
+<td align="center">#-*((</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">10</td>
+<td align="center">c</td>
+<td align="center">操作数</td>
+<td align="center">直接输出</td>
+<td align="center">#-*((</td>
+<td align="center">c</td>
+</tr>
+<tr>
+<td align="center">11</td>
+<td align="center">+</td>
+<td align="center">操作符</td>
+<td align="center">isp(‘(‘)&lt;icp(‘+’)，进栈</td>
+<td align="center">#-*((+</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">12</td>
+<td align="center">d</td>
+<td align="center">操作数</td>
+<td align="center">直接输出</td>
+<td align="center">#-*((+</td>
+<td align="center">d</td>
+</tr>
+<tr>
+<td align="center">13</td>
+<td align="center">)</td>
+<td align="center">操作符</td>
+<td align="center">isp(‘+’)&gt;icp(‘)’)，退栈并输出</td>
+<td align="center">#-*((</td>
+<td align="center">+</td>
+</tr>
+<tr>
+<td align="center">14</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">isp(‘(‘)==icp(‘)’)，直接退栈</td>
+<td align="center">#-*(</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">15</td>
+<td align="center">/</td>
+<td align="center">操作符</td>
+<td align="center">isp(‘(‘)&lt;icp(‘/‘)，进栈</td>
+<td align="center">#-*(/</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">16</td>
+<td align="center">e</td>
+<td align="center">操作数</td>
+<td align="center">直接输出</td>
+<td align="center">#-*(/</td>
+<td align="center">e</td>
+</tr>
+<tr>
+<td align="center">17</td>
+<td align="center">-</td>
+<td align="center">操作符</td>
+<td align="center">isp(‘/‘)&gt;icp(‘-‘)，退栈并输出</td>
+<td align="center">#-*(</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">18</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">isp(‘(‘)&lt;icp(‘-‘)，进栈</td>
+<td align="center">#-*(-</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">19</td>
+<td align="center">f</td>
+<td align="center">操作数</td>
+<td align="center">直接输出</td>
+<td align="center">#-*(-</td>
+<td align="center">f</td>
+</tr>
+<tr>
+<td align="center">20</td>
+<td align="center">)</td>
+<td align="center">操作符</td>
+<td align="center">isp(‘-‘)&gt;icp(‘)’)，退栈并输出</td>
+<td align="center">#-*(</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="center">21</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">isp(‘(‘)==icp(‘)’)，直接退栈</td>
+<td align="center">#-*</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">22</td>
+<td align="center">+</td>
+<td align="center">操作符</td>
+<td align="center">isp(‘*’)&gt;icp(‘+’)，退栈并输出</td>
+<td align="center">#-</td>
+<td align="center">*</td>
+</tr>
+<tr>
+<td align="center">23</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">isp(‘-‘)&gt;icp(‘+’)，退栈并输出</td>
+<td align="center">#</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="center">24</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">isp(‘#’)&lt;icp(‘+’)，进栈</td>
+<td align="center">#+</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">25</td>
+<td align="center">g</td>
+<td align="center">操作数</td>
+<td align="center">直接输出</td>
+<td align="center">#+</td>
+<td align="center">g</td>
+</tr>
+<tr>
+<td align="center">26</td>
+<td align="center">#</td>
+<td align="center">操作符</td>
+<td align="center">isp(‘+’)&gt;icp(‘#’)，退栈并输出</td>
+<td align="center">#</td>
+<td align="center">+</td>
+</tr>
+<tr>
+<td align="center">27</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">isp(‘#’)==icp(‘#’)，退栈，结束</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+</li>
+<li><p>后缀表达式求值过程：abcd-*+ef/-</p>
+<table>
+<thead>
+<tr>
+<th align="center">步</th>
+<th align="center">扫描项</th>
+<th align="center">项类型</th>
+<th align="center">动作</th>
+<th align="center">栈中内容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">置空栈</td>
+<td align="center">空</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">a</td>
+<td align="center">操作数</td>
+<td align="center">进栈</td>
+<td align="center">a</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">b</td>
+<td align="center">操作数</td>
+<td align="center">进栈</td>
+<td align="center">a,b</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">c</td>
+<td align="center">操作数</td>
+<td align="center">进栈</td>
+<td align="center">a,b,c</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center">d</td>
+<td align="center">操作数</td>
+<td align="center">进栈</td>
+<td align="center">a,b,c,d</td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="center">-</td>
+<td align="center">操作符</td>
+<td align="center">d,c退栈，计算c-d，结果R1进栈</td>
+<td align="center">a,b,R1</td>
+</tr>
+<tr>
+<td align="center">7</td>
+<td align="center">*</td>
+<td align="center">操作符</td>
+<td align="center">R1,b退栈，计算b*R1，结果R2进栈</td>
+<td align="center">a,R2</td>
+</tr>
+<tr>
+<td align="center">8</td>
+<td align="center">+</td>
+<td align="center">操作符</td>
+<td align="center">R2.a退栈，计算a+R2，结果R3进栈</td>
+<td align="center">R3</td>
+</tr>
+<tr>
+<td align="center">9</td>
+<td align="center">e</td>
+<td align="center">操作数</td>
+<td align="center">进栈</td>
+<td align="center">R3,e</td>
+</tr>
+<tr>
+<td align="center">10</td>
+<td align="center">f</td>
+<td align="center">操作数</td>
+<td align="center">进栈</td>
+<td align="center">R3,e,f</td>
+</tr>
+<tr>
+<td align="center">11</td>
+<td align="center">/</td>
+<td align="center">操作符</td>
+<td align="center">f,e退栈，计算e/f，结果R4进栈</td>
+<td align="center">R3,R4</td>
+</tr>
+<tr>
+<td align="center">12</td>
+<td align="center">-</td>
+<td align="center">操作符</td>
+<td align="center">R4,R3退栈，计算R3-R4，结果R5进栈</td>
+<td align="center">R5</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="三、栈在递归中的应用"><a href="#三、栈在递归中的应用" class="headerlink" title="三、栈在递归中的应用"></a>三、栈在递归中的应用</h3><ul>
+<li>思想：通过栈来实现将递归算法转换为非递归算法，避免递归次数过多造成栈溢出。</li>
+</ul>
+<h3 id="四、队列在层次遍历中的应用"><a href="#四、队列在层次遍历中的应用" class="headerlink" title="四、队列在层次遍历中的应用"></a>四、队列在层次遍历中的应用</h3><ul>
+<li><p>算法思想：</p>
+<ol>
+<li><p>根结点入队</p>
+</li>
+<li><p>若队空，则所有结点遍历完成，结束遍历。否则重复3号操作。</p>
+</li>
+<li><p>队列中的第一个结点出队，并访问之。若其有左孩子，则将左孩子入队；若其有右孩子，则将右孩子入队，返回2号操作。</p>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="五、队列在计算机系统中的应用"><a href="#五、队列在计算机系统中的应用" class="headerlink" title="五、队列在计算机系统中的应用"></a>五、队列在计算机系统中的应用</h3><ol>
+<li>解决主机与外部设备之间速度不匹配的问题：<ul>
+<li>设置一个缓冲区，该缓冲区就是一个队列</li>
+</ul>
+</li>
+<li>解决由多用户引起的资源竞争问题：<ul>
+<li>采用先来先服务（FCFS）策略，将它们按照时间先后排成一个队列。</li>
+</ul>
+</li>
+</ol>
+<h2 id="四、特殊矩阵的压缩存储"><a href="#四、特殊矩阵的压缩存储" class="headerlink" title="四、特殊矩阵的压缩存储"></a>四、特殊矩阵的压缩存储</h2><h3 id="一、数组的定义"><a href="#一、数组的定义" class="headerlink" title="一、数组的定义"></a>一、数组的定义</h3><ol>
+<li>定义：数组是由n个<font color="red">相同类型</font>的<font color="red">数据元素</font>构成的<font color="red">有限序列</font>。每个元素在n个线性关系中的序号称为该元素的下标，下标的取值范围称为数组的维界。</li>
+<li>数组和线性表的关系：数组是线性表的推广。一维数组可以视为一个线性表；二位数组可视为其元素也是定长线性表的线性表。</li>
+</ol>
+<h3 id="二、数组的存储结构"><a href="#二、数组的存储结构" class="headerlink" title="二、数组的存储结构"></a>二、数组的存储结构</h3><ol>
+<li><p>一维数组：A[0…n-1]<br> $$<br> LOC(a_i)=LOC(a_0)+i\times L;(0\leq i&lt;n)<br> $$</p>
+</li>
+<li><p>二维数组：</p>
+<ul>
+<li><p>按行优先方式：<br>  $$<br>  LOC(a_{i,j})=LOC(a_{0,0})+\lbrack i\times(h_2+1)+j\rbrack\times L<br>  $$</p>
+</li>
+<li><p>按列优先方式：<br>  $$<br>  LOC(a_{i,j})=LOC(a_{0,0})+\lbrack j\times(h_1+1)+i\rbrack\times L<br>  $$</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="三、矩阵的压缩存储"><a href="#三、矩阵的压缩存储" class="headerlink" title="三、矩阵的压缩存储"></a>三、矩阵的压缩存储</h3><ol>
+<li><p>对称矩阵的压缩存储：</p>
+<ul>
+<li>策略：只存储主对角线和下三角区，因为aij==aji，所以可以很方便的将上三角区转化为下三角区。 </li>
+</ul>
+</li>
+<li><p>三角矩阵：</p>
+<ul>
+<li>定义：下三角矩阵中，上三角区均为同一常量；上三角矩阵中，下三角区均为同一常量。</li>
+<li>策略：存储主对角线和元素不同的区域，在最后增加一个存储空间存储常量。访问同一常量区时，直接访问数组最后一个元素。</li>
+</ul>
+</li>
+<li><p>三对角矩阵：</p>
+<ul>
+<li><p>将三对角矩阵A中三条对角线上的元素按行优先方式存放在一维数组中。</p>
+</li>
+<li><p>已知aij，B中下标k=2i+j-3.</p>
+</li>
+<li><p>已知下标k，<br>  $$<br>  \begin{array}{l}3(i-1)-1&lt;k+1\leq3i-1\i\geq(k+2)/3\i=\left\lceil(k+2)/3\right\rceil\j=k-2i+3\end{array}<br>  $$</p>
+</li>
+</ul>
+</li>
+<li><p>稀疏矩阵：</p>
+<ul>
+<li>定义：非零元素的个数远小于0元素的个数。</li>
+<li>存储方法：<ul>
+<li>顺序存储（数组）：定义一个结构体，存放三元组&lt;i,j,v&gt;（i：行号；j：列号；v：值）</li>
+<li>十字链表法：每行指针指向当前行第一个元素，若还有继续往下指；每列同样</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -1040,7 +1836,7 @@
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">一、数据结构的基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E5%92%8C%E6%9C%AF%E8%AF%AD"><span class="toc-text">一、基本概念和术语</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%89%E8%A6%81%E7%B4%A0"><span class="toc-text">二、数据结构三要素</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E7%AE%97%E6%B3%95%E5%92%8C%E7%AE%97%E6%B3%95%E8%AF%84%E4%BB%B7"><span class="toc-text">二、算法和算法评价</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%AE%97%E6%B3%95%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">一、算法的基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E7%AE%97%E6%B3%95%E6%95%88%E7%8E%87%E7%9A%84%E5%BA%A6%E9%87%8F"><span class="toc-text">二、算法效率的度量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E5%AE%9A%E4%B9%89%E5%92%8C%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-text">一、线性表的定义和基本操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">一、线性表的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-text">二、线性表的基本操作</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E9%A1%BA%E5%BA%8F%E8%A1%A8%E7%A4%BA"><span class="toc-text">二、线性表的顺序表示</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E9%A1%BA%E5%BA%8F%E8%A1%A8%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">一、顺序表的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E9%A1%BA%E5%BA%8F%E8%A1%A8%E4%B8%8A%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="toc-text">二、顺序表上基本操作的实现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E9%93%BE%E5%BC%8F%E8%A1%A8%E7%A4%BA"><span class="toc-text">三、线性表的链式表示</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%8D%95%E9%93%BE%E8%A1%A8%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">一、单链表的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%8D%95%E9%93%BE%E8%A1%A8%E4%B8%8A%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="toc-text">二、单链表上的基本操作的实现</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">一、数据结构的基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E5%92%8C%E6%9C%AF%E8%AF%AD"><span class="toc-text">一、基本概念和术语</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%89%E8%A6%81%E7%B4%A0"><span class="toc-text">二、数据结构三要素</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E7%AE%97%E6%B3%95%E5%92%8C%E7%AE%97%E6%B3%95%E8%AF%84%E4%BB%B7"><span class="toc-text">二、算法和算法评价</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%AE%97%E6%B3%95%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">一、算法的基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E7%AE%97%E6%B3%95%E6%95%88%E7%8E%87%E7%9A%84%E5%BA%A6%E9%87%8F"><span class="toc-text">二、算法效率的度量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E5%AE%9A%E4%B9%89%E5%92%8C%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-text">一、线性表的定义和基本操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">一、线性表的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-text">二、线性表的基本操作</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E9%A1%BA%E5%BA%8F%E8%A1%A8%E7%A4%BA"><span class="toc-text">二、线性表的顺序表示</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E9%A1%BA%E5%BA%8F%E8%A1%A8%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">一、顺序表的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E9%A1%BA%E5%BA%8F%E8%A1%A8%E4%B8%8A%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="toc-text">二、顺序表上基本操作的实现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E9%93%BE%E5%BC%8F%E8%A1%A8%E7%A4%BA"><span class="toc-text">三、线性表的链式表示</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%8D%95%E9%93%BE%E8%A1%A8%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">一、单链表的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%8D%95%E9%93%BE%E8%A1%A8%E4%B8%8A%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="toc-text">二、单链表上的基本操作的实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%8F%8C%E9%93%BE%E8%A1%A8"><span class="toc-text">三、双链表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%BE%AA%E7%8E%AF%E9%93%BE%E8%A1%A8"><span class="toc-text">四、循环链表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E9%9D%99%E6%80%81%E9%93%BE%E8%A1%A8"><span class="toc-text">五、静态链表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E9%A1%BA%E5%BA%8F%E8%A1%A8%E5%92%8C%E9%93%BE%E8%A1%A8%E7%9A%84%E6%AF%94%E8%BE%83"><span class="toc-text">六、顺序表和链表的比较</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%A0%88"><span class="toc-text">一、栈</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%A0%88%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">一、栈的基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%A0%88%E7%9A%84%E9%A1%BA%E5%BA%8F%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84"><span class="toc-text">二、栈的顺序存储结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%A0%88%E7%9A%84%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84"><span class="toc-text">三、栈的链式存储结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E9%98%9F%E5%88%97"><span class="toc-text">二、队列</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E9%98%9F%E5%88%97%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">一、队列的基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E9%98%9F%E5%88%97%E7%9A%84%E9%A1%BA%E5%BA%8F%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84"><span class="toc-text">二、队列的顺序存储结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E9%98%9F%E5%88%97%E7%9A%84%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84"><span class="toc-text">三、队列的链式存储结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%8F%8C%E7%AB%AF%E9%98%9F%E5%88%97"><span class="toc-text">四、双端队列</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-text">三、栈和队列的应用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%A0%88%E5%9C%A8%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-text">一、栈在括号匹配中的应用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%A0%88%E5%9C%A8%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%B1%82%E5%80%BC%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-text">二、栈在表达式求值中的应用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%A0%88%E5%9C%A8%E9%80%92%E5%BD%92%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-text">三、栈在递归中的应用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E9%98%9F%E5%88%97%E5%9C%A8%E5%B1%82%E6%AC%A1%E9%81%8D%E5%8E%86%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-text">四、队列在层次遍历中的应用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E9%98%9F%E5%88%97%E5%9C%A8%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-text">五、队列在计算机系统中的应用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E7%89%B9%E6%AE%8A%E7%9F%A9%E9%98%B5%E7%9A%84%E5%8E%8B%E7%BC%A9%E5%AD%98%E5%82%A8"><span class="toc-text">四、特殊矩阵的压缩存储</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%95%B0%E7%BB%84%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">一、数组的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%95%B0%E7%BB%84%E7%9A%84%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84"><span class="toc-text">二、数组的存储结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E7%9F%A9%E9%98%B5%E7%9A%84%E5%8E%8B%E7%BC%A9%E5%AD%98%E5%82%A8"><span class="toc-text">三、矩阵的压缩存储</span></a></li></ol></li></ol>
     </div>
   </section>
 
