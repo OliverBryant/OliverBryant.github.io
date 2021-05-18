@@ -986,6 +986,62 @@
 </ul>
 </li>
 </ol>
+<h3 id="三、TCP-IP模型"><a href="#三、TCP-IP模型" class="headerlink" title="三、TCP/IP模型"></a>三、TCP/IP模型</h3><ol>
+<li><p>TCP/IP模型：<img src="https://oliver-picture.oss-cn-beijing.aliyuncs.com/img/TCPIP%E6%A8%A1%E5%9E%8B.png" class="lazyload" data-srcset="https://oliver-picture.oss-cn-beijing.aliyuncs.com/img/TCPIP%E6%A8%A1%E5%9E%8B.png" srcset="data:image/png;base64,666" style="zoom:50%;" /></p>
+</li>
+<li><p>TCP/IP协议栈：<img src="https://oliver-picture.oss-cn-beijing.aliyuncs.com/img/TCPIP%E5%8D%8F%E8%AE%AE%E6%A0%88.png" class="lazyload" data-srcset="https://oliver-picture.oss-cn-beijing.aliyuncs.com/img/TCPIP%E5%8D%8F%E8%AE%AE%E6%A0%88.png" srcset="data:image/png;base64,666" style="zoom:50%;" /></p>
+</li>
+<li><p>TCP/IP模型与OSI模型的比较</p>
+<ul>
+<li><p>相同点：</p>
+<ul>
+<li>都分层</li>
+<li>基于独立的协议栈的概念</li>
+<li>可以实现异构网络的互联</li>
+</ul>
+</li>
+<li><p>不同点：</p>
+<ul>
+<li><p>OSI定义三点：服务、协议、接口</p>
+</li>
+<li><p>OSI先出现，参考模型先于协议发明，不偏向特定协议</p>
+</li>
+<li><p>TCP/IP设计之初就考虑到异构网互联问题，将IP作为重要层次</p>
+</li>
+<li><table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">OSI</th>
+<th align="center">TCP/IP</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">网络层</td>
+<td align="center">无连接+面向连接</td>
+<td align="center">无连接</td>
+</tr>
+<tr>
+<td align="center">传输层</td>
+<td align="center">面向连接</td>
+<td align="center">无连接+面向连接</td>
+</tr>
+</tbody></table>
+<ul>
+<li>面向连接：<ul>
+<li>建立连接：发出一个建立连接的请求。</li>
+<li>数据传输</li>
+<li>释放连接</li>
+</ul>
+</li>
+<li>无连接：直接进行数据传输</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
 
   
   
@@ -1172,7 +1228,7 @@
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A6%82%E8%BF%B0"><span class="toc-text">一、计算机网络概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-text">一、计算机网络的概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9A%84%E7%BB%84%E6%88%90"><span class="toc-text">二、计算机网络的组成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9A%84%E5%8A%9F%E8%83%BD"><span class="toc-text">三、计算机网络的功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8F%91%E5%B1%95%E7%9A%84%E4%B8%89%E4%B8%AA%E9%98%B6%E6%AE%B5"><span class="toc-text">四、计算机网络发展的三个阶段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-text">五、计算机网络的分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9A%84%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87"><span class="toc-text">六、计算机网络的性能指标</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E4%B8%8E%E5%8F%82%E8%80%83%E6%A8%A1%E5%9E%8B"><span class="toc-text">二、计算机网络体系结构与参考模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%88%86%E5%B1%82%E7%BB%93%E6%9E%84"><span class="toc-text">一、计算机网络分层结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81OSI%E5%8F%82%E8%80%83%E6%A8%A1%E5%9E%8B"><span class="toc-text">二、OSI参考模型</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A6%82%E8%BF%B0"><span class="toc-text">一、计算机网络概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-text">一、计算机网络的概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9A%84%E7%BB%84%E6%88%90"><span class="toc-text">二、计算机网络的组成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9A%84%E5%8A%9F%E8%83%BD"><span class="toc-text">三、计算机网络的功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8F%91%E5%B1%95%E7%9A%84%E4%B8%89%E4%B8%AA%E9%98%B6%E6%AE%B5"><span class="toc-text">四、计算机网络发展的三个阶段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-text">五、计算机网络的分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9A%84%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87"><span class="toc-text">六、计算机网络的性能指标</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E4%B8%8E%E5%8F%82%E8%80%83%E6%A8%A1%E5%9E%8B"><span class="toc-text">二、计算机网络体系结构与参考模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%88%86%E5%B1%82%E7%BB%93%E6%9E%84"><span class="toc-text">一、计算机网络分层结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81OSI%E5%8F%82%E8%80%83%E6%A8%A1%E5%9E%8B"><span class="toc-text">二、OSI参考模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81TCP-IP%E6%A8%A1%E5%9E%8B"><span class="toc-text">三、TCP&#x2F;IP模型</span></a></li></ol></li></ol>
     </div>
   </section>
 
