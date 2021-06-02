@@ -674,12 +674,18 @@
 </li>
 <li>多道批处理系统：<ul>
 <li>定义：每次往内存中读入多道程序，<font color="red">操作系统正式诞生，用于支持多道程序并发运行</font>。</li>
+<li>特点：<ul>
+<li>多道：</li>
+<li>宏观上并行：同时进入系统的多道程序都处于运行过程中，即它们先后开始各自的运行，但都未运行完毕。</li>
+<li>微观上串行：内存中的多道程序轮流占有CPU，交替执行。</li>
+</ul>
+</li>
 <li>优点：<ul>
 <li>多道程序并发执行，共享计算机资源。</li>
 <li>资源利用率大幅提升，CPU和其他资源更能保持“忙碌”状态，系统吞吐量增大。</li>
 </ul>
 </li>
-<li>缺点：<ul>
+<li>缺点： <ul>
 <li>用户响应时间长，没有人机交互功能</li>
 </ul>
 </li>
@@ -688,6 +694,199 @@
 </ol>
 <h3 id="三、分时操作系统"><a href="#三、分时操作系统" class="headerlink" title="三、分时操作系统"></a>三、分时操作系统</h3><ol>
 <li>定义：计算机以时间片为单位轮流为各个用户/作业服务，各个用户可通过终端与计算机进行交互。</li>
+<li>特点：<ul>
+<li>同时性</li>
+<li>交互性</li>
+<li>独立性</li>
+<li>及时性</li>
+</ul>
+</li>
+<li>优点：<ul>
+<li>用户请求可以被即时响应，解决了人机交互问题。</li>
+<li>允许多个用户同时使用一台计算机，并且用户对计算机的操作相互独立，感受不到别人的存在。</li>
+</ul>
+</li>
+<li>缺点：不能优先处理一些紧急任务。操作系统对各个用户/作业都是完全公平的，循环地为每个用户/作业服务一个时间片，不区分任务的紧急性。</li>
+</ol>
+<h3 id="四、实时操作系统"><a href="#四、实时操作系统" class="headerlink" title="四、实时操作系统"></a>四、实时操作系统</h3><ol>
+<li>定义：在实时操作系统的控制下，计算机系统接受到外部信号后及时处理，并在严格的时限内处理完事件。</li>
+<li>特点：<ul>
+<li>及时性</li>
+<li>可靠性</li>
+</ul>
+</li>
+<li>优点：能够优先响应一些紧急任务，某些紧急任务不需时间片排队。</li>
+<li>分类：<ul>
+<li>硬实时系统：必须在绝对严格的规定时间内完成处理<ul>
+<li>导弹控制系统</li>
+<li>自动驾驶系统</li>
+</ul>
+</li>
+<li>软实时系统：能接受偶尔违反时间规定<ul>
+<li>12306火车订票系统</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="五、网络操作系统"><a href="#五、网络操作系统" class="headerlink" title="五、网络操作系统"></a>五、网络操作系统</h3><ol>
+<li>定义：能把网络中各个计算机有机地结合起来，实现数据传送等功能，实现网络中各种资源的共享（如文件共享）和各台计算机之间的通信。</li>
+</ol>
+<h3 id="六、分布式操作系统"><a href="#六、分布式操作系统" class="headerlink" title="六、分布式操作系统"></a>六、分布式操作系统</h3><ol>
+<li>定义：系统中各台计算机地位相同，任何工作都可以分布在这些计算机上，由它们并行、协同完成这个任务。</li>
+<li>特点：<ul>
+<li>分布性</li>
+<li>并行性</li>
+</ul>
+</li>
+</ol>
+<h3 id="七、个人计算机操作系统"><a href="#七、个人计算机操作系统" class="headerlink" title="七、个人计算机操作系统"></a>七、个人计算机操作系统</h3><ul>
+<li>Windows</li>
+<li>Linux</li>
+<li>MacOS</li>
+</ul>
+<h2 id="三、操作系统的运行环境"><a href="#三、操作系统的运行环境" class="headerlink" title="三、操作系统的运行环境"></a>三、操作系统的运行环境</h2><h3 id="一、操作系统的运行机制"><a href="#一、操作系统的运行机制" class="headerlink" title="一、操作系统的运行机制"></a>一、操作系统的运行机制</h3><ol>
+<li>指令：CPU能识别、执行的最基本命令。（二进制）</li>
+<li>内核程序和应用程序：<ul>
+<li>内核（kernel）：内核是操作系统最重要最核心的部分，也是最接近硬件的部分。由许多内核程序组成。可以运行特权指令。<font color="orange">（I/O指令、置中断指令等等）</font></li>
+<li>应用程序：运行于操作系统之上的程序。只能运行非特权指令。</li>
+</ul>
+</li>
+<li>内核态与用户态：<ul>
+<li>内核态：<ul>
+<li>定义：处于内核态时，说明此时正在运行的是内核程序，此时可以执行特权指令。</li>
+<li>别名：核心态、管态</li>
+</ul>
+</li>
+<li>用户态：<ul>
+<li>定义：处于用户态时，说明此时正在运行的是应用程序，此时只能执行非特权指令。</li>
+<li>别名：目态</li>
+</ul>
+</li>
+<li>内核态与用户态的切换：CPU中有一个寄存器叫<font color="red">程序状态字寄存器（PSW）</font>，其中有个二进制位，1表示“内核态”，0表示“用户态”。<ul>
+<li>内核态—&gt;用户态：执行一条<font color="red">特权指令——修改PSW</font>的标志位为“用户态”</li>
+<li>用户态—&gt;内核态：由“中断”引发，硬件自动完成变态过程，触发中断信号意味着操作系统将强行夺回CPU的使用权。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>内核内容：<ul>
+<li>时钟管理：<ul>
+<li>计时</li>
+<li>时钟中断：实现进程的切换</li>
+</ul>
+</li>
+<li>中断机制：<ul>
+<li>目的：提高多道程序运行环境中CPU的利用率<font color="orange">（主要是针对外部设备）</font></li>
+<li>作用：保护和恢复中断现场的信息，转移控制权到相关的处理程序</li>
+</ul>
+</li>
+<li>原语：<ul>
+<li>定义：具有以下特点的程序称为原语（Atomic Operation）</li>
+<li>特点：<ul>
+<li>处于操作系统的最底层，是最接近硬件的部分</li>
+<li>这些程序的运行具有原子性，其操作只能是一气呵成。<font color="orange">（主要从系统安全性和便于管理考虑）</font></li>
+<li>这些程序的运行时间都较短，而且调用频繁。</li>
+</ul>
+</li>
+<li>定义方法：关闭中断，让其所有动作都不可分割地完成后再打开中断。</li>
+</ul>
+</li>
+<li>系统控制的数据结构及处理：<ul>
+<li>进程管理：进程状态管理、进程调度和分配、创建与撤销进程控制块</li>
+<li>存储器管理：存储器的空间分配和回收、内存信息保护程序、代码对换程序</li>
+<li>设备管理：缓冲区管理、设备分配和回收</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="二、中断和异常"><a href="#二、中断和异常" class="headerlink" title="二、中断和异常"></a>二、中断和异常</h3><ol>
+<li>中断的概念：在CPU上会运行两种程序，一种是<font color="red">应用程序</font>，一种是<font color="red">操作系统内核程序</font>。在合适的情况下，操作系统内核会把CPU的使用权主动让给应用程序。而“中断”是让操作系统内核夺回CPU使用权的唯一途径。</li>
+<li>中断的分类：<ul>
+<li>内中断（异常）：<ul>
+<li>定义：与当前执行的指令有关，中断信号来源于CPU内部</li>
+<li>类型：<ul>
+<li>陷阱、陷入（trap）：由陷入指令引发，是应用程序故意引发的</li>
+<li>故障（fault）：由错误条件引起的，可能被内核程序修复。内核程序修复故障后会把CPU使用权还给应用程序，让他继续执行下去。<font color="orange">（缺页故障）</font></li>
+<li>终止（abort）：由致命错误引起，内核程序无法修复该错误，因此一般不再将CPU使用权还给引发终止的应用程序，而是直接终止该应用程序。<font color="orange">（整数除0、非法使用特权指令）</font></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>外中断（中断）：<ul>
+<li>定义：与当前执行的指令无关，中断信号来自CPU外部</li>
+<li>类型：<ul>
+<li>时钟中断</li>
+<li>I/O中断请求</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>中断处理的过程：<ul>
+<li>关中断：CPU响应中断后，首先要保护程序的现场状态，在保护现场的过程中，CPU不应响应更高级中断源的中断请求。否则，若现场保存不完整，中断服务程序结束后，不能正确地恢复并继续执行现行程序。</li>
+<li>保存断点：为保证中断服务程序执行完毕后能正确地回到原来的程序，必须将原来的程序的断点（程序计数器PC）保存起来。</li>
+<li>中断服务程序寻址：取出中断服务程序的入口地址送入程序计数器PC。</li>
+<li>保存现场和屏蔽字：进入中断服务程序后，首先要保存现场，现场信息一般是指程序状态字寄存器PSWR和某些通用寄存器的内容。</li>
+<li>开中断：允许更高级中断请求得到响应。</li>
+<li>执行中断服务程序：中断请求的目的。</li>
+<li>关中断：保证在恢复现场和屏蔽字时不被中断。</li>
+<li>恢复现场和屏蔽字：将现场和屏蔽字恢复到原来的状态。</li>
+<li>开中断，中断返回：中断服务程序的最后一条指令通常是一条中断返回指令，使其返回到原程序的断点处，以便继续执行原程序。</li>
+</ul>
+</li>
+</ol>
+<h3 id="三、系统调用"><a href="#三、系统调用" class="headerlink" title="三、系统调用"></a>三、系统调用</h3><ol>
+<li><p>定义：用户在程序中调用操作系统所提供的一些子功能，可视为特殊的公共子程序，<font color="red">应用程序可以通过系统调用来请求获得操作系统内核的服务</font>。</p>
+</li>
+<li><p>何时用：凡是与共享资源有关的操作（存储分配、I/O操作、文件管理等），都必须通过系统调用的方式向操作系统内核提出服务请求。</p>
+</li>
+<li><p>目的：保证系统的稳定性和安全性。</p>
+</li>
+<li><p>分类：</p>
+<ul>
+<li>设备管理：完成设备的请求/释放/启动等功能</li>
+<li>文件管理：完成文件的读/写/创建/删除等功能</li>
+<li>进程控制：完成进程的创建/撤销/阻塞/唤醒等功能</li>
+<li>进程通信：完成进程之间的消息传递/信号传递等功能</li>
+<li>内存管理：完成内存的分配/回收等功能</li>
+</ul>
+</li>
+<li><p>系统调用的过程：</p>
+<ul>
+<li><p>传递系统调用参数</p>
+</li>
+<li><p>执行陷入指令<font color="red">（用户态）</font></p>
+</li>
+<li><p>运行相应的内请求核程序处理系统调用<font color="red">（核心态）</font></p>
+</li>
+<li><p>返回应用程序</p>
+<p>注：</p>
+</li>
+</ul>
+<ol>
+<li>陷入指令是在用户态执行的，执行陷入指令后引发一个内中断，使CPU进入核心态</li>
+<li>发出系统调用请求是在用户态，而对系统调用的相应处理在核心态下进行</li>
+</ol>
+</li>
+</ol>
+<h2 id="四、操作系统的体系结构"><a href="#四、操作系统的体系结构" class="headerlink" title="四、操作系统的体系结构"></a>四、操作系统的体系结构</h2><ol>
+<li>大内核：<ul>
+<li>定义：将操作系统的主要功能模块都作为一个紧密联系的整体运行在核心态，从而应用提高性能的系统服务。</li>
+<li>优点：高性能</li>
+<li>缺点：内核代码庞大，结构混乱，难以维护</li>
+<li>典型系统：Linux、Unix</li>
+</ul>
+</li>
+<li>微内核：<ul>
+<li>定义：将内核中最基本的功能保留在内核，将那些不需要在核心态执行的功能移到用户态执行。</li>
+<li>优点：内核功能少，结构清晰，方便维护</li>
+<li>缺点：需要频繁地在核心态和用户态之间切换，性能低</li>
+<li>典型系统：Windows NT</li>
+</ul>
+</li>
 </ol>
 
   
@@ -883,7 +1082,7 @@
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">一、操作系统的基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-text">一、操作系统的概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%89%B9%E5%BE%81"><span class="toc-text">二、操作系统的特征</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%9B%AE%E7%9A%84%E5%92%8C%E5%8A%9F%E8%83%BD"><span class="toc-text">三、操作系统的目的和功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E6%B3%A8"><span class="toc-text">四、注</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E5%B1%95%E4%B8%8E%E5%88%86%E7%B1%BB"><span class="toc-text">二、操作系统的发展与分类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%89%8B%E5%B7%A5%E6%93%8D%E4%BD%9C%E9%98%B6%E6%AE%B5"><span class="toc-text">一、手工操作阶段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%89%B9%E5%A4%84%E7%90%86%E9%98%B6%E6%AE%B5"><span class="toc-text">二、批处理阶段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%88%86%E6%97%B6%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="toc-text">三、分时操作系统</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">一、操作系统的基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-text">一、操作系统的概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%89%B9%E5%BE%81"><span class="toc-text">二、操作系统的特征</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%9B%AE%E7%9A%84%E5%92%8C%E5%8A%9F%E8%83%BD"><span class="toc-text">三、操作系统的目的和功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E6%B3%A8"><span class="toc-text">四、注</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E5%B1%95%E4%B8%8E%E5%88%86%E7%B1%BB"><span class="toc-text">二、操作系统的发展与分类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%89%8B%E5%B7%A5%E6%93%8D%E4%BD%9C%E9%98%B6%E6%AE%B5"><span class="toc-text">一、手工操作阶段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%89%B9%E5%A4%84%E7%90%86%E9%98%B6%E6%AE%B5"><span class="toc-text">二、批处理阶段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%88%86%E6%97%B6%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="toc-text">三、分时操作系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%AE%9E%E6%97%B6%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="toc-text">四、实时操作系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E7%BD%91%E7%BB%9C%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="toc-text">五、网络操作系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E5%88%86%E5%B8%83%E5%BC%8F%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="toc-text">六、分布式操作系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%83%E3%80%81%E4%B8%AA%E4%BA%BA%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="toc-text">七、个人计算机操作系统</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83"><span class="toc-text">三、操作系统的运行环境</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6"><span class="toc-text">一、操作系统的运行机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%B8%AD%E6%96%AD%E5%92%8C%E5%BC%82%E5%B8%B8"><span class="toc-text">二、中断和异常</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8"><span class="toc-text">三、系统调用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="toc-text">四、操作系统的体系结构</span></a></li></ol>
     </div>
   </section>
 
