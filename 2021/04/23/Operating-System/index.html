@@ -517,16 +517,7 @@
 
 
   
-  <style>
-    .cls1{
-        color: orange;
-    }
-    .cls2{
-        color: red;
-    }
-</style>
-
-<h1 id="第一章：计算机系统概述"><a href="#第一章：计算机系统概述" class="headerlink" title="第一章：计算机系统概述"></a>第一章：计算机系统概述</h1><h2 id="一、操作系统的基本概念"><a href="#一、操作系统的基本概念" class="headerlink" title="一、操作系统的基本概念"></a>一、操作系统的基本概念</h2><h3 id="一、操作系统的概念"><a href="#一、操作系统的概念" class="headerlink" title="一、操作系统的概念"></a>一、操作系统的概念</h3><ol>
+  <h1 id="第一章：计算机系统概述"><a href="#第一章：计算机系统概述" class="headerlink" title="第一章：计算机系统概述"></a>第一章：计算机系统概述</h1><h2 id="一、操作系统的基本概念"><a href="#一、操作系统的基本概念" class="headerlink" title="一、操作系统的基本概念"></a>一、操作系统的基本概念</h2><h3 id="一、操作系统的概念"><a href="#一、操作系统的概念" class="headerlink" title="一、操作系统的概念"></a>一、操作系统的概念</h3><ol>
 <li>计算机系统：自下而上分为：<ul>
 <li>硬件</li>
 <li>操作系统：管理各种计算机硬件，为应用程序提供基础，并充当计算机硬件与用户之间的媒介。</li>
@@ -1328,10 +1319,175 @@
 </li>
 <li>不能进行进程调度与切换的情况：<ul>
 <li>在处理中断的过程中：中断处理过程复杂，与硬件密切相关，很难做到在中断处理过程中进行进程切换。</li>
-<li>进程在操作系统内核程序临界区中</li>
+<li>进程在操作系统内核程序临界区中<ul>
+<li>临界资源：一个时间段内只允许一个进程使用的资源。各进程需要互斥地访问临界资源。</li>
+<li>临界区：访问临界资源的那段代码。</li>
+<li>内核临界区：用来访问某种内核数据结构</li>
+</ul>
+</li>
 <li>在原子操作过程中（原语）：原子操作不可中断</li>
 </ul>
 </li>
+</ul>
+</li>
+<li>方式：<ul>
+<li>非剥夺调度方式（非抢占方式）：<ul>
+<li>定义：只允许进程主动放弃处理机。在运行过程中即便有更紧迫的任务到达，当前进程依然会继续使用处理机，直到该进程终止或主动要求进入阻塞态。</li>
+<li>优点：实现简单，系统开销小</li>
+<li>缺点：无法及时处理紧急任务</li>
+</ul>
+</li>
+<li>剥夺调度方式（抢占方式）：<ul>
+<li>定义：当一个进程正在处理机上执行时，如果有一个更重要或更紧迫的进程需要使用处理机，则立即暂停正在执行的进程，将处理机分配给更重要更紧迫的进程。</li>
+<li>优点：可以优先处理更紧急的进程，也可实现让各进程按时间片轮流执行的功能（时钟中断）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>进程的切换与过程：<ul>
+<li>狭义的进程调度：从就绪队列中选中一个要运行的进程。</li>
+<li>进程切换：让一个进程让出处理机，由另一个进程占用处理机。 <ul>
+<li>步骤：<ul>
+<li>对原来运行进程各种数据的保存</li>
+<li>对新的进程各种数据的恢复</li>
+</ul>
+</li>
+<li>进程切换是有代价的，如果过于频繁进行进程调度、切换，必然会使整个系统的效率降低。</li>
+</ul>
+</li>
+<li>广义的进程调度：包含选择和进程切换两个步骤。</li>
+</ul>
+</li>
+</ol>
+<h3 id="三、调度算法的评价指标"><a href="#三、调度算法的评价指标" class="headerlink" title="三、调度算法的评价指标"></a>三、调度算法的评价指标</h3><ol>
+<li><p>CPU利用率：</p>
+<ul>
+<li><p>定义：CPU“忙碌”的时间占总时间的比例。</p>
+</li>
+<li><p>公式：<br>$$<br>利用率=\frac{忙碌的时间}{总时间}<br>$$</p>
+</li>
+</ul>
+</li>
+<li><p>系统吞吐量：</p>
+<ul>
+<li><p>定义：单位时间内完成作业的数量</p>
+</li>
+<li><p>公式：<br>$$<br>系统吞吐量=\frac{总共完成了多少道作业}{总共花了多少时间}<br>$$</p>
+</li>
+</ul>
+</li>
+<li><p>周转时间：</p>
+<ul>
+<li><p>定义：从作业被提交给系统开始，到作业完成为止这段时间间隔。</p>
+</li>
+<li><p>包括：</p>
+<ul>
+<li>作业在外存后备队列上等待作业调度（高级调度）的时间</li>
+<li>进程在就绪队列上等待进程调度（低级调度）的时间</li>
+<li>进程在CPU上执行的时间</li>
+<li>进程等待I/O操作完成的时间</li>
+</ul>
+</li>
+<li><p>公式：</p>
+<ul>
+<li><p>周转时间：<br>$$<br>周转时间=作业完成时间-作业提交时间<br>$$</p>
+</li>
+<li><p>平均周转时间：<br>$$<br>平均周转时间=\frac{各作业周转时间之和}{作业数}<br>$$</p>
+</li>
+<li><p>带权周转时间：<br>$$<br>带权周转时间=\frac{作业周转时间}{作业实际运行的时间}=\frac{作业完成时间-作业提交时间}{作业实际运行的时间}<br>$$</p>
+</li>
+<li><p>平均带权周转时间：<br>$$<br>平均带权周转时间=\frac{各作业带权周转时间之和}{作业数}<br>$$</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>等待时间：</p>
+<ul>
+<li>定义：进程/作业等待处理机状态时间之和，等待时间越长，用户满意度越低。<ul>
+<li>进程：等待时间就是指进程建立后等待被服务的时间之和，在等待I/O完成的期间其实进程也是在被服务的，所以不计入等待时间。</li>
+<li>作业：不仅要考虑建立进程后的等待时间，还要加上作业在外存后备队列中等待的时间</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>响应时间：</p>
+<ul>
+<li>定义：用户从提交请求到首次产生响应所用的时间。</li>
+</ul>
+</li>
+</ol>
+<h3 id="四、调度算法"><a href="#四、调度算法" class="headerlink" title="四、调度算法"></a>四、调度算法</h3><ol>
+<li><p>先来先服务（FCFS）：</p>
+<ul>
+<li>算法思想：主要从“公平”的角度考虑</li>
+<li>算法规则：按照作业/进程到达的先后顺序进行服务</li>
+<li>用于作业/进程调度：用于作业调度时，考虑的是哪个作业先到达后备队列；用于进程调度时，考虑的是哪个进程先到达就绪队列。</li>
+<li>是否可抢占：非抢占式的算法</li>
+<li>优点：公平、算法实现简单</li>
+<li>缺点：排在长作业（进程）后面的短作业需要等待很长的时间，带权周转时间很大，对短作业来说用户体验不好</li>
+<li>是否会导致饥饿：不会</li>
+</ul>
+</li>
+<li><p>短作业优先（SJF）：</p>
+<ul>
+<li>算法思想：追求最少的平均等待时间，最少的平均周转时间、最少的平均带权周转时间</li>
+<li>算法规则：最短的作业/进程优先得到服务（所谓“最短”，是指要求服务时间最短）</li>
+<li>用于作业/进程调度：既可用于作业调度，也可用于进程调度。<font color=orange>（用于进程调度时称为“短进程优先算法”，SPF）</font></li>
+<li>是否可抢占：SJF和SPF是非抢占式的算法。但是也有可抢占式的版本——最短剩余时间优先算法（SRTN）</li>
+<li>优点：“最短的”平均等待时间、平均周转时间</li>
+<li>缺点：<ul>
+<li>不公平，对短作业有利，对长作业不利。</li>
+<li>可能产生饥饿现象</li>
+<li>作业/进程的运行时间是由用户提供的，并不一定真实，不一定能做到真正的短作业优先。</li>
+</ul>
+</li>
+<li>是否会导致饥饿：会。如果源源不断地有短作业/进程到来，可能使长作业/进程长时间得不到服务，产生“饥饿”现象。如果一直得不到服务，则称为“饿死”。</li>
+</ul>
+</li>
+<li><p>高响应比优先（HRRN）：</p>
+<ul>
+<li><p>算法思想：综合考虑作业/进程的等待时间和要求服务的时间</p>
+</li>
+<li><p>算法规则：在每次调度时先计算各个作业/进程的响应比，选择响应比最高的作业/进程为其服务。<br>$$<br>响应比=\frac{等待时间+要求服务时间}{要求服务时间}<br>$$</p>
+</li>
+<li><p>用于作业/进程调度：既可用于作业调度，也可用于进程调度</p>
+</li>
+<li><p>是否可抢占：非抢占式的算法。只有当前运行的作业/进程主动放弃处理机时，才需要调度，才需要计算响应比。</p>
+</li>
+<li><p>优点：</p>
+<ul>
+<li>综合考虑了等待时间和运行时间（要求服务时间）</li>
+<li>等待时间相同时，要求服务时间短的优先（SJF的优点）</li>
+<li>要求服务时间相同时，等待时间长的优先（FCFS的优点）</li>
+<li>对于长作业来说，随着等待时间越来越久，其响应比也会越来越大，从而避免了长作业饥饿的问题。</li>
+</ul>
+</li>
+<li><p>是否会导致饥饿：不会</p>
+</li>
+</ul>
+<p><font color=green>注：以上三种算法主要关心对用户的公平性、平均周转时间、平均等待时间等评价系统整体性能的指标，但是交互性很差。因此这三种算法一般适合早期的批处理系统。</font></p>
+</li>
+<li><p>时间片轮转（RR）：</p>
+<ul>
+<li>算法思想：公平地、轮流地为各个进程服务，让每个进程在一定时间间隔内都可以得到响应。</li>
+<li>算法规则：按照各进程到达就绪队列的顺序，轮流让各个进程执行一个时间片（如100ms）。若进程未在一个时间片内执行完，则剥夺处理机，将进程重新放到就绪队列队尾重新排队。</li>
+<li>用于作业/进程调度：用于进程调度。<font color=orange>（只有作业放入内存建立了相应的进程后，才能被分配处理机时间片）</font></li>
+<li>是否可抢占：若进程未能在时间片内运行完，将被强行剥夺处理机使用权，因此时间片轮转调度算法属于抢占式的算法。<font color=orange></li>
+<li>优点：</li>
+<li>缺点：</li>
+<li>是否会导致饥饿：</li>
+</ul>
+</li>
+<li><p>短作业优先（SJF）：</p>
+<ul>
+<li>算法思想：</li>
+<li>算法规则：</li>
+<li>用于作业/进程调度：</li>
+<li>是否可抢占：</li>
+<li>优点：</li>
+<li>缺点：</li>
+<li>是否会导致饥饿：</li>
 </ul>
 </li>
 </ol>
@@ -1529,7 +1685,7 @@
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">一、操作系统的基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-text">一、操作系统的概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%89%B9%E5%BE%81"><span class="toc-text">二、操作系统的特征</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%9B%AE%E7%9A%84%E5%92%8C%E5%8A%9F%E8%83%BD"><span class="toc-text">三、操作系统的目的和功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E6%B3%A8"><span class="toc-text">四、注</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E5%B1%95%E4%B8%8E%E5%88%86%E7%B1%BB"><span class="toc-text">二、操作系统的发展与分类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%89%8B%E5%B7%A5%E6%93%8D%E4%BD%9C%E9%98%B6%E6%AE%B5"><span class="toc-text">一、手工操作阶段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%89%B9%E5%A4%84%E7%90%86%E9%98%B6%E6%AE%B5"><span class="toc-text">二、批处理阶段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%88%86%E6%97%B6%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="toc-text">三、分时操作系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%AE%9E%E6%97%B6%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="toc-text">四、实时操作系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E7%BD%91%E7%BB%9C%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="toc-text">五、网络操作系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E5%88%86%E5%B8%83%E5%BC%8F%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="toc-text">六、分布式操作系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%83%E3%80%81%E4%B8%AA%E4%BA%BA%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="toc-text">七、个人计算机操作系统</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83"><span class="toc-text">三、操作系统的运行环境</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6"><span class="toc-text">一、操作系统的运行机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%B8%AD%E6%96%AD%E5%92%8C%E5%BC%82%E5%B8%B8"><span class="toc-text">二、中断和异常</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8"><span class="toc-text">三、系统调用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="toc-text">四、操作系统的体系结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B"><span class="toc-text">一、进程和线程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E8%BF%9B%E7%A8%8B%E7%9A%84%E6%A6%82%E5%BF%B5%E5%92%8C%E7%89%B9%E5%BE%81"><span class="toc-text">一、进程的概念和特征</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E8%BF%9B%E7%A8%8B%E7%9A%84%E7%8A%B6%E6%80%81%E4%B8%8E%E8%BD%AC%E6%8D%A2"><span class="toc-text">二、进程的状态与转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E8%BF%9B%E7%A8%8B%E6%8E%A7%E5%88%B6"><span class="toc-text">三、进程控制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1"><span class="toc-text">四、进程通信</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E7%BA%BF%E7%A8%8B%E6%A6%82%E5%BF%B5%E5%92%8C%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%A8%A1%E5%9E%8B"><span class="toc-text">五、线程概念和多线程模型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%A4%84%E7%90%86%E6%9C%BA%E8%B0%83%E5%BA%A6"><span class="toc-text">二、处理机调度</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E8%B0%83%E5%BA%A6%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-text">一、调度的概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E8%BF%9B%E7%A8%8B%E8%B0%83%E5%BA%A6%E7%9A%84%E6%97%B6%E6%9C%BA%E3%80%81%E5%88%87%E6%8D%A2%E5%92%8C%E8%BF%87%E7%A8%8B"><span class="toc-text">二、进程调度的时机、切换和过程</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">一、操作系统的基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-text">一、操作系统的概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%89%B9%E5%BE%81"><span class="toc-text">二、操作系统的特征</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%9B%AE%E7%9A%84%E5%92%8C%E5%8A%9F%E8%83%BD"><span class="toc-text">三、操作系统的目的和功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E6%B3%A8"><span class="toc-text">四、注</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E5%B1%95%E4%B8%8E%E5%88%86%E7%B1%BB"><span class="toc-text">二、操作系统的发展与分类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%89%8B%E5%B7%A5%E6%93%8D%E4%BD%9C%E9%98%B6%E6%AE%B5"><span class="toc-text">一、手工操作阶段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%89%B9%E5%A4%84%E7%90%86%E9%98%B6%E6%AE%B5"><span class="toc-text">二、批处理阶段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%88%86%E6%97%B6%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="toc-text">三、分时操作系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%AE%9E%E6%97%B6%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="toc-text">四、实时操作系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E7%BD%91%E7%BB%9C%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="toc-text">五、网络操作系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E5%88%86%E5%B8%83%E5%BC%8F%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="toc-text">六、分布式操作系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%83%E3%80%81%E4%B8%AA%E4%BA%BA%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="toc-text">七、个人计算机操作系统</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83"><span class="toc-text">三、操作系统的运行环境</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6"><span class="toc-text">一、操作系统的运行机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%B8%AD%E6%96%AD%E5%92%8C%E5%BC%82%E5%B8%B8"><span class="toc-text">二、中断和异常</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8"><span class="toc-text">三、系统调用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="toc-text">四、操作系统的体系结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B"><span class="toc-text">一、进程和线程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E8%BF%9B%E7%A8%8B%E7%9A%84%E6%A6%82%E5%BF%B5%E5%92%8C%E7%89%B9%E5%BE%81"><span class="toc-text">一、进程的概念和特征</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E8%BF%9B%E7%A8%8B%E7%9A%84%E7%8A%B6%E6%80%81%E4%B8%8E%E8%BD%AC%E6%8D%A2"><span class="toc-text">二、进程的状态与转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E8%BF%9B%E7%A8%8B%E6%8E%A7%E5%88%B6"><span class="toc-text">三、进程控制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1"><span class="toc-text">四、进程通信</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E7%BA%BF%E7%A8%8B%E6%A6%82%E5%BF%B5%E5%92%8C%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%A8%A1%E5%9E%8B"><span class="toc-text">五、线程概念和多线程模型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%A4%84%E7%90%86%E6%9C%BA%E8%B0%83%E5%BA%A6"><span class="toc-text">二、处理机调度</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E8%B0%83%E5%BA%A6%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-text">一、调度的概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E8%BF%9B%E7%A8%8B%E8%B0%83%E5%BA%A6%E7%9A%84%E6%97%B6%E6%9C%BA%E3%80%81%E5%88%87%E6%8D%A2%E5%92%8C%E8%BF%87%E7%A8%8B"><span class="toc-text">二、进程调度的时机、切换和过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95%E7%9A%84%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87"><span class="toc-text">三、调度算法的评价指标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95"><span class="toc-text">四、调度算法</span></a></li></ol></li></ol>
     </div>
   </section>
 
