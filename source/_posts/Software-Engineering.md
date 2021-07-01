@@ -5,7 +5,9 @@ abbrlink: 57655
 date: 2021-06-30 19:59:06
 updated: 2021-06-30 19:59:06
 categories:
+  - 大三下
 tags:
+  - 软件
 permalink:
 ---
 
@@ -119,7 +121,14 @@ permalink:
 
 ### 5. What is a nonfuctional requirement? Give an example to explain.
 
-​	A nonfuctional requirement, or quality requirement, or constraint, describes a restriction on the system that limits our choices for construction a solution to the problem. (For instance, we may be the system must be developed on an Aardvark computer.)
+​	A nonfuctional requirement, or quality requirement, or constraint, describes a restriction on the system that limits our choices for construction a solution to the problem. (For instance, we may be the system must be developed on an Aardvark computer or that the paychecks must be distributed to the employees no more than four hours after the initial data are read. Similarly, we may be told that queries to the system must be answered within three seconds.) These constraints usually narrow our selection of language, platform, or implementation techniques or tools; however, the selection is made at the design stage, after the requirements have been specified.
+
+
+
+### 6. The following is the requirements of a system. Please draw its data flow diagram.
+
+- 某银行计算机储蓄系统的工作过程大致如下：储户填写的存款单或取款单由业务员键入系统,如果是存款则系统记录存款人姓名、住址(或电话号码)、身份证号码、存款类型、存款日期、到期日期、利率及密码等信息，并印出存款单给储户；如果是取款而且存款时留有密码，则系统首先核对储户密码，若密码正确或存款时未留密码，则系统计算利息并印出利息清单给储户。请对以上问题画出分层数据流图。
+- 
 
 
 
@@ -127,9 +136,126 @@ permalink:
 
 ### 1. For each type of coupling, give an example of two components coupled in that way.
 
+1. Content coupling: Content coupling might occur when one component modifies an internal data item in another component, or when one component branches into the middle of another component.
+2. Common coupling: If data are accessible from a common data store, common coupling occurs.
+3. Control coupling: When on component passes parameters to control the activity of another component, we say that there is control coupling between the two.
+4. Stamp coupling: When a data structure is used to pass information from one component to another, and the data structure itself is passed, there is stamp coupling between the components.
+5. Data coupling: If only data are passed, the components are connected by data coupling.
 
+
+
+### 2. For each type of cohesion, write a description of a component exhibiting that kind of cohesion.
+
+1. Coincidental: The worst degree of cohesion, coincidental, is found in a component whose parts are unrelated to one another.
+2. Logical cohesion: Logical is the next higher level of cohesion( though still not desirable), where several logically related functions or data elements are placed in the same component.
+3. Temporal: Sometimes a component is used to initialize a system or a set of variables. Such a component performs several functions in sequence, but the functions are related only by the timing involved, so its cohesion is temporal.
+4. Procedurally cohesive: When functions are grouped together in a component just to ensure this order, the component is procedurally cohesive.
+5. Communicationally cohesive: Modules that are designed around data sets in the way that associate certain functions because they operate on the same data set are communicationally cohesive.
+6. Sequential cohesion: If the output from one part of a component is input to the next part, the component has sequential cohesion.
+7. Functional cohesion: Every processing element is essential to the performance of a single function, and all essential elements are contained in one component.
+
+
+
+### 3. 画出下列伪码程序的程序流程图。
+
+- ```
+  START 
+  	IF p THEN
+  		WHILE q DO
+  			f
+  		END DO
+  	ELSE
+  		BLOCK
+  			g
+  			n
+  		END  BLOCK
+  	END IF
+  STOP
+  ```
+
+- 
+
+
+
+## Chapter 6
+
+### 1. What are major characteristics of object orientation?
+
+1. identity
+2. abstraction
+3. classification
+4. encapsulation
+5. inheritance
+6. polymorphism
+7. persistence
+
+
+
+### 2. What is the key difference between more traditional procedural development and the OO development?
+
+​	The across-the-process consistency is a key difference between more traditional procedural development and the OO development process. OO is a philosophy of problem and solution representation, not a software life cycle by itself.
 
 ​	
+
+### 3. What is a use case?
+
+​	A use case describes particular functionality that a system is supposed to perform or exhibit by modeling the dialog that a user, external system, or other entity will have with the system to be developed.
+
+
+
+## Chapter 8
+
+### 1. What are the main software testing objectives?
+
+1. Testing is the process of executing a program with the intent of finding errors.
+2. A good test case is one with a high probability of finding an as-yet undiscovered error.
+3. A successful test is one that discovers an as-yet-undiscovered error.
+
+
+
+
+### 2. Explain the following terms: Unit test, integration test, function test, performance test, acceptance test.
+
+1. Unit test: Unit test verifies that the component functions properly with the types of input expected from studying the component's design. Each program component is tested on its own, isolated from the other components in the system.
+2. Integration test: Integration testing is the process of verifying that the system components work together as described in the system and program design specifications. It ensures that the interfaces among the components are defined and handled properly.
+3. Function test: A function test evaluates the system to determine if the functions described by the requirements specification are actually performed by the integrated system. We test the system to ensure that it has the desired functionality. The result is a functioning system. 
+4. Performance test: A performance test compares the system with the remainder of these software and hardware requirements.
+5. Acceptance test: An acceptance test makes certain that the system works according to customer expectations. We join the customer to perform an acceptance test, where the system is checked against the customer's requirements description.
+
+
+
+### 3. What are the differences between black box and white box testing?
+
+1. Black-box testing: Knowing the specified function a product is to perform, tests  can be conducted that demonstrate each function is fully operational, at the same time searching for errors in each function.
+2. White-box testing: Knowing the internal workings of of all independent logic paths. White-box testing is a test case design method that uses the  control structure of the procedural design to derive test cases. 
+
+
+
+### 4. What is statement testing?
+
+​	Every statement in the component is executed at least once in some test.
+
+
+
+### 5. What is branch testing?
+
+​	For every decision point in the code, each branch is chosen at least once in some test.
+
+
+
+### 6. What is Equivalence partitioning? Give an example to explain.
+
+​	Equivalence partitioning is a black-box technique that divides the input domain of a program into classes of data from which test cases can be derived. An ideal test case uncovers a class of errors that might require many arbitrary test cases to be executed before a general error is observed.
+
+
+
+### 7. Describe the steps involved in bottom up integration.
+
+​	When this method is used, each component at the lowest level of the system hierarchy is tested individually first. Then, the next components to be tested are those that call the previously tested ones. This approach is followed repeatedly until all components are included in the testing.
+
+
+
+### 8. What are the differences between the three integration testing strategies?
 
 
 
