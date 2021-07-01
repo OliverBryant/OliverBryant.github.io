@@ -1,8 +1,9 @@
 ---
 title: Software_Engineering
+mathjax: true
+abbrlink: 57655
 date: 2021-06-30 19:59:06
 updated: 2021-06-30 19:59:06
-mathjax: true
 categories:
 tags:
 permalink:
@@ -105,9 +106,30 @@ permalink:
 
 ### 3. What is a requirements definition document? What is a requirements specification document?
 
-1. 
+1. The requirements definition is a complete listing of everything the customer expects the proposed system to do. It represents an understanding between the customer and developer of what the customer needs or wants, and it is usually written jointly by the customer and developer.
+2. The requirements specification restates the requirements definition in technical terms appropriate for the development of a system design; it is the technical counterpart to the requirements definition document, and it is written by requirements analysts.
 
 
+
+### 4. What is a functional requirement? Give an example to explain.
+
+​	A functional requirement describes an interaction between the system and its environment.( For example, to determine functional requirements, we decide what states are acceptable ones for the system to be in.) Further, functional requirements describe how the system should behave given certain stimuli.
+
+
+
+### 5. What is a nonfuctional requirement? Give an example to explain.
+
+​	A nonfuctional requirement, or quality requirement, or constraint, describes a restriction on the system that limits our choices for construction a solution to the problem. (For instance, we may be the system must be developed on an Aardvark computer.)
+
+
+
+## Chapter 5
+
+### 1. For each type of coupling, give an example of two components coupled in that way.
+
+
+
+​	
 
 
 
