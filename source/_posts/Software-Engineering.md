@@ -78,3 +78,54 @@ permalink:
 1. Training can begin on an early release, even if some functions are missing.
 2. Markets can be created early for functionality that has never before been offered.
 3. Frequent releases allow developers to fix unanticipated problems globally and quickly, as they are reported from the operational system.
+4. The development team can focus on different areas of expertise with different releases.
+
+
+
+## Chapter 4
+
+### 1. Describe the process of determining requirements.
+
+1. Elicitation: Collecting the user's requirements.
+2. Analysis: Understanding and modeling the desired behavior.
+3. Specification: Documenting the behavior of the proposed software system.
+4. Validation: Checking that our specification matches the user's requirements.
+
+
+
+### 2. It is usually helpful to separate the requirements into three categories. What are these three categories? Explain why it is helpful.
+
+1. Three categories are:
+   - Requirements that absolutely must be met.
+   - Requirements that are highly desirable but not necessary.
+   - Requirements that are possible but could be eliminated.
+2. Reasons: The analysis of requirements by category is helpful to all parties in understanding what is really needed. It is also useful when a software development project is constrained by time or resources; if the system as defined will cost too much or take too long to develop, category 3 requirements can be dropped and category 2 requirements can be analyzed for elimination or postponement.
+
+
+
+### 3. What is a requirements definition document? What is a requirements specification document?
+
+1. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
