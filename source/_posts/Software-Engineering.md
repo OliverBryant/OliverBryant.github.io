@@ -15,17 +15,23 @@ permalink:
 
 ### 1. What is Software Engineering?
 
-​	Software engineers use their knowledge of computers and computing to help solve problems.Software engineers use techniques, tools, procedures, and paradigms to enhance the quality of their software products. Their aim is to use efficient and productive approaches to generate effective solutions to problems. Instead of investigating hardware design or proving theorems about how algorithms work, a software engineer focuses on the computer as a problem-solving tools.
+​	Software engineers use their knowledge of computers and computing to help solve problems.Software engineers use techniques, tools, procedures, and paradigms to enhance the quality of their software products. Their aim is to use efficient and productive approaches to generate effective solutions to problems.
+
+​	软件工程师使用他们在计算机和计算方面的知识来帮助解决问题。软件工程师使用技术、工具、程序和范式来提高他们的软件产品的质量。他们的目标是使用高效和富有成效的方法来产生有效的问题解决方案。软件工程师不是调查硬件设计或证明关于算法如何工作的定理，而是将计算机作为解决问题的工具来关注。
 
 
 
 ### 2. What is good software?
 
-​	Good software engineering must always include a strategy for producing quality software. But before we can devise a strategy, we must understand what we mean by quality software.
-
 1. The quality of the product.
 2. The quality of the process.
 3. Quality in the context of the business environment.
+
+
+
+1. 产品的质量
+2. 过程的质量
+3. 商业环境中的质量
 
 
 
@@ -34,12 +40,24 @@ permalink:
 1. requirements analysis and definition
 2. system design
 3. program design
-4. writing the programs (program implementation)
+4. writing the programs
 5. unit testing
 6. integration testing
 7. system testing
 8. system delivery
 9. maintenance
+
+
+
+1. 需求分析和定义
+2. 系统设计
+3. 程序设计
+4. 编写程序
+5. 单元测试
+6. 集成测试
+7. 系统测试
+8. 系统交付
+9. 维护
 
 
 
@@ -52,6 +70,16 @@ permalink:
 5. availability and adoption of OO technology
 6. graphical user interfaces
 7. unpredictability of waterfall model of development
+
+
+
+1. 商业产品上市时间的重要性
+2. 计算机行业经济学的转变：较低的硬件成本，较高的开发/维护成本
+3. 强大的桌面计算的可用性
+4. 局域网和广域网的广泛应用
+5. 面向对象技术的出现和应用
+6. 图形化的用户界面
+7. 使用瀑布模型开发的不可预测性
 
 
 
@@ -68,13 +96,36 @@ permalink:
 
 
 
+1. 抽象
+2. 分析，设计方法和符号
+3. 用户界面原型
+4. 软件体系结构
+5. 软件过程
+6. 重用
+7. 度量
+8. 工具和集成环境
+
+
+
+### *6. Understand the roles of a development team.
+
+
+
 ## Chapter 2
 
 ### 1. What are the drawbacks of the Waterfall model?
 
 1. The model provides no guidance to managers and developers on how to handle changes to products and activities that are likely to occur during development.
-2. It does not treat software as a problem-solving process. It was derived from a manufacturing view of software development. Software is a creation process, not a manufacturing process. Creation usually involves trying a little of this or that, developing and evaluating prototypes, assessing the feasibility or requirements, contrasting several designs, learning from failure, and eventually setting on a satisfactory solution to the problem at hand.
+2. It does not treat software as a problem-solving process. It was derived from a manufacturing view of software development. Software is a creation process, not a manufacturing process. 
 3. The biggest problem with the waterfall model is that it does not reflect the way code is really developed.
+
+
+
+1. 该模型没有为管理者和开发者提供如何处理开发过程中可能发生的产品和活动变化的指导。
+2. 它没有将软件作为一个解决问题的过程。它是从软件开发的制造观点中得出的。软件是一个创造过程，而不是一个制造过程。
+3. 瀑布模型的最大问题是它没有反映出代码真正的开发方式。
+
+
 
 ### 2. What are the benefits of the Incremental Model and Iterative Model?
 
@@ -82,6 +133,13 @@ permalink:
 2. Markets can be created early for functionality that has never before been offered.
 3. Frequent releases allow developers to fix unanticipated problems globally and quickly, as they are reported from the operational system.
 4. The development team can focus on different areas of expertise with different releases.
+
+
+
+1. 即使缺少一些功能，也可以在早期版本中开始培训。
+2. 可以为以前从未提供过的功能提前创造市场。
+3. 频繁的发布使开发人员能够在全球范围内快速地修复未预料到的问题，因为这些问题是由运行系统报告的。
+4. 开发团队可以在不同的版本中专注于不同的专业领域。
 
 
 
@@ -319,15 +377,46 @@ permalink:
 
 ### 8. What are the differences between the three integration testing strategies?
 
+|                                      | Bottom-up | Top-down | Big-bang | Sandwich |
+| :----------------------------------: | :-------: | :------: | :------: | :------: |
+|             Integration              |   Early   |  Early   |   Late   |  Early   |
+|    Time to basic working program     |   Early   |  Early   |   Late   |  Early   |
+|       Component drivers needed       |    No     |    No    |   Yes    |   Yes    |
+|             Stubs needed             |    No     |   Yes    |   Yes    |   Yes    |
+|    Work parallelism at beginning     |  Medium   |   Low    |   High   |  Medium  |
+|   Ability to test particular paths   |   Easy    |   Hard   |   Easy   |  Medium  |
+| Ability to plan and control sequence |   Easy    |   Hard   |   Easy   |   Hard   |
 
 
 
+### 9. Figure 8.22 illustrates the component hierarchy in a software system. Describe the sequence of tests for integrating the components using a bottom-up approach, a top-down approach, a big-bang approach.
+
+- Figure 8.22:
+- ![8.22](https://oliver-picture.oss-cn-beijing.aliyuncs.com/Software/8.22.png)
+
+- bottom-up approach:
+
+  ![bottom-up](https://oliver-picture.oss-cn-beijing.aliyuncs.com/Software/bottom-up%20approach.png)
+
+- top-down approach:
+
+  ![top-down](https://oliver-picture.oss-cn-beijing.aliyuncs.com/Software/top-down%20approach.png)
+
+- big-bang approach:
+
+  ![big-bang](https://oliver-picture.oss-cn-beijing.aliyuncs.com/Software/big-bang%20approach.png)
 
 
 
+### 10. A program is seeded with 25 faults. During testing, 18 faults are detected, 13 of which are seeded faults and 5 of which are indigenous faults. What is the estimate of the number of indigenous faults remaining undetected in the program?
 
+$$
+\frac{发现的种子错误s}{总共的种子错误S}=\frac{发现的非种子错误n}{总共的非种子错误N}
+$$
 
-
+$$
+N=\frac{Sn}{s}=\frac{25\times5}{13}\approx10,10-5=5
+$$
 
 
 
