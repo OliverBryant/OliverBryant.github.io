@@ -227,8 +227,13 @@ permalink:
 
 ### 8. Suppose we have the following scenario for the simple library problem. A patron goes to the library and checks out a book. Two months later, he brings the overdue library book back to the library. Please draw a sequence diagram and a collaboration diagram for the scenario.
 
-1. Sequence diagram:![时序图](https://oliver-picture.oss-cn-beijing.aliyuncs.com/Software/Library%20sequence%20diagram.png)
-2. Collaboration diagram:![Collaboration diagram](https://oliver-picture.oss-cn-beijing.aliyuncs.com/Software/Library%20collaboration%20diagram.png)
+1. Sequence diagram:
+
+   ![时序图](https://oliver-picture.oss-cn-beijing.aliyuncs.com/Software/Library%20sequence%20diagram.png)
+
+2. Collaboration diagram:
+
+   ![Collaboration diagram](https://oliver-picture.oss-cn-beijing.aliyuncs.com/Software/Library%20collaboration%20diagram.png)
 
 ### 9. Use the noun-in-text-description to identify the classes from the above requirement statement.
 
