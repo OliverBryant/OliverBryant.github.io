@@ -128,7 +128,9 @@ permalink:
 ### 6. The following is the requirements of a system. Please draw its data flow diagram.
 
 - 某银行计算机储蓄系统的工作过程大致如下：储户填写的存款单或取款单由业务员键入系统,如果是存款则系统记录存款人姓名、住址(或电话号码)、身份证号码、存款类型、存款日期、到期日期、利率及密码等信息，并印出存款单给储户；如果是取款而且存款时留有密码，则系统首先核对储户密码，若密码正确或存款时未留密码，则系统计算利息并印出利息清单给储户。请对以上问题画出分层数据流图。
-- 
+- ![基本模型](https://oliver-picture.oss-cn-beijing.aliyuncs.com/Software/Chapter5_first.png)
+- ![第一级模型](https://oliver-picture.oss-cn-beijing.aliyuncs.com/Software/Chapter5_second.png)
+- ![第二级模型](https://oliver-picture.oss-cn-beijing.aliyuncs.com/Software/Chapter5_third.png)
 
 
 
@@ -173,7 +175,7 @@ permalink:
   STOP
   ```
 
-- 
+- ![程序流程图](https://oliver-picture.oss-cn-beijing.aliyuncs.com/Software/Chapter5.png)
 
 
 
@@ -200,6 +202,61 @@ permalink:
 ### 3. What is a use case?
 
 ​	A use case describes particular functionality that a system is supposed to perform or exhibit by modeling the dialog that a user, external system, or other entity will have with the system to be developed.
+
+
+
+### 4. Draw a use case diagram for the ATM problem.
+
+![ATM use case](https://oliver-picture.oss-cn-beijing.aliyuncs.com/Software/ATM_usecase.png)
+
+### 5. Classify each of the following relationships as either an inheritance relationship, an aggregation relationship, or a general association.
+
+1. Person──Student: an inheritance relationship
+2. Library──Library patron: an aggregation relationship
+3. Car──Driver: a general association
+
+
+
+### 6. Draw a use case diagram for the simple library problem.
+
+![library use case](https://oliver-picture.oss-cn-beijing.aliyuncs.com/Software/Library%20use%20case.png)
+
+### 7. Draw a class diagram for the simple library problem. Suppose the classes in this problem are the library, book, copies of books, and patron.
+
+<img src="https://oliver-picture.oss-cn-beijing.aliyuncs.com/Software/Library%20class%20diagram.png" alt="library class diagram" style="zoom:67%;" />
+
+### 8. Suppose we have the following scenario for the simple library problem. A patron goes to the library and checks out a book. Two months later, he brings the overdue library book back to the library. Please draw a sequence diagram and a collaboration diagram for the scenario.
+
+1. Sequence diagram:![时序图](https://oliver-picture.oss-cn-beijing.aliyuncs.com/Software/Library%20sequence%20diagram.png)
+2. Collaboration diagram:![Collaboration diagram](https://oliver-picture.oss-cn-beijing.aliyuncs.com/Software/Library%20collaboration%20diagram.png)
+
+### 9. Use the noun-in-text-description to identify the classes from the above requirement statement.
+
+- The Royal Service Station provides three types of services to its customers: refueling, vehicle maintenance, and parking.
+- Classes: service station, services, customer, refueling, vehicle maintenance, and parking.
+
+
+
+### 10. Please draw a class diagram for 9.
+
+![Royal class 1](https://oliver-picture.oss-cn-beijing.aliyuncs.com/Software/Royal.png)
+
+### 11. Use the noun-in-text-description to identify the classes from the above requirement statement.
+
+- The station manager uses the system to control inventory. The system will warn of low inventory and automatically order new parts and fuel.
+- Classes: system, manager, inventory, fuel, parts.
+
+
+
+### 12. Please draw a class diagram for 11.
+
+![Royal class 2](https://oliver-picture.oss-cn-beijing.aliyuncs.com/Software/Royal_second.png)
+
+
+
+### 13. Please draw the state diagrams for the fuel and parts classes.
+
+![Royal state diagram](https://oliver-picture.oss-cn-beijing.aliyuncs.com/Software/Royal_state_diagram.png)
 
 
 
