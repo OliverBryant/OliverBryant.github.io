@@ -699,13 +699,13 @@
 <li>Stamp coupling: When a data structure is used to pass information from one component to another, and the data structure itself is passed, there is stamp coupling between the components.</li>
 <li>Data coupling: If only data are passed, the components are connected by data coupling.</li>
 </ol>
-<p>​    当两个组件之间存在大量的依赖关系时，我们说它们是高度耦合的。</p>
+<p>​    当两个模块之间存在大量的依赖关系时，我们说它们是高度耦合的。</p>
 <ol>
-<li>内容耦合：当一个组件修改另一个组件的内部数据项，或者当一个组件的分支进入另一个组件的中间时，就可能发生内容耦合。</li>
+<li>内容耦合：当一个模块修改另一个模块的内部数据项，或者当一个模块的分支进入另一个模块的中间时，就可能发生内容耦合。</li>
 <li>公共耦合：如果数据可以从一个共同的数据存储中访问，就会发生公共耦合。</li>
-<li>控制耦合：当一个组件通过参数来控制另一个组件活动时，就会发生控制耦合。</li>
-<li>标记耦合：当一个数据结构被用来将信息从一个组件传递给另一个组件，并且数据结构本身被传递，组件之间就存在标记耦合。</li>
-<li>数据耦合：如果只有数据被传递，组件之间使通过数据耦合连接的。</li>
+<li>控制耦合：当一个模块通过参数来控制另一个模块活动时，就会发生控制耦合。</li>
+<li>标记耦合：当一个数据结构被用来将信息从一个模块传递给另一个模块，并且数据结构本身被传递，模块之间就存在标记耦合。</li>
+<li>数据耦合：如果只有数据被传递，模块之间使通过数据耦合连接的。</li>
 </ol>
 <h3 id="2-For-each-type-of-cohesion-write-a-description-of-a-component-exhibiting-that-kind-of-cohesion"><a href="#2-For-each-type-of-cohesion-write-a-description-of-a-component-exhibiting-that-kind-of-cohesion" class="headerlink" title="2. For each type of cohesion, write a description of a component exhibiting that kind of cohesion."></a>2. For each type of cohesion, write a description of a component exhibiting that kind of cohesion.</h3><ol>
 <li>Coincidental: The worst degree of cohesion, coincidental, is found in a component whose parts are unrelated to one another.</li>
@@ -718,12 +718,12 @@
 </ol>
 <ol>
 <li>偶然内聚：最差程度的耦合，即巧合，各个部分互不相关。</li>
-<li>逻辑内聚：下一个更高级的内聚，即几个逻辑上相关的功能或数据元素被放在同一个组件中。</li>
-<li>时间内聚：有时一个组件被用来初始化一个系统或一组变量。这样的组件依次执行几个功能，但这些功能只在涉及到的时间上有关系。</li>
-<li>过程内聚：当组件被组合在一起是为了保证执行顺序，那么这个组件就是过程内聚的。</li>
+<li>逻辑内聚：下一个更高级的内聚，即几个逻辑上相关的功能或数据元素被放在同一个模块中。</li>
+<li>时间内聚：有时一个模块被用来初始化一个系统或一组变量。这样的模块依次执行几个功能，但这些功能只在涉及到的时间上有关系。</li>
+<li>过程内聚：当模块被组合在一起是为了保证执行顺序，那么这个模块就是过程内聚的。</li>
 <li>通讯内聚：围绕着数据集设计的模块，因为对同一数据集进行操作而将某些功能联系起来的方式。</li>
-<li>顺序内聚：如果一个组件的一个部分的输出是对下个部分的输入，该组件就具有顺序内聚性。</li>
-<li>功能内聚：每一个处理元素对单一功能的执行都是必不可少的，而且所有的基本元素都包含在一个组件中。</li>
+<li>顺序内聚：如果一个模块的一个部分的输出是对下个部分的输入，该模块就具有顺序内聚性。</li>
+<li>功能内聚：每一个处理元素对单一功能的执行都是必不可少的，而且所有的基本元素都包含在一个模块中。</li>
 </ol>
 <h3 id="3-画出下列伪码程序的程序流程图。"><a href="#3-画出下列伪码程序的程序流程图。" class="headerlink" title="3. 画出下列伪码程序的程序流程图。"></a>3. 画出下列伪码程序的程序流程图。</h3><p>START<br>    IF p THEN<br>        WHILE q DO<br>            f<br>        END DO<br>    ELSE<br>        BLOCK<br>            g<br>            n<br>        END  BLOCK<br>    END IF<br>STOP</p>
 <ul>
