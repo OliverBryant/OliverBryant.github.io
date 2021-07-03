@@ -725,23 +725,9 @@
 <li>顺序内聚：如果一个组件的一个部分的输出是对下个部分的输入，该组件就具有顺序内聚性。</li>
 <li>功能内聚：每一个处理元素对单一功能的执行都是必不可少的，而且所有的基本元素都包含在一个组件中。</li>
 </ol>
-<h3 id="3-画出下列伪码程序的程序流程图。"><a href="#3-画出下列伪码程序的程序流程图。" class="headerlink" title="3. 画出下列伪码程序的程序流程图。"></a>3. 画出下列伪码程序的程序流程图。</h3><ul>
-<li><p>START </p>
-<pre><code>  IF p THEN
-  WHILE q DO
-      f
-  END DO
-</code></pre>
-<p>  ELSE</p>
-<pre><code>  BLOCK
-      g
-      n
-  END  BLOCK
-</code></pre>
-<p>  END IF<br>STOP</p>
-</li>
-<li><p><img src="https://oliver-picture.oss-cn-beijing.aliyuncs.com/Software/Chapter5.png" class="lazyload" data-srcset="https://oliver-picture.oss-cn-beijing.aliyuncs.com/Software/Chapter5.png" srcset="data:image/png;base64,666" alt="程序流程图"></p>
-</li>
+<h3 id="3-画出下列伪码程序的程序流程图。"><a href="#3-画出下列伪码程序的程序流程图。" class="headerlink" title="3. 画出下列伪码程序的程序流程图。"></a>3. 画出下列伪码程序的程序流程图。</h3><p>START<br>    IF p THEN<br>        WHILE q DO<br>            f<br>        END DO<br>    ELSE<br>        BLOCK<br>            g<br>            n<br>        END  BLOCK<br>    END IF<br>STOP</p>
+<ul>
+<li><img src="https://oliver-picture.oss-cn-beijing.aliyuncs.com/Software/Chapter5.png" class="lazyload" data-srcset="https://oliver-picture.oss-cn-beijing.aliyuncs.com/Software/Chapter5.png" srcset="data:image/png;base64,666" alt="程序流程图"></li>
 </ul>
 <h3 id="4-What-is-the-implicit-invocation-What-are-advantages-and-disadvantages-of-the-implicit-invocation"><a href="#4-What-is-the-implicit-invocation-What-are-advantages-and-disadvantages-of-the-implicit-invocation" class="headerlink" title="4. What is the implicit invocation? What are advantages and disadvantages of the implicit invocation?"></a>4. What is the implicit invocation? What are advantages and disadvantages of the implicit invocation?</h3><ol>
 <li><p>Instead of invoking a procedure directly, a component can broadcast one or more events. Other components in the system can register an interest in an event by associating a procedure with the event. When the event is announced the system itself invokes all of the procedures that have been registered for the event.</p>
