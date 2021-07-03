@@ -724,10 +724,23 @@
 <li>顺序内聚：如果一个组件的一个部分的输出是对下个部分的输入，该组件就具有顺序内聚性。</li>
 <li>功能内聚：每一个处理元素对单一功能的执行都是必不可少的，而且所有的基本元素都包含在一个组件中。</li>
 </ol>
-<h3 id="3-画出下列伪码程序的程序流程图。"><a href="#3-画出下列伪码程序的程序流程图。" class="headerlink" title="3. 画出下列伪码程序的程序流程图。"></a>3. 画出下列伪码程序的程序流程图。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">START </span><br><span class="line">  	IF p THEN</span><br><span class="line">  	WHILE q DO</span><br><span class="line">  		f</span><br><span class="line">  	END DO</span><br><span class="line">  ELSE</span><br><span class="line">  	BLOCK</span><br><span class="line">  		g</span><br><span class="line">  		n</span><br><span class="line">  	END  BLOCK</span><br><span class="line">  END IF</span><br><span class="line">STOP</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><img src="https://oliver-picture.oss-cn-beijing.aliyuncs.com/Software/Chapter5.png" class="lazyload" data-srcset="https://oliver-picture.oss-cn-beijing.aliyuncs.com/Software/Chapter5.png" srcset="data:image/png;base64,666" alt="程序流程图"></li>
+<h3 id="3-画出下列伪码程序的程序流程图。"><a href="#3-画出下列伪码程序的程序流程图。" class="headerlink" title="3. 画出下列伪码程序的程序流程图。"></a>3. 画出下列伪码程序的程序流程图。</h3><ul>
+<li><p>START </p>
+<pre><code>  IF p THEN
+  WHILE q DO
+      f
+  END DO
+</code></pre>
+<p>  ELSE</p>
+<pre><code>  BLOCK
+      g
+      n
+  END  BLOCK
+</code></pre>
+<p>  END IF<br>STOP</p>
+</li>
+<li><p><img src="https://oliver-picture.oss-cn-beijing.aliyuncs.com/Software/Chapter5.png" class="lazyload" data-srcset="https://oliver-picture.oss-cn-beijing.aliyuncs.com/Software/Chapter5.png" srcset="data:image/png;base64,666" alt="程序流程图"></p>
+</li>
 </ul>
 <h3 id="4-What-is-the-implicit-invocation-What-are-advantages-and-disadvantages-of-the-implicit-invocation"><a href="#4-What-is-the-implicit-invocation-What-are-advantages-and-disadvantages-of-the-implicit-invocation" class="headerlink" title="4. What is the implicit invocation? What are advantages and disadvantages of the implicit invocation?"></a>4. What is the implicit invocation? What are advantages and disadvantages of the implicit invocation?</h3><ol>
 <li><p>Instead of invoking a procedure directly, a component can broadcast one or more events. Other components in the system can register an interest in an event by associating a procedure with the event. When the event is announced the system itself invokes all of the procedures that have been registered for the event.</p>
@@ -1027,17 +1040,13 @@
 <h3 id="10-A-program-is-seeded-with-25-faults-During-testing-18-faults-are-detected-13-of-which-are-seeded-faults-and-5-of-which-are-indigenous-faults-What-is-the-estimate-of-the-number-of-indigenous-faults-remaining-undetected-in-the-program"><a href="#10-A-program-is-seeded-with-25-faults-During-testing-18-faults-are-detected-13-of-which-are-seeded-faults-and-5-of-which-are-indigenous-faults-What-is-the-estimate-of-the-number-of-indigenous-faults-remaining-undetected-in-the-program" class="headerlink" title="10. A program is seeded with 25 faults. During testing, 18 faults are detected, 13 of which are seeded faults and 5 of which are indigenous faults. What is the estimate of the number of indigenous faults remaining undetected in the program?"></a>10. A program is seeded with 25 faults. During testing, 18 faults are detected, 13 of which are seeded faults and 5 of which are indigenous faults. What is the estimate of the number of indigenous faults remaining undetected in the program?</h3><p>$$<br>\frac{发现的种子错误s}{总共的种子错误S}=\frac{发现的非种子错误n}{总共的非种子错误N}<br>$$</p>
 <p>$$<br>N=\frac{Sn}{s}=\frac{25\times5}{13}\approx10,10-5=5<br>$$</p>
 <h3 id="11-The-following-is-the-pseudo-code-for-the-module-F1-Please-draw-its-program-flowchart"><a href="#11-The-following-is-the-pseudo-code-for-the-module-F1-Please-draw-its-program-flowchart" class="headerlink" title="11. The following is the pseudo code for the module F1. Please draw its program flowchart."></a>11. The following is the pseudo code for the module F1. Please draw its program flowchart.</h3><ul>
-<li><pre><code>Procedure F1(A:Real; B:Real; Var X: Real)
-Begin
-    If (A&gt;1 AND B==0)
-        Then X:=X/A;
-    If (A==2 Or X&gt;1)
-        Then X:=X+1;
-End
+<li>Procedure F1 (A:Real; B:Real; Var X: Real)<br>Begin<pre><code>If (A&gt;1 AND B==0)
+    Then X:=X/A;
+If (A==2 Or X&gt;1)
+    Then X:=X+1;
 </code></pre>
-</li>
-<li><p><img src="https://oliver-picture.oss-cn-beijing.aliyuncs.com/Software/flowchart.png" class="lazyload" data-srcset="https://oliver-picture.oss-cn-beijing.aliyuncs.com/Software/flowchart.png" srcset="data:image/png;base64,666" alt="flowchart"></p>
-</li>
+End</li>
+<li><img src="https://oliver-picture.oss-cn-beijing.aliyuncs.com/Software/flowchart.png" class="lazyload" data-srcset="https://oliver-picture.oss-cn-beijing.aliyuncs.com/Software/flowchart.png" srcset="data:image/png;base64,666" alt="flowchart"></li>
 </ul>
 <h3 id="12-For-the-module-F1-in-11-Can-the-test-case-A-2-B-0-X-4-achieve-statement-coverage-Branch-Coverage"><a href="#12-For-the-module-F1-in-11-Can-the-test-case-A-2-B-0-X-4-achieve-statement-coverage-Branch-Coverage" class="headerlink" title="12. For the module F1 in 11, Can the test case{ A=2, B=0, X=4} achieve statement coverage?Branch Coverage?"></a>12. For the module F1 in 11, Can the test case{ A=2, B=0, X=4} achieve statement coverage?Branch Coverage?</h3><h3 id="13-For-the-module-F1-in-11-Can-the-test-case-A-3-B-0-X-3-and-A-2-B-1-X-1-achieve-Branch-Coverage-Condition-coverage"><a href="#13-For-the-module-F1-in-11-Can-the-test-case-A-3-B-0-X-3-and-A-2-B-1-X-1-achieve-Branch-Coverage-Condition-coverage" class="headerlink" title="13. For the module F1 in 11, Can the test case { A=3, B =0, X=3} and { A=2, ****B =1, X=1} achieve Branch Coverage? Condition coverage?"></a>13. For the module F1 in 11, Can the test case { A=3, B =0, X=3} and { A=2, ****B =1, X=1} achieve Branch Coverage? Condition coverage?</h3>
   
