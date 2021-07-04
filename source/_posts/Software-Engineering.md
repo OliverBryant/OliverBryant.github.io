@@ -1,5 +1,6 @@
 ---
 title: Software_Engineering
+author: Oliver
 mathjax: true
 abbrlink: 57655
 date: 2021-06-30 19:59:06
@@ -19,7 +20,7 @@ permalink:
 
 
 
-​	软件工程师使用他们在计算机和计算方面的知识来帮助解决问题。软件工程师使用技术、工具、程序和范式来提高他们的软件产品的质量。他们的目标是使用高效和富有成效的方法来产生有效的问题解决方案。软件工程师不是调查硬件设计或证明关于算法如何工作的定理，而是将计算机作为解决问题的工具来关注。
+​	软件工程师使用他们在计算机和计算方面的知识来帮助解决问题。软件工程师使用技术、工具、程序和范式来提高他们的软件产品的质量。他们的目标是使用高效和富有成效的方法来产生有效的问题解决方案。
 
 
 
@@ -129,14 +130,14 @@ permalink:
 
 1. Training can begin on an early release, even if some functions are missing.
 2. Markets can be created early for functionality that has never before been offered.
-3. Frequent releases allow developers to fix unanticipated problems globally and quickly, as they are reported from the operational system.
+3. Frequent releases allow developers to fix unanticipated problems globally and quickly.
 4. The development team can focus on different areas of expertise with different releases.
 
 
 
 1. 即使缺少一些功能，也可以在早期版本中开始培训。
 2. 可以为以前从未提供过的功能提前创造市场。
-3. 频繁的发布使开发人员能够在全球范围内快速地修复未预料到的问题，因为这些问题是由运行系统报告的。
+3. 频繁的发布使开发人员能够在全球范围内快速地修复未预料到的问题。
 4. 开发团队可以在不同的版本中专注于不同的专业领域。
 
 
@@ -147,7 +148,7 @@ permalink:
 
 
 
-​	增量模型按功能划分为若干子系统。版本的定义从一个小的功能子系统开始，然后在每个新的版本中增加功能。
+​	增量模型将系统按功能划分为若干子系统。版本的定义从一个小的功能子系统开始，然后在每个新的版本中增加功能。
 
 
 
@@ -193,7 +194,7 @@ permalink:
    - 绝对需要满足的需求
    - 想要但非必要的需求
    - 可以实现也可以不实现的需求
-2. 原因：对需求进行分类有助于各方了解真正需要的是什么。当一个软件开发项目受到时间或资源的限制时，它也是有用的；如果定义的系统将花费或需要太多时间来开发，第3类需求可以被放弃，第2类需求也可以考虑被取消或推迟。
+2. 原因：对需求进行分类有助于各方了解真正需要的是什么。它在当一个软件开发项目受到时间或资源的限制时非常有用；如果定义的系统将花费或需要太多时间来开发，第3类需求可以被放弃，第2类需求也可以考虑被取消或推迟。
 
 
 
@@ -225,7 +226,7 @@ permalink:
 
 
 
-​	非功能性需求，描述了对系统的限制，限制了我们面对问题的解决方案上的选择。例如，我们可能被告知系统只能部署在琳达的电脑商。这就是非功能性需求。
+​	非功能性需求，描述了对系统的限制，限制了我们在面对问题的解决方案上的选择。例如，我们可能被告知系统只能部署在琳达的电脑上。这就是非功能性需求。
 
 
 
@@ -240,8 +241,9 @@ permalink:
 
 ### 7. The following is the requirements of a system. Please draw its data flow diagram.(Airport)
 
-- 为方便旅客, 某航空公司拟开发一个机票预订系统。旅行社把预订机票的旅客信 息(姓名、性别、工作单位、身份证号码、旅行时间、旅行目的地等)输入进该系统,系统为旅客安排航班, 印出取票通知和账单, 旅客在飞机起飞的前一天凭取票通知和账单交款取 票,系统校对无误即印出机票给旅客。
-- ![Airport](https://oliver-picture.oss-cn-beijing.aliyuncs.com/Software/Airpot.png)
+- 为方便旅客, 某航空公司拟开发一个机票预订系统。旅行社把预订机票的旅客信息(姓名、性别、工作单位、身份证号码、旅行时间、旅行目的地等)输入进该系统,系统为旅客安排航班, 印出取票通知和账单, 旅客在飞机起飞的前一天凭取票通知和账单交款取票,系统校对无误即印出机票给旅客。
+- ![Airport](https://oliver-picture.oss-cn-beijing.aliyuncs.com/Software/airport_1.png)
+- ![airport_2](https://oliver-picture.oss-cn-beijing.aliyuncs.com/Software/airport_2.png)
 
 
 
@@ -291,13 +293,13 @@ permalink:
 
 
 
-​	当两个组件之间存在大量的依赖关系时，我们说它们是高度耦合的。
+​	当两个模块之间存在大量的依赖关系时，我们说它们是高度耦合的。
 
-1. 内容耦合：当一个组件修改另一个组件的内部数据项，或者当一个组件的分支进入另一个组件的中间时，就可能发生内容耦合。
+1. 内容耦合：当一个模块修改另一个模块的内部数据项，或者当一个模块的分支进入另一个模块的中间时，就可能发生内容耦合。
 2. 公共耦合：如果数据可以从一个共同的数据存储中访问，就会发生公共耦合。
-3. 控制耦合：当一个组件通过参数来控制另一个组件活动时，就会发生控制耦合。
-4. 标记耦合：当一个数据结构被用来将信息从一个组件传递给另一个组件，并且数据结构本身被传递，组件之间就存在标记耦合。
-5. 数据耦合：如果只有数据被传递，组件之间使通过数据耦合连接的。
+3. 控制耦合：当一个模块通过参数来控制另一个模块活动时，就会发生控制耦合。
+4. 标记耦合：当一个数据结构被用来将信息从一个模块传递给另一个模块，并且数据结构本身被传递，模块之间就存在标记耦合。
+5. 数据耦合：如果只有数据被传递，模块之间使通过数据耦合连接的。
 
 
 
@@ -313,32 +315,30 @@ permalink:
 
 
 
-1. 偶然内聚：最差程度的耦合，即巧合，各个部分互不相关。
-2. 逻辑内聚：下一个更高级的内聚，即几个逻辑上相关的功能或数据元素被放在同一个组件中。
-3. 时间内聚：有时一个组件被用来初始化一个系统或一组变量。这样的组件依次执行几个功能，但这些功能只在涉及到的时间上有关系。
-4. 过程内聚：当组件被组合在一起是为了保证执行顺序，那么这个组件就是过程内聚的。
+1. 偶然内聚：最差程度的内聚，即巧合，各个部分互不相关。
+2. 逻辑内聚：下一个更高级的内聚，即几个逻辑上相关的功能或数据元素被放在同一个模块中。
+3. 时间内聚：有时一个模块被用来初始化一个系统或一组变量。这样的模块依次执行几个功能，但这些功能只在涉及到的时间上有关系。
+4. 过程内聚：当模块被组合在一起是为了保证执行顺序，那么这个模块就是过程内聚的。
 5. 通讯内聚：围绕着数据集设计的模块，因为对同一数据集进行操作而将某些功能联系起来的方式。
-6. 顺序内聚：如果一个组件的一个部分的输出是对下个部分的输入，该组件就具有顺序内聚性。
-7. 功能内聚：每一个处理元素对单一功能的执行都是必不可少的，而且所有的基本元素都包含在一个组件中。
+6. 顺序内聚：如果一个模块的一个部分的输出是对下个部分的输入，该模块就具有顺序内聚性。
+7. 功能内聚：每一个处理元素对单一功能的执行都是必不可少的，而且所有的基本元素都包含在一个模块中。
 
 
 
 ### 3. 画出下列伪码程序的程序流程图。
 
-- ```
-  START 
-  	IF p THEN
-  		WHILE q DO
-  			f
-  		END DO
-  	ELSE
-  		BLOCK
-  			g
-  			n
-  		END  BLOCK
-  	END IF
-  STOP
-  ```
+START 
+	IF p THEN
+		WHILE q DO
+			f
+		END DO
+	ELSE
+		BLOCK
+			g
+			n
+		END  BLOCK
+	END IF
+STOP
 
 - ![程序流程图](https://oliver-picture.oss-cn-beijing.aliyuncs.com/Software/Chapter5.png)
 
@@ -359,11 +359,11 @@ permalink:
 
 
 
-1. 一个组件可以广播一个或多个事件，而不是直接调用一个程序。系统中的其他组件可以通过将一个过程与该事件相关联来注册对该事件。当事件被宣布时，系统本身会调用所有被该事件注册的程序。
+1. 一个模块可以广播一个或多个事件，而不是直接调用一个程序。系统中的其他模块可以通过将一个过程与该事件相关联来注册该事件。当事件被宣布时，系统本身会调用所有被该事件注册的程序。
 2. 优点：
-   - 这种设计风格对于重复使用其他系统的设计特别游泳。任何组件都可以被引入到一个系统中，只需为该系统的时间注册即可。
-   - 随着系统的发展和需要进行升级，旧的组件可以被删除，而新的组件则很容易被添加。
-3. 缺点：这种设计风格的最大缺点是不能保证一个组件会对一个事件作出反应。这种对事件背景和顺序的依赖使得测试系统和检查正确性变得非常困难。
+   - 这种设计风格对于重复使用其他系统的设计模块非常有用。任何模块都可以被引入到一个系统中，只需为该系统的事件注册即可。
+   - 随着系统的发展和需要进行升级，旧的模块可以被删除，而新的模块则很容易被添加。
+3. 缺点：这种设计风格的最大缺点是不能保证一个模块会对一个事件作出反应。这种对事件背景和顺序的依赖使得测试系统和检查正确性变得非常困难。
 
 
 
@@ -385,7 +385,7 @@ permalink:
 2. 抽象
 3. 分类
 4. 封装
-5. 集成
+5. 继承
 6. 多态
 7. 连续性
 
@@ -544,7 +544,7 @@ permalink:
 
 
 
-1. 单元测试：单元测试验证了组件在设计时预设的输入类型下功能是否正常。每个程序组件都是独立侧视的，与系统中的其他组件隔离。
+1. 单元测试：单元测试验证了组件在设计时预设的输入类型下功能是否正常。每个程序组件都是独立测试的，与系统中的其他组件隔离。
 2. 集成测试：集成测试是验证系统组件是否按照系统和程序设计规范中的描述一起工作。它确保各组件之间的接口被定义和正确处理。
 3. 功能测试：对系统进行评估，以确定需求说明所描述的功能是否由集成系统实际执行。
 4. 性能测试：性能测试将系统与这些软件和硬件要求的剩余部分进行比较。
@@ -555,7 +555,7 @@ permalink:
 ### 3. What are the differences between black box and white box testing?
 
 1. Black-box testing: Knowing the specified function a product is to perform, tests  can be conducted that demonstrate each function is fully operational, at the same time searching for errors in each function.
-2. White-box testing: Knowing the internal workings of of all independent logic paths. White-box testing is a test case design method that uses the  control structure of the procedural design to derive test cases. 
+2. White-box testing: Knowing the internal workings of all independent logic paths. White-box testing is a test case design method that uses the  control structure of the procedural design to derive test cases. 
 3. The biggest difference should be that the test objects are different. White-box testing focuses on the logic of the problem code. Black-box testing focuses on the functionality that the program presents to the user.
 
 
@@ -684,29 +684,29 @@ $$
 
 ### 11. The following is the pseudo code for the module F1. Please draw its program flowchart.
 
-- ```
-  Procedure F1(A:Real; B:Real; Var X: Real)
+- Procedure F1 (A:Real; B:Real; Var X: Real)
   Begin
   	If (A>1 AND B==0)
   		Then X:=X/A;
   	If (A==2 Or X>1)
   		Then X:=X+1;
   End
-  ```
-
+  
 - ![flowchart](https://oliver-picture.oss-cn-beijing.aliyuncs.com/Software/flowchart.png)
 
 
 
 ### 12. For the module F1 in 11, Can the test case{ A=2, B=0, X=4} achieve statement coverage?Branch Coverage?
 
+- 满足语句覆盖，因为每一个框框都执行了。
+- 不满足判定覆盖，因为不是每一个if的真假都进行了测试。
 
 
 
+### 13. For the module F1 in 11, Can the test case { A=3, B =0, X=3} and { A=2, B =1, X=1} achieve Branch Coverage? Condition coverage?
 
-### 13. For the module F1 in 11, Can the test case { A=3, B =0, X=3} and { A=2, \****B =1, X=1} achieve Branch Coverage? Condition coverage?
-
-
+- 满足判定覆盖，因为每个if的真假都进行了测试。
+- 不满足条件覆盖，因为A<=1,A==1没有进行测试。
 
 
 
