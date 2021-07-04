@@ -851,7 +851,7 @@
 <li>Acceptance test: An acceptance test makes certain that the system works according to customer expectations. We join the customer to perform an acceptance test, where the system is checked against the customer’s requirements description.</li>
 </ol>
 <ol>
-<li>单元测试：单元测试验证了组件在设计时预设的输入类型下功能是否正常。每个程序组件都是独立侧视的，与系统中的其他组件隔离。</li>
+<li>单元测试：单元测试验证了组件在设计时预设的输入类型下功能是否正常。每个程序组件都是独立测试的，与系统中的其他组件隔离。</li>
 <li>集成测试：集成测试是验证系统组件是否按照系统和程序设计规范中的描述一起工作。它确保各组件之间的接口被定义和正确处理。</li>
 <li>功能测试：对系统进行评估，以确定需求说明所描述的功能是否由集成系统实际执行。</li>
 <li>性能测试：性能测试将系统与这些软件和硬件要求的剩余部分进行比较。</li>
@@ -859,7 +859,7 @@
 </ol>
 <h3 id="3-What-are-the-differences-between-black-box-and-white-box-testing"><a href="#3-What-are-the-differences-between-black-box-and-white-box-testing" class="headerlink" title="3. What are the differences between black box and white box testing?"></a>3. What are the differences between black box and white box testing?</h3><ol>
 <li>Black-box testing: Knowing the specified function a product is to perform, tests  can be conducted that demonstrate each function is fully operational, at the same time searching for errors in each function.</li>
-<li>White-box testing: Knowing the internal workings of of all independent logic paths. White-box testing is a test case design method that uses the  control structure of the procedural design to derive test cases. </li>
+<li>White-box testing: Knowing the internal workings of all independent logic paths. White-box testing is a test case design method that uses the  control structure of the procedural design to derive test cases. </li>
 <li>The biggest difference should be that the test objects are different. White-box testing focuses on the logic of the problem code. Black-box testing focuses on the functionality that the program presents to the user.</li>
 </ol>
 <ol>
@@ -1035,7 +1035,15 @@ If (A==2 Or X&gt;1)
 End</li>
 <li><img src="https://oliver-picture.oss-cn-beijing.aliyuncs.com/Software/flowchart.png" class="lazyload" data-srcset="https://oliver-picture.oss-cn-beijing.aliyuncs.com/Software/flowchart.png" srcset="data:image/png;base64,666" alt="flowchart"></li>
 </ul>
-<h3 id="12-For-the-module-F1-in-11-Can-the-test-case-A-2-B-0-X-4-achieve-statement-coverage-Branch-Coverage"><a href="#12-For-the-module-F1-in-11-Can-the-test-case-A-2-B-0-X-4-achieve-statement-coverage-Branch-Coverage" class="headerlink" title="12. For the module F1 in 11, Can the test case{ A=2, B=0, X=4} achieve statement coverage?Branch Coverage?"></a>12. For the module F1 in 11, Can the test case{ A=2, B=0, X=4} achieve statement coverage?Branch Coverage?</h3><h3 id="13-For-the-module-F1-in-11-Can-the-test-case-A-3-B-0-X-3-and-A-2-B-1-X-1-achieve-Branch-Coverage-Condition-coverage"><a href="#13-For-the-module-F1-in-11-Can-the-test-case-A-3-B-0-X-3-and-A-2-B-1-X-1-achieve-Branch-Coverage-Condition-coverage" class="headerlink" title="13. For the module F1 in 11, Can the test case { A=3, B =0, X=3} and { A=2, B =1, X=1} achieve Branch Coverage? Condition coverage?"></a>13. For the module F1 in 11, Can the test case { A=3, B =0, X=3} and { A=2, B =1, X=1} achieve Branch Coverage? Condition coverage?</h3>
+<h3 id="12-For-the-module-F1-in-11-Can-the-test-case-A-2-B-0-X-4-achieve-statement-coverage-Branch-Coverage"><a href="#12-For-the-module-F1-in-11-Can-the-test-case-A-2-B-0-X-4-achieve-statement-coverage-Branch-Coverage" class="headerlink" title="12. For the module F1 in 11, Can the test case{ A=2, B=0, X=4} achieve statement coverage?Branch Coverage?"></a>12. For the module F1 in 11, Can the test case{ A=2, B=0, X=4} achieve statement coverage?Branch Coverage?</h3><ul>
+<li>满足语句覆盖，因为每一个框框都执行了。</li>
+<li>不满足判定覆盖，因为不是每一个if的真假都进行了测试。</li>
+</ul>
+<h3 id="13-For-the-module-F1-in-11-Can-the-test-case-A-3-B-0-X-3-and-A-2-B-1-X-1-achieve-Branch-Coverage-Condition-coverage"><a href="#13-For-the-module-F1-in-11-Can-the-test-case-A-3-B-0-X-3-and-A-2-B-1-X-1-achieve-Branch-Coverage-Condition-coverage" class="headerlink" title="13. For the module F1 in 11, Can the test case { A=3, B =0, X=3} and { A=2, B =1, X=1} achieve Branch Coverage? Condition coverage?"></a>13. For the module F1 in 11, Can the test case { A=3, B =0, X=3} and { A=2, B =1, X=1} achieve Branch Coverage? Condition coverage?</h3><ul>
+<li>满足判定覆盖，因为每个if的真假都进行了测试。</li>
+<li>不满足条件覆盖，因为A&lt;=1,A==1没有进行测试。</li>
+</ul>
+
   
   
     
