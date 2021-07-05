@@ -823,15 +823,27 @@
 </ul>
 <h3 id="14-Concepts-and-examples-about-aggregation-composition-association-generalization-between-two-classes"><a href="#14-Concepts-and-examples-about-aggregation-composition-association-generalization-between-two-classes" class="headerlink" title="14. Concepts and examples about aggregation, composition, association, generalization between two classes."></a>14. Concepts and examples about aggregation, composition, association, generalization between two classes.</h3><ol>
 <li>aggregation: One class is part of another class. For example, CPU is part of a computer.</li>
-<li>composition: Composition is also a relationship between whole and part between classes, but the whole and part in a composition relationship have the same lifetime. For instance, a person consists of a head, arms, etcs. If this head leaves the person, then this head has no meaning.</li>
-<li>association: Two classes are associated when they occur together, and when the relationship must be preserved for some period of time. For example, each order is associated with a salesperson. Until the order is complete, it is important to link the order with the salesperson.</li>
+<li>composition: Composition is also a relationship between whole and part between classes, but the whole and part in a composition relationship have the same lifetime. For instance, a school has lots of classes. If the school doesn’t exist, the classes do not exist. And if all classes don’t exist, the school does not exist.</li>
+<li>association: Two classes are associated when they occur together, and when the relationship must be preserved for some period of time. Such as a husband with his wife.</li>
 <li>generalization: The superclass generalizes the subclass. For instance, the fuel class may be a generalization of the diesel fuel class.</li>
 </ol>
 <ol>
-<li>聚集：一个类是另一个类的一部分。例如，CPU是计算机的一部分。</li>
-<li>组合：也是类之间的整体和部分的关系，但组合关系中的整体与部分具有同样的生存期。例如一个人由头、手等组成，如果这个头离开了这个人，那么这个头就没有任何意义了。</li>
-<li>关联：当两个类同时出现，且之间的关系必须保留一段时间时，就发生关联。例如，每个订单都与一个销售人员相关联。在订单完成前，将订单和销售人员联系起来是很重要的。</li>
-<li>继承：超类概括子类。例如，柴油类继承自燃料类。</li>
+<li>聚集：一个类是另一个类的一部分。例如，CPU是计算机的一部分。<ul>
+<li>解释：has-a，整体与部分可分离，可以具有各自的生命周期，部分可以属于多个整体对象。例如计算机和CPU、公司与员工等。用空心菱形的实线，菱形指向整体。</li>
+</ul>
+</li>
+<li>组合：也是类之间的整体和部分的关系，但组合关系中的整体与部分具有同样的生存期。例如一个学校和学校里的班级，学校不存在班级就不存在，所有班级都不存在学校也就不存在了。<ul>
+<li>解释：contains-a，整体与部分不可分，整体的生命周期结束也意味着部分的生命周期结束。用带实心菱形的实线，菱形指向整体。</li>
+</ul>
+</li>
+<li>关联：当两个类同时出现，且之间的关系必须保留一段时间时，就发生关联。例如，丈夫和他的妻子之间就是关联。<ul>
+<li>解释：两个类之间有关系，一般是长期的关系，关系一般是平等的。例如我和我的朋友，丈夫和妻子。双向关联用直线，单向关联用指向被拥有者的带箭头的实线。</li>
+</ul>
+</li>
+<li>泛化：超类概括子类。例如，柴油类继承自燃料类。<ul>
+<li>解释：一种继承关系，表示一般与特殊的关系。比如鸟和猫头鹰。</li>
+</ul>
+</li>
 </ol>
 <h2 id="Chapter-8"><a href="#Chapter-8" class="headerlink" title="Chapter 8"></a>Chapter 8</h2><h3 id="1-What-are-the-main-software-testing-objectives"><a href="#1-What-are-the-main-software-testing-objectives" class="headerlink" title="1. What are the main software testing objectives?"></a>1. What are the main software testing objectives?</h3><ol>
 <li>Testing is the process of executing a program with the intent of finding errors.</li>
