@@ -855,7 +855,7 @@
 <li>集成测试：集成测试是验证系统组件是否按照系统和程序设计规范中的描述一起工作。它确保各组件之间的接口被定义和正确处理。</li>
 <li>功能测试：对系统进行评估，以确定需求说明所描述的功能是否由集成系统实际执行。</li>
 <li>性能测试：性能测试将系统与这些软件和硬件要求的剩余部分进行比较。</li>
-<li>验收测试：验收测试可以确定系统是按照客户的期望工作的。我们与客户一起进行验收测试，根据客户的需求描述检察系统。</li>
+<li>验收测试：验收测试可以确定系统是按照客户的期望工作的。我们与客户一起进行验收测试，根据客户的需求描述检查系统。</li>
 </ol>
 <h3 id="3-What-are-the-differences-between-black-box-and-white-box-testing"><a href="#3-What-are-the-differences-between-black-box-and-white-box-testing" class="headerlink" title="3. What are the differences between black box and white box testing?"></a>3. What are the differences between black box and white box testing?</h3><ol>
 <li>Black-box testing: Knowing the specified function a product is to perform, tests  can be conducted that demonstrate each function is fully operational, at the same time searching for errors in each function.</li>
@@ -1026,13 +1026,8 @@
 </ul>
 <h3 id="10-A-program-is-seeded-with-25-faults-During-testing-18-faults-are-detected-13-of-which-are-seeded-faults-and-5-of-which-are-indigenous-faults-What-is-the-estimate-of-the-number-of-indigenous-faults-remaining-undetected-in-the-program"><a href="#10-A-program-is-seeded-with-25-faults-During-testing-18-faults-are-detected-13-of-which-are-seeded-faults-and-5-of-which-are-indigenous-faults-What-is-the-estimate-of-the-number-of-indigenous-faults-remaining-undetected-in-the-program" class="headerlink" title="10. A program is seeded with 25 faults. During testing, 18 faults are detected, 13 of which are seeded faults and 5 of which are indigenous faults. What is the estimate of the number of indigenous faults remaining undetected in the program?"></a>10. A program is seeded with 25 faults. During testing, 18 faults are detected, 13 of which are seeded faults and 5 of which are indigenous faults. What is the estimate of the number of indigenous faults remaining undetected in the program?</h3><p>$$<br>\frac{发现的种子错误s}{总共的种子错误S}=\frac{发现的非种子错误n}{总共的非种子错误N}<br>$$</p>
 <p>$$<br>N=\frac{Sn}{s}=\frac{25\times5}{13}\approx10,10-5=5<br>$$</p>
-<h3 id="11-The-following-is-the-pseudo-code-for-the-module-F1-Please-draw-its-program-flowchart"><a href="#11-The-following-is-the-pseudo-code-for-the-module-F1-Please-draw-its-program-flowchart" class="headerlink" title="11. The following is the pseudo code for the module F1. Please draw its program flowchart."></a>11. The following is the pseudo code for the module F1. Please draw its program flowchart.</h3><ul>
-<li>Procedure F1 (A:Real; B:Real; Var X: Real)<br>Begin<pre><code>If (A&gt;1 AND B==0)
-    Then X:=X/A;
-If (A==2 Or X&gt;1)
-    Then X:=X+1;
-</code></pre>
-End</li>
+<h3 id="11-The-following-is-the-pseudo-code-for-the-module-F1-Please-draw-its-program-flowchart"><a href="#11-The-following-is-the-pseudo-code-for-the-module-F1-Please-draw-its-program-flowchart" class="headerlink" title="11. The following is the pseudo code for the module F1. Please draw its program flowchart."></a>11. The following is the pseudo code for the module F1. Please draw its program flowchart.</h3><p>Procedure F1 (A:Real; B:Real; Var X: Real)<br>Begin<br>    If (A&gt;1 AND B==0)<br>        Then X:=X/A;<br>    If (A==2 Or X&gt;1)<br>        Then X:=X+1;<br>End</p>
+<ul>
 <li><img src="https://oliver-picture.oss-cn-beijing.aliyuncs.com/Software/flowchart.png" class="lazyload" data-srcset="https://oliver-picture.oss-cn-beijing.aliyuncs.com/Software/flowchart.png" srcset="data:image/png;base64,666" alt="flowchart"></li>
 </ul>
 <h3 id="12-For-the-module-F1-in-11-Can-the-test-case-A-2-B-0-X-4-achieve-statement-coverage-Branch-Coverage"><a href="#12-For-the-module-F1-in-11-Can-the-test-case-A-2-B-0-X-4-achieve-statement-coverage-Branch-Coverage" class="headerlink" title="12. For the module F1 in 11, Can the test case{ A=2, B=0, X=4} achieve statement coverage?Branch Coverage?"></a>12. For the module F1 in 11, Can the test case{ A=2, B=0, X=4} achieve statement coverage?Branch Coverage?</h3><ul>
