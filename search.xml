@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>DataBase</title>
+      <link href="/2023/03/17/DataBase/"/>
+      <url>/2023/03/17/DataBase/</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-如何理解数据库系统的三层模式结构？"><a href="#1-如何理解数据库系统的三层模式结构？" class="headerlink" title="1.如何理解数据库系统的三层模式结构？"></a>1.如何理解数据库系统的三层模式结构？</h2><p>​    三层模式结构分别为外模式、模式和内模式</p><p><img src="https://oliver-picture.oss-cn-beijing.aliyuncs.com/DataBase/1654684980985_333333333333.jpg" class="lazyload" data-srcset="https://oliver-picture.oss-cn-beijing.aliyuncs.com/DataBase/1654684980985_333333333333.jpg" srcset="data:image/png;base64,666" alt="image"></p><ul><li>模式：又称逻辑模式，是对数据库中全部数据的逻辑结构和特性的描述，是数据库所有用户的公共数据视图。它处于三级结构的中间层，是整个数据库实际存储的抽象表示。DBMS提供模式描述语言（模式DDL）来严格定义模式</li><li>外模式：又称用户模式或子模式，通常是模式的子集，是数据库系统每个用户看到和使用的数据视图，即与某一应用有关的数据的逻辑表示。DBMS提供子模式描述语言（子模式DDL）来定义子模式</li><li>内模式：又称存储模式，是数据库所有数据的内部表示或者说是底层的描述，用来定义数据的存储方式和物理结构。DBMS提供内模式描述语言（内模式DDL）来定义内模式</li></ul><p>​    三层模式结构的优点：</p><ul><li>保证数据的独立性</li><li>有利于数据共享</li><li>简化了用户接口</li><li>利于数据的安全保密</li></ul><h2 id="2-什么是数据E-R图"><a href="#2-什么是数据E-R图" class="headerlink" title="2.什么是数据E-R图"></a>2.什么是数据E-R图</h2><p>​    E-R图是实体-联系模型，用以描述现实世界的概念模型，应用于数据库设计的概念模型设计</p><p><img src="https://oliver-picture.oss-cn-beijing.aliyuncs.com/DataBase/images%20%281%29.jpg" class="lazyload" data-srcset="https://oliver-picture.oss-cn-beijing.aliyuncs.com/DataBase/images%20%281%29.jpg" srcset="data:image/png;base64,666" alt="image"></p><p>​    E-R模型主要的元素是：实体集、属性、联系集</p><ul><li>实体集：方框表示，内部标注实体的命名。</li><li>属性：椭圆框或圆角矩阵表示，内部表明属性名，通过实线与实体集相连（某些联系也有属性）</li><li>联系集：用菱形框表示，内部标明联系的命名，并用实线分别与有关的实体集相连，同时在实线旁标注联系的类型（1对1、1对n、m对n）</li></ul><h2 id="3-数据库基本逻辑运算"><a href="#3-数据库基本逻辑运算" class="headerlink" title="3.数据库基本逻辑运算"></a>3.数据库基本逻辑运算</h2><p>​    关系代数用到的运算符包括四类：集合运算符、专门的关系运算符、算术比较运算符和逻辑运算符</p><ul><li>集合运算符：<ul><li>交</li><li>并</li><li>差</li><li>笛卡尔积</li></ul></li><li>专门的关系运算符：<ul><li>选择</li><li>投影</li><li>链接</li><li>除</li></ul></li><li>比较运算符：<ul><li>大于</li><li>大于等于</li><li>小于</li><li>小于等于</li><li>等于</li><li>不等于</li></ul></li><li>逻辑运算符：<ul><li>非</li><li>与</li><li>或</li></ul></li></ul><h2 id="4-数据库管理系统（DBMS）的定义及其功能功能"><a href="#4-数据库管理系统（DBMS）的定义及其功能功能" class="headerlink" title="4.数据库管理系统（DBMS）的定义及其功能功能"></a>4.数据库管理系统（DBMS）的定义及其功能功能</h2><ul><li><p>定义：是位于用户与操作系统之间的一层数据管理软件，是数据库系统（DBS）的核心，有一组程序构成，主要功能如下：</p><ul><li>数据定义功能</li><li>数据操纵功能</li><li>数据库的运行管理功能</li><li>数据库的建立和维护功能</li></ul></li></ul><h2 id="5-数据库系统是什么？"><a href="#5-数据库系统是什么？" class="headerlink" title="5.数据库系统是什么？"></a>5.数据库系统是什么？</h2><p>​    数据库系统就是基于数据库的计算机应用系统，由4部分组成：</p><ul><li>数据库：数据的汇集，以一定的组织形式保存在存储介质上</li><li>数据库管理系统：管理数据库的系统软件，可以实现数据库系统的各种功能</li><li>应用程序：以数据库管理系统和数据库中的数据为基础的程序</li><li>用户：<ul><li>应用程序开发人员</li><li>系统管理员</li><li>最终用户</li></ul></li></ul><h2 id="6-什么是数据库定义语言和数据操作语言？"><a href="#6-什么是数据库定义语言和数据操作语言？" class="headerlink" title="6.什么是数据库定义语言和数据操作语言？"></a>6.什么是数据库定义语言和数据操作语言？</h2><ul><li>数据库定义语言DDL：用于描述或定义实体，例如CREATE、ALTER、DROP等</li><li>数据操作语言DML：用于增删改查的操作，例如SELECT、UPDATE、DELETE等</li></ul><h2 id="7-数据库设计步骤"><a href="#7-数据库设计步骤" class="headerlink" title="7.数据库设计步骤"></a>7.数据库设计步骤</h2><ol><li>需求分析<ul><li>调查分析用户的活动</li><li>收集和分析需求数据并确定系统边界</li><li>编写需求分析说明书</li></ul></li><li>概念结构设计：E-R模型</li><li>逻辑结构设计：先将E-R图转换为关系模型，然后根据具体DBMS的特点和限制转换为特定的DBMS支持的数据模型，最后进行优化</li><li>数据库物理设计<ul><li>确定数据库的物理结构，在关系数据库中主要指存取方法（索引方法（B+树）、聚簇方法、Hash方法）和存取结构</li><li>对物理结构进行评价，评价的重点是时间和空间效率</li></ul></li><li>数据库实施<ul><li>用DDL定义数据库结构</li><li>组织数据入库（数据装载）</li><li>编制与调试应用程序</li><li>数据库试运行</li></ul></li><li>数据库运行和维护<ul><li>数据库的转储和恢复</li><li>数据库的安全性、完整性控制</li><li>数据库性能的监督、分析、改造</li><li>数据库的重组与重构造</li></ul></li></ol><h2 id="8-候选码、主码、全码、外码、主属性、主键、主关键字、非主属性清晰总结"><a href="#8-候选码、主码、全码、外码、主属性、主键、主关键字、非主属性清晰总结" class="headerlink" title="8.候选码、主码、全码、外码、主属性、主键、主关键字、非主属性清晰总结"></a>8.候选码、主码、全码、外码、主属性、主键、主关键字、非主属性清晰总结</h2><p>（引用自<a href="https://blog.csdn.net/sumaliqinghua/article/details/85872446%EF%BC%89">https://blog.csdn.net/sumaliqinghua/article/details/85872446）</a></p><p><img src="https://oliver-picture.oss-cn-beijing.aliyuncs.com/DataBase/20190625173457198.png" class="lazyload" data-srcset="https://oliver-picture.oss-cn-beijing.aliyuncs.com/DataBase/20190625173457198.png" srcset="data:image/png;base64,666" alt="码的关系"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 考研 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 专业课 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello World</title>
       <link href="/2023/03/10/hello-world/"/>
       <url>/2023/03/10/hello-world/</url>
