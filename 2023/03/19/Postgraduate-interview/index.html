@@ -517,7 +517,7 @@
 
 
   
-  <h1 id="数据库篇"><a href="#数据库篇" class="headerlink" title="数据库篇"></a>数据库篇</h1><h3 id="1-如何理解数据库系统的三层模式结构？"><a href="#1-如何理解数据库系统的三层模式结构？" class="headerlink" title="1.如何理解数据库系统的三层模式结构？"></a>1.如何理解数据库系统的三层模式结构？</h3><p>三层模式结构分别为外模式、模式和内模式</p>
+  <h2 id="数据库篇"><a href="#数据库篇" class="headerlink" title="数据库篇"></a>数据库篇</h2><h3 id="1-如何理解数据库系统的三层模式结构？"><a href="#1-如何理解数据库系统的三层模式结构？" class="headerlink" title="1.如何理解数据库系统的三层模式结构？"></a>1.如何理解数据库系统的三层模式结构？</h3><p>三层模式结构分别为外模式、模式和内模式</p>
 <p><img src="https://oliver-picture.oss-cn-beijing.aliyuncs.com/DataBase/1654684980985_333333333333.jpg" class="lazyload" data-srcset="https://oliver-picture.oss-cn-beijing.aliyuncs.com/DataBase/1654684980985_333333333333.jpg" srcset="data:image/png;base64,666" alt="image"></p>
 <ul>
 <li><p>模式：又称逻辑模式，是对数据库中全部数据的逻辑结构和特性的描述，是数据库所有用户的公共数据视图。它处于三级结构的中间层，是整个数据库实际存储的抽象表示。DBMS提供模式描述语言（模式DDL）来严格定义模式</p>
@@ -747,7 +747,7 @@
 </ul>
 <h3 id="17-候选码、主码、全码、外码、主属性、主键、主关键字、非主属性清晰总结"><a href="#17-候选码、主码、全码、外码、主属性、主键、主关键字、非主属性清晰总结" class="headerlink" title="17.候选码、主码、全码、外码、主属性、主键、主关键字、非主属性清晰总结"></a>17.候选码、主码、全码、外码、主属性、主键、主关键字、非主属性清晰总结</h3><p>（引用自<a target="_blank" rel="noopener" href="https://blog.csdn.net/sumaliqinghua/article/details/85872446%EF%BC%89">https://blog.csdn.net/sumaliqinghua/article/details/85872446）</a></p>
 <p><img src="https://oliver-picture.oss-cn-beijing.aliyuncs.com/DataBase/20190625173457198.png" class="lazyload" data-srcset="https://oliver-picture.oss-cn-beijing.aliyuncs.com/DataBase/20190625173457198.png" srcset="data:image/png;base64,666" alt="码的关系"></p>
-<h1 id="软件工程篇"><a href="#软件工程篇" class="headerlink" title="软件工程篇"></a>软件工程篇</h1><h3 id="1-什么是软件工程"><a href="#1-什么是软件工程" class="headerlink" title="1. 什么是软件工程"></a>1. 什么是软件工程</h3><p>​    将系统化的、规范的、可度量的方法用于软件的开发、运行和维护的过程，即将工程化应用于软件开发中</p>
+<h2 id="软件工程篇"><a href="#软件工程篇" class="headerlink" title="软件工程篇"></a>软件工程篇</h2><h3 id="1-什么是软件工程"><a href="#1-什么是软件工程" class="headerlink" title="1. 什么是软件工程"></a>1. 什么是软件工程</h3><p>​    将系统化的、规范的、可度量的方法用于软件的开发、运行和维护的过程，即将工程化应用于软件开发中</p>
 <h3 id="2-软件的生命周期"><a href="#2-软件的生命周期" class="headerlink" title="2.软件的生命周期"></a>2.软件的生命周期</h3><p>​    是软件的产生直到报废的生命周期</p>
 <ul>
 <li>问题定义：确定系统要解决什么问题</li>
@@ -1521,7 +1521,7 @@
 </li>
 <li>索引分配：将每个文件所有的盘块号都集中放在一起构成索引表</li>
 </ul>
-<h1 id="计算机网络篇"><a href="#计算机网络篇" class="headerlink" title="计算机网络篇"></a>计算机网络篇</h1><h3 id="1-计算机网络的功能"><a href="#1-计算机网络的功能" class="headerlink" title="1.计算机网络的功能"></a>1.计算机网络的功能</h3><ul>
+<h2 id="计算机网络篇"><a href="#计算机网络篇" class="headerlink" title="计算机网络篇"></a>计算机网络篇</h2><h3 id="1-计算机网络的功能"><a href="#1-计算机网络的功能" class="headerlink" title="1.计算机网络的功能"></a>1.计算机网络的功能</h3><ul>
 <li>数据通信：实现联网计算机之间各种信息的传输，并将分散在不同地理位置的计算机联系起来，进行统一的调配、控制和管理。</li>
 <li>资源共享：同一个计算机上的其他计算机可使用某台计算机的计算机资源的行为，可共享硬件、软件和数据。</li>
 <li>分布式处理：多台计算机各自承担同一工作任务的不同部分。</li>
@@ -1657,6 +1657,328 @@
 <li>无应答服务：接收方收到数据后不自动给出应答，如需应答，则由高层实现</li>
 </ul>
 </li>
+</ul>
+<h3 id="5-OSI和TCP模型"><a href="#5-OSI和TCP模型" class="headerlink" title="5. OSI和TCP模型"></a>5. OSI和TCP模型</h3><ul>
+<li><p>OSI参考模型</p>
+<ul>
+<li><p>层次：物链网输会示用：<img src="https://oliver-picture.oss-cn-beijing.aliyuncs.com/img/OSI.png" class="lazyload" data-srcset="https://oliver-picture.oss-cn-beijing.aliyuncs.com/img/OSI.png" srcset="data:image/png;base64,666" style="zoom: 50%;" /></p>
+</li>
+<li><p>应用层：</p>
+<ul>
+<li><p>定义：所有能和用户交互产生网络流量的程序，是用户与网络的界面</p>
+</li>
+<li><p>典型服务：</p>
+<ul>
+<li>文件传输（FTP）</li>
+<li>电子邮件（SMTP）</li>
+<li>万维网（HTTP）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>表示层：</p>
+<ul>
+<li><p>定义：用于处理在两个通信系统中交换信息的表示方式（语法和语义）</p>
+</li>
+<li><p>功能：</p>
+<ul>
+<li>数据格式变换：翻译</li>
+<li>数据加密解密</li>
+<li>数据压缩恢复</li>
+</ul>
+</li>
+<li><p>典型协议：</p>
+<ul>
+<li>JPEG</li>
+<li>ASCII</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>会话层：</p>
+<ul>
+<li><p>定义：向表示层实体/用户进程提供建立连接并在连接上有序地传输数据，也称为建立同步（SYN）。</p>
+</li>
+<li><p>功能：</p>
+<ul>
+<li>建立、管理、终止会话</li>
+<li>使用校验点可使会话在通信失效时从校验点/同步点继续恢复通信，实现数据同步。</li>
+</ul>
+</li>
+<li><p>典型协议：</p>
+<ul>
+<li>ADSP</li>
+<li>ASP</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>传输层：</p>
+<ul>
+<li><p>定义：负责主机中两个进程的通信，即端到端的通信。</p>
+</li>
+<li><p>传输单位：报文段或用户数据报</p>
+</li>
+<li><p>功能：</p>
+<ul>
+<li>可靠传输、不可靠传输</li>
+<li>差错控制</li>
+<li>流量控制</li>
+<li>复用分用：<ul>
+<li>复用：多个应用层进程可同时使用下面运输层的服务</li>
+<li>分用：运输层把收到的信息分别交付给上面应用层中相应的进程</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>典型协议：</p>
+<ul>
+<li>TCP</li>
+<li>UDP</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>网络层：</p>
+<ul>
+<li><p>主要任务：把分组从源端传送到目的端，为分组交换网上的不同主机提供通信服务。</p>
+</li>
+<li><p>传输单位：数据报（分组是数据报切割后）</p>
+</li>
+<li><p>功能：</p>
+<ul>
+<li>路由选择：寻找最佳路径</li>
+<li>流量控制</li>
+<li>差错控制</li>
+<li>拥塞控制：若所有结点都来不及接受分组，而要丢弃大量分组的话，网络就处于拥塞状态。</li>
+</ul>
+</li>
+<li><p>主要协议：</p>
+<ul>
+<li>IP</li>
+<li>IPX</li>
+<li>ICMP</li>
+<li>IGMP</li>
+<li>ARP</li>
+<li>RARP</li>
+<li>OSPF</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>数据链路层：</p>
+<ul>
+<li><p>主要任务：把网络层传下来的数据报组装成帧。</p>
+</li>
+<li><p>传输单位：帧</p>
+</li>
+<li><p>功能：</p>
+<ul>
+<li>成帧：定义帧的开始和结束</li>
+<li>差错控制</li>
+<li>流量控制</li>
+<li>访问（接入）控制：控制对信道的访问</li>
+</ul>
+</li>
+<li><p>主要协议：</p>
+<ul>
+<li>SDLC</li>
+<li>HDLC</li>
+<li>PPP</li>
+<li>STP</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>物理层：</p>
+<ul>
+<li><p>主要任务：在物理媒体上实现比特流的透明传输（指不管所传数据是什么样的比特组合，都应当能够在链路上传送）</p>
+</li>
+<li><p>传输单位：比特</p>
+</li>
+<li><p>功能：</p>
+<ul>
+<li>定义接口特性</li>
+<li>定义传输模式：<ul>
+<li>单工</li>
+<li>半双工</li>
+<li>双工</li>
+</ul>
+</li>
+<li>定义传输速率</li>
+<li>比特同步</li>
+<li>比特编码</li>
+</ul>
+</li>
+<li><p>主要协议：</p>
+<ul>
+<li>Rj45</li>
+<li>802.3</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>TCP/IP模型：<img src="https://oliver-picture.oss-cn-beijing.aliyuncs.com/img/TCPIP%E6%A8%A1%E5%9E%8B.png" class="lazyload" data-srcset="https://oliver-picture.oss-cn-beijing.aliyuncs.com/img/TCPIP%E6%A8%A1%E5%9E%8B.png" srcset="data:image/png;base64,666" style="zoom:50%;" /></p>
+<ul>
+<li><p>TCP/IP模型与OSI模型的比较</p>
+<ul>
+<li><p>相同点：</p>
+<ul>
+<li>都分层</li>
+<li>基于独立的协议栈的概念</li>
+<li>可以实现异构网络的互联</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>- 不同点：
+
+  - OSI定义三点：服务、协议、接口
+
+  - OSI先出现，参考模型先于协议发明，不偏向特定协议
+
+  - TCP/IP设计之初就考虑到异构网互联问题，将IP作为重要层次
+
+  - |        |       OSI       |     TCP/IP      |
+    | :----: | :-------------: | :-------------: |
+    | 网络层 | 无连接+面向连接 |     无连接      |
+    | 传输层 |    面向连接     | 无连接+面向连接 |
+
+    - 面向连接：
+      - 建立连接：发出一个建立连接的请求。
+      - 数据传输
+      - 释放连接
+    - 无连接：直接进行数据传输
+</code></pre>
+<h3 id="6-同步通信和异步通信"><a href="#6-同步通信和异步通信" class="headerlink" title="6. 同步通信和异步通信"></a>6. 同步通信和异步通信</h3><ul>
+<li>同步通信：双方必须先建立同步，即把始终调整到同一个频率</li>
+<li>异步通信：所发送的字符之间的时间间隔可以是任意的，但接收端必须时刻做好接受的准备，通过开始位和结束位标志开始和结束</li>
+</ul>
+<h3 id="7-复用技术"><a href="#7-复用技术" class="headerlink" title="7. 复用技术"></a>7. 复用技术</h3><ul>
+<li>频分复用：给每个信号分配唯一的载波频率并通过单一媒体来传输多个独立信号的方法。</li>
+<li>时分复用：把多个信号复用到单个硬件传输信道，它允许每个信号在一个很短的时间使用信道，<br>接着再让下一个信号使用。</li>
+<li>波分复用：就是光的频分复用。用一根光纤同时传输多个频率很接近的光载波信号。</li>
+<li>码分复用：码分复用是用一组包含互相正交的码字的码组携带多路信号。每一个用户可以在同样的时间使用同样的频带进行通信。由于各用户使用经过特殊挑选的不同码型，各用户之间不会造成干扰，因此这种系统发送的信号有很强的抗干扰能力。</li>
+</ul>
+<h3 id="8-三种交换方式"><a href="#8-三种交换方式" class="headerlink" title="8.三种交换方式"></a>8.三种交换方式</h3><ul>
+<li>电路交换：包括建立连接、传输数据和断开连接三个阶段，整个报文的比特流从源点连续的直达重点</li>
+<li>报文交换：将整个报文转发到相邻节点，存储下来，查找转发表，转发到下一个结点</li>
+<li>分组交换：将整个报文拆成若干分组，转发到相邻节点，存储下来，查找转发表，转发到下一个结点</li>
+</ul>
+<p><img src="https://oliver-picture.oss-cn-beijing.aliyuncs.com/img/image-20230319200808400.png" class="lazyload" data-srcset="https://oliver-picture.oss-cn-beijing.aliyuncs.com/img/image-20230319200808400.png" srcset="data:image/png;base64,666" alt="image-20230319200808400"></p>
+<h3 id="9-流量控制"><a href="#9-流量控制" class="headerlink" title="9.流量控制"></a>9.流量控制</h3><ul>
+<li>定义：发送方和接收方之间各自工作速率和缓存空间产生差异，导致<font color="orange">发送方发送能力大于接收方接收能力</font>，因此需要控制发送方的数据流量</li>
+<li>常见方式：<ul>
+<li>停止——等待方式（发送窗口=1，接收窗口=1）：发送方每发送一帧，都要等待接收方的应答信号</li>
+<li>后退n帧协议GBN（发送窗口=n，接收窗口=1）：发送方无须收到上一帧的ACK才能发送下一帧，可以连续发送帧，当接收方检测到失序帧后，要求发送方重新发送最后一个正确接收的信息帧后的所有未确认帧，<font color="red">接收方只允许顺序接收帧</font></li>
+<li>选择重传协议SR（发送窗口=n，接收窗口=m）：每个发送缓冲区对应一个计时器，当计时器超时时，缓冲区的帧就会重传</li>
+</ul>
+</li>
+</ul>
+<h3 id="10-可靠传输机制"><a href="#10-可靠传输机制" class="headerlink" title="10.可靠传输机制"></a>10.可靠传输机制</h3><ul>
+<li>确认：即ACK帧，可采用捎带确认</li>
+<li>超时重传机制：即流量控制三种方式</li>
+</ul>
+<h3 id="11-随机访问介质访问控制"><a href="#11-随机访问介质访问控制" class="headerlink" title="11.随机访问介质访问控制"></a>11.随机访问介质访问控制</h3><ul>
+<li><p>为解决随机接入发生的碰撞，每个用户需要按照一定的规则反复地重传它的帧，直到该帧无碰撞地通过</p>
+</li>
+<li><p>ALOHA协议：</p>
+<ul>
+<li>纯ALOHA：当网络中的任何一个站点需要发送数据时，可以不进行任何检测就发送，如果一段时间未收到确认，那么就认为传输发生了冲突，发送站点需要等待一段时间再重新发送</li>
+<li>时隙ALOHA：把各站在时间上同步起来，并将时间划分为一段段等长的时隙，规定只能在每个时隙开始时才能发送一个帧</li>
+</ul>
+</li>
+<li><p>CSMA协议：</p>
+<ul>
+<li>1-坚持：一个结点发送数据时，先侦听信道，如果空闲，那么立即发送；如果信道忙，则持续侦听等待，直至空闲；如果发生冲突，则随机等待一段时间，再重新开始侦听</li>
+<li>非坚持：一个结点发送数据时，先侦听信道，如果空闲，那么立即发送；如果信道忙，放弃侦听，随机等待一段时间，再重新开始侦听</li>
+<li>p-坚持：一个结点发送数据时，先侦听信道，如果空闲，那么以概率p发送数据，以概率1-p推迟到下个时隙；如果信道忙，则等到下一个时隙，再重新开始侦听</li>
+</ul>
+</li>
+<li><p>CSMA/CD协议（载波侦听多路访问/碰撞检测）：</p>
+<p>发送前先侦听，即每个站在发送数据之前先要检测一下总线上是否有其他站点正在发送数据，若有则暂时不发送数据，等待信道变为空闲时再发送</p>
+<p>”碰撞检测”就是边发送边侦听，即适配器边发送数据边检测信道上信号电压的变化情况，以便判断自己在发送数据时其他站点是否也在发送数据，若检测到冲突则停止，等待一段时间（截断二进制指数退避算法）再重发</p>
+</li>
+<li><p>CSMA/CA协议（载波侦听多路访问/碰撞避免）：应用于无线局域网</p>
+<ul>
+<li>原因：<ul>
+<li>接收信号的强度往往远小于发送信号的强度，若使用CSMA/CD，则硬件花费过大</li>
+<li>隐蔽站问题</li>
+</ul>
+</li>
+<li>目的：降低碰撞发生的概率</li>
+<li>原理：信道从忙态变为空困时，任何一个站要发送数据帧时，不仅都须等待一个时间间隔，而且还要进入争用窗口，并计算随机退避时间以便再次试图接入信道</li>
+<li>方法：<ul>
+<li>预约信道</li>
+<li>ACK帧</li>
+<li>RTS/CTS帧：解决隐蔽站问题</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="12-PPP协议"><a href="#12-PPP协议" class="headerlink" title="12. PPP协议"></a>12. PPP协议</h3><ul>
+<li>定义：为同等单元之间传输数据包这样的简单链路设计的链路层协议</li>
+<li>功能：<ul>
+<li>动态分配IP地址</li>
+<li>支持多种网络协议</li>
+<li>具有错误检测能力，但不能纠错（不可靠）</li>
+<li>无重传机制，网络开销小，速度快</li>
+<li>具有身份验证功能</li>
+<li>可用于多种类型的物理介质</li>
+</ul>
+</li>
+</ul>
+<h3 id="12-HDLC协议"><a href="#12-HDLC协议" class="headerlink" title="12. HDLC协议"></a>12. HDLC协议</h3><ul>
+<li>定义：采用统一的帧格式，采用零比特插入法，支持任意的位流传输，实现透明传输，全双工</li>
+<li>特点：<ul>
+<li>透明传输</li>
+<li>具有较高的数据链路传输效率</li>
+<li>采用CRC帧检验序列，可靠性高</li>
+<li>采用统一的帧格式</li>
+</ul>
+</li>
+</ul>
+<h3 id="13-前三层设备"><a href="#13-前三层设备" class="headerlink" title="13.前三层设备"></a>13.前三层设备</h3><ul>
+<li>中继器：工作在物理层，用来连接两个速率相同且数据链路层协议也相同的网段，原理是信号再生</li>
+<li>集线器：工作在物理层，相当于多接口的中继器，可将多个结点连接成一个共享式局域网，但任何时刻只能有一个节点通过公共信道发送数据</li>
+<li>网桥：工作在数据链路层，可以互联不同的物理层、不同的MAC子层及不同速率的以太网</li>
+<li>交换机：工作在数据链路层，相当于一个多端口的网桥，允许端口之间建立多个并发连接，实现多个节点之间的并发传输</li>
+<li>路由器：<ul>
+<li>路由选择</li>
+<li>分组转发</li>
+</ul>
+</li>
+</ul>
+<h3 id="14-动态路由算法"><a href="#14-动态路由算法" class="headerlink" title="14. 动态路由算法"></a>14. 动态路由算法</h3><ul>
+<li>距离——向量路由算法（如RIP）：<ul>
+<li>原理：所有结点定期地将它们的整个路由表传送给与之相邻的结点</li>
+<li>路由表内容：<ul>
+<li>每条路径的目的地</li>
+<li>路径的代价</li>
+</ul>
+</li>
+<li>更新时机：<ul>
+<li>被通告一条新路由</li>
+<li>发来的路由信息有一条到某个目的地的路由，比原路由表有更短的距离</li>
+</ul>
+</li>
+<li>RIP：<ul>
+<li>每经过一个路由器，条数+1</li>
+<li>每个路由器都维护从自身到其他每个目的网络的距离记录</li>
+<li>RIP认为好的路由就是距离短的</li>
+<li>RIP一条路径最多包含15个路由器</li>
+<li>默认任意两个使用RIP协议的路由器之间每隔30秒更新一次路由信息</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>链路状态路由算法：</li>
 </ul>
 
   
@@ -1896,7 +2218,7 @@
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E7%9A%84%E4%B8%89%E5%B1%82%E6%A8%A1%E5%BC%8F%E7%BB%93%E6%9E%84%EF%BC%9F"><span class="toc-text">1.如何理解数据库系统的三层模式结构？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%BB%80%E4%B9%88%E6%98%AF%E6%95%B0%E6%8D%AEE-R%E5%9B%BE"><span class="toc-text">2.什么是数据E-R图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97"><span class="toc-text">3.数据库基本逻辑运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%EF%BC%88DBMS%EF%BC%89%E7%9A%84%E5%AE%9A%E4%B9%89%E5%8F%8A%E5%85%B6%E5%8A%9F%E8%83%BD%E5%8A%9F%E8%83%BD"><span class="toc-text">4.数据库管理系统（DBMS）的定义及其功能功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-text">5.数据库系统是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E4%BB%80%E4%B9%88%E6%98%AF%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9A%E4%B9%89%E8%AF%AD%E8%A8%80%E5%92%8C%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C%E8%AF%AD%E8%A8%80%EF%BC%9F"><span class="toc-text">6.什么是数据库定义语言和数据操作语言？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E6%AD%A5%E9%AA%A4"><span class="toc-text">7.数据库设计步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BA%8B%E5%8A%A1%E7%9A%84%E5%9B%9B%E4%B8%AA%E7%89%B9%E6%80%A7"><span class="toc-text">8.数据库事务的四个特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-%E6%95%B0%E6%8D%AE%E5%BA%93%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6%E5%8F%8A%E5%85%B6%E4%BD%9C%E7%94%A8"><span class="toc-text">9. 数据库日志文件及其作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-%E6%95%B0%E6%8D%AE%E5%BA%93%E6%95%85%E9%9A%9C%E5%8F%8A%E5%85%B6%E4%BF%AE%E5%A4%8D"><span class="toc-text">10.数据库故障及其修复</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-%E5%B9%B6%E5%8F%91%E6%8E%A7%E5%88%B6"><span class="toc-text">11.并发控制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-%E5%B0%81%E9%94%81"><span class="toc-text">12.封锁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%98%E5%82%A8%E7%9A%84%E8%BF%87%E7%A8%8B"><span class="toc-text">13.数据库存储的过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-%E6%95%B0%E6%8D%AE%E7%9A%84%E9%A2%84%E5%A4%84%E7%90%86"><span class="toc-text">14.数据的预处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%BF%9E%E6%8E%A5%E6%96%B9%E5%BC%8F"><span class="toc-text">15.数据库的连接方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-%E6%95%B0%E6%8D%AE%E5%AE%9A%E4%B9%89"><span class="toc-text">16.数据定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#17-%E5%80%99%E9%80%89%E7%A0%81%E3%80%81%E4%B8%BB%E7%A0%81%E3%80%81%E5%85%A8%E7%A0%81%E3%80%81%E5%A4%96%E7%A0%81%E3%80%81%E4%B8%BB%E5%B1%9E%E6%80%A7%E3%80%81%E4%B8%BB%E9%94%AE%E3%80%81%E4%B8%BB%E5%85%B3%E9%94%AE%E5%AD%97%E3%80%81%E9%9D%9E%E4%B8%BB%E5%B1%9E%E6%80%A7%E6%B8%85%E6%99%B0%E6%80%BB%E7%BB%93"><span class="toc-text">17.候选码、主码、全码、外码、主属性、主键、主关键字、非主属性清晰总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AF%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B"><span class="toc-text">1. 什么是软件工程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-text">2.软件的生命周期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E8%BD%AF%E4%BB%B6%E8%BF%87%E7%A8%8B"><span class="toc-text">3.软件过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E7%9A%84%E8%BF%87%E7%A8%8B"><span class="toc-text">4.软件开发的过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E8%BD%AF%E4%BB%B6%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90"><span class="toc-text">5. 软件需求分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95"><span class="toc-text">6. 软件测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E9%BB%91%E7%9B%92%E6%B5%8B%E8%AF%95%E4%B8%8E%E7%99%BD%E7%9B%92%E6%B5%8B%E8%AF%95"><span class="toc-text">7.黑盒测试与白盒测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-%E8%BD%AF%E4%BB%B6%E7%BB%B4%E6%8A%A4"><span class="toc-text">8.软件维护</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E9%9D%A2%E5%90%91%E8%BF%87%E7%A8%8B"><span class="toc-text">9.面向对象和面向过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%B8%80%E4%BA%9B%E6%A6%82%E5%BF%B5"><span class="toc-text">10.面向对象的一些概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%88%86%E6%9E%90%E8%AE%BE%E8%AE%A1%E7%9A%84%E4%B8%89%E4%B8%AA%E6%A8%A1%E5%9E%8B"><span class="toc-text">11.面向对象分析设计的三个模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-UML%E5%9B%BE"><span class="toc-text">12.UML图</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%AF%87"><span class="toc-text">操作系统篇</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%9B%AE%E6%A0%87%E5%92%8C%E5%8A%9F%E8%83%BD"><span class="toc-text">1.操作系统的目标和功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6"><span class="toc-text">2.操作系统的运行机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E4%B8%AD%E6%96%AD%E5%92%8C%E5%BC%82%E5%B8%B8"><span class="toc-text">3.中断和异常</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="toc-text">4.操作系统的体系结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B"><span class="toc-text">5.进程和线程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1"><span class="toc-text">6.进程通信</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E8%BF%9B%E7%A8%8B%E7%9A%84%E7%8A%B6%E6%80%81%E4%B8%8E%E8%BD%AC%E6%8D%A2"><span class="toc-text">7.进程的状态与转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-%E8%BF%9B%E7%A8%8B%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95"><span class="toc-text">8.进程调度算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-%E5%90%8C%E6%AD%A5%E5%92%8C%E4%BA%92%E6%96%A5"><span class="toc-text">9.同步和互斥</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-%E6%AD%BB%E9%94%81"><span class="toc-text">10.死锁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-%E9%93%B6%E8%A1%8C%E5%AE%B6%E7%AE%97%E6%B3%95"><span class="toc-text">11.银行家算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-%E5%AD%98%E5%82%A8%E5%99%A8%E7%AE%A1%E7%90%86%E7%9A%84%E5%8A%9F%E8%83%BD"><span class="toc-text">12.存储器管理的功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-%E5%B0%86%E7%94%A8%E6%88%B7%E7%A8%8B%E5%BA%8F%E5%8F%98%E4%B8%BA%E5%8F%AF%E5%9C%A8%E5%86%85%E5%AD%98%E4%B8%AD%E6%89%A7%E8%A1%8C%E7%9A%84%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%AD%A5%E9%AA%A4"><span class="toc-text">13.将用户程序变为可在内存中执行的程序的步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-%E8%BF%9E%E7%BB%AD%E5%88%86%E9%85%8D%E7%AE%A1%E7%90%86%E6%96%B9%E5%BC%8F"><span class="toc-text">14.连续分配管理方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15-%E5%9F%BA%E6%9C%AC%E5%88%86%E9%A1%B5%E5%92%8C%E8%AF%B7%E6%B1%82%E5%88%86%E9%A1%B5"><span class="toc-text">15.基本分页和请求分页</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-%E9%A1%B5%E9%9D%A2%E7%BD%AE%E6%8D%A2%E7%AE%97%E6%B3%95"><span class="toc-text">16.页面置换算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#17-%E9%A1%B5%E8%A1%A8%E4%B8%8E%E5%BF%AB%E8%A1%A8"><span class="toc-text">17.页表与快表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#18-%E5%9C%B0%E5%9D%80%E7%BF%BB%E8%AF%91%E8%BF%87%E7%A8%8B"><span class="toc-text">18.地址翻译过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#19-%E6%96%87%E4%BB%B6%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-text">19. 文件的基本操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#20-%E7%A3%81%E7%9B%98%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95"><span class="toc-text">20. 磁盘调度算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#21-I-O%E6%8E%A7%E5%88%B6%E6%96%B9%E5%BC%8F"><span class="toc-text">21. I&#x2F;O控制方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#22-%E6%96%87%E4%BB%B6%E5%AD%98%E5%82%A8%E7%9A%84%E6%96%B9%E5%BC%8F%E6%9C%89%E5%93%AA%E4%BA%9B"><span class="toc-text">22. 文件存储的方式有哪些</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9A%84%E5%8A%9F%E8%83%BD"><span class="toc-text">1.计算机网络的功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%B8%BB%E6%9C%BA%E9%97%B4%E7%9A%84%E9%80%9A%E8%AE%AF%E6%96%B9%E5%BC%8F"><span class="toc-text">2.主机间的通讯方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87"><span class="toc-text">3. 计算机网络性能指标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%8F%90%E4%BE%9B%E7%9A%84%E6%9C%8D%E5%8A%A1"><span class="toc-text">4. 计算机网络提供的服务</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AF%87"><span class="toc-text">数据库篇</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E7%9A%84%E4%B8%89%E5%B1%82%E6%A8%A1%E5%BC%8F%E7%BB%93%E6%9E%84%EF%BC%9F"><span class="toc-text">1.如何理解数据库系统的三层模式结构？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%BB%80%E4%B9%88%E6%98%AF%E6%95%B0%E6%8D%AEE-R%E5%9B%BE"><span class="toc-text">2.什么是数据E-R图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97"><span class="toc-text">3.数据库基本逻辑运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%EF%BC%88DBMS%EF%BC%89%E7%9A%84%E5%AE%9A%E4%B9%89%E5%8F%8A%E5%85%B6%E5%8A%9F%E8%83%BD%E5%8A%9F%E8%83%BD"><span class="toc-text">4.数据库管理系统（DBMS）的定义及其功能功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-text">5.数据库系统是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E4%BB%80%E4%B9%88%E6%98%AF%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9A%E4%B9%89%E8%AF%AD%E8%A8%80%E5%92%8C%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C%E8%AF%AD%E8%A8%80%EF%BC%9F"><span class="toc-text">6.什么是数据库定义语言和数据操作语言？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E6%AD%A5%E9%AA%A4"><span class="toc-text">7.数据库设计步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BA%8B%E5%8A%A1%E7%9A%84%E5%9B%9B%E4%B8%AA%E7%89%B9%E6%80%A7"><span class="toc-text">8.数据库事务的四个特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-%E6%95%B0%E6%8D%AE%E5%BA%93%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6%E5%8F%8A%E5%85%B6%E4%BD%9C%E7%94%A8"><span class="toc-text">9. 数据库日志文件及其作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-%E6%95%B0%E6%8D%AE%E5%BA%93%E6%95%85%E9%9A%9C%E5%8F%8A%E5%85%B6%E4%BF%AE%E5%A4%8D"><span class="toc-text">10.数据库故障及其修复</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-%E5%B9%B6%E5%8F%91%E6%8E%A7%E5%88%B6"><span class="toc-text">11.并发控制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-%E5%B0%81%E9%94%81"><span class="toc-text">12.封锁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%98%E5%82%A8%E7%9A%84%E8%BF%87%E7%A8%8B"><span class="toc-text">13.数据库存储的过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-%E6%95%B0%E6%8D%AE%E7%9A%84%E9%A2%84%E5%A4%84%E7%90%86"><span class="toc-text">14.数据的预处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%BF%9E%E6%8E%A5%E6%96%B9%E5%BC%8F"><span class="toc-text">15.数据库的连接方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-%E6%95%B0%E6%8D%AE%E5%AE%9A%E4%B9%89"><span class="toc-text">16.数据定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#17-%E5%80%99%E9%80%89%E7%A0%81%E3%80%81%E4%B8%BB%E7%A0%81%E3%80%81%E5%85%A8%E7%A0%81%E3%80%81%E5%A4%96%E7%A0%81%E3%80%81%E4%B8%BB%E5%B1%9E%E6%80%A7%E3%80%81%E4%B8%BB%E9%94%AE%E3%80%81%E4%B8%BB%E5%85%B3%E9%94%AE%E5%AD%97%E3%80%81%E9%9D%9E%E4%B8%BB%E5%B1%9E%E6%80%A7%E6%B8%85%E6%99%B0%E6%80%BB%E7%BB%93"><span class="toc-text">17.候选码、主码、全码、外码、主属性、主键、主关键字、非主属性清晰总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%AF%87"><span class="toc-text">软件工程篇</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AF%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B"><span class="toc-text">1. 什么是软件工程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-text">2.软件的生命周期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E8%BD%AF%E4%BB%B6%E8%BF%87%E7%A8%8B"><span class="toc-text">3.软件过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E7%9A%84%E8%BF%87%E7%A8%8B"><span class="toc-text">4.软件开发的过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E8%BD%AF%E4%BB%B6%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90"><span class="toc-text">5. 软件需求分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95"><span class="toc-text">6. 软件测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E9%BB%91%E7%9B%92%E6%B5%8B%E8%AF%95%E4%B8%8E%E7%99%BD%E7%9B%92%E6%B5%8B%E8%AF%95"><span class="toc-text">7.黑盒测试与白盒测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-%E8%BD%AF%E4%BB%B6%E7%BB%B4%E6%8A%A4"><span class="toc-text">8.软件维护</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E9%9D%A2%E5%90%91%E8%BF%87%E7%A8%8B"><span class="toc-text">9.面向对象和面向过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%B8%80%E4%BA%9B%E6%A6%82%E5%BF%B5"><span class="toc-text">10.面向对象的一些概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%88%86%E6%9E%90%E8%AE%BE%E8%AE%A1%E7%9A%84%E4%B8%89%E4%B8%AA%E6%A8%A1%E5%9E%8B"><span class="toc-text">11.面向对象分析设计的三个模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-UML%E5%9B%BE"><span class="toc-text">12.UML图</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%AF%87"><span class="toc-text">操作系统篇</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%9B%AE%E6%A0%87%E5%92%8C%E5%8A%9F%E8%83%BD"><span class="toc-text">1.操作系统的目标和功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6"><span class="toc-text">2.操作系统的运行机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E4%B8%AD%E6%96%AD%E5%92%8C%E5%BC%82%E5%B8%B8"><span class="toc-text">3.中断和异常</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="toc-text">4.操作系统的体系结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B"><span class="toc-text">5.进程和线程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1"><span class="toc-text">6.进程通信</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E8%BF%9B%E7%A8%8B%E7%9A%84%E7%8A%B6%E6%80%81%E4%B8%8E%E8%BD%AC%E6%8D%A2"><span class="toc-text">7.进程的状态与转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-%E8%BF%9B%E7%A8%8B%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95"><span class="toc-text">8.进程调度算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-%E5%90%8C%E6%AD%A5%E5%92%8C%E4%BA%92%E6%96%A5"><span class="toc-text">9.同步和互斥</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-%E6%AD%BB%E9%94%81"><span class="toc-text">10.死锁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-%E9%93%B6%E8%A1%8C%E5%AE%B6%E7%AE%97%E6%B3%95"><span class="toc-text">11.银行家算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-%E5%AD%98%E5%82%A8%E5%99%A8%E7%AE%A1%E7%90%86%E7%9A%84%E5%8A%9F%E8%83%BD"><span class="toc-text">12.存储器管理的功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-%E5%B0%86%E7%94%A8%E6%88%B7%E7%A8%8B%E5%BA%8F%E5%8F%98%E4%B8%BA%E5%8F%AF%E5%9C%A8%E5%86%85%E5%AD%98%E4%B8%AD%E6%89%A7%E8%A1%8C%E7%9A%84%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%AD%A5%E9%AA%A4"><span class="toc-text">13.将用户程序变为可在内存中执行的程序的步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-%E8%BF%9E%E7%BB%AD%E5%88%86%E9%85%8D%E7%AE%A1%E7%90%86%E6%96%B9%E5%BC%8F"><span class="toc-text">14.连续分配管理方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15-%E5%9F%BA%E6%9C%AC%E5%88%86%E9%A1%B5%E5%92%8C%E8%AF%B7%E6%B1%82%E5%88%86%E9%A1%B5"><span class="toc-text">15.基本分页和请求分页</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-%E9%A1%B5%E9%9D%A2%E7%BD%AE%E6%8D%A2%E7%AE%97%E6%B3%95"><span class="toc-text">16.页面置换算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#17-%E9%A1%B5%E8%A1%A8%E4%B8%8E%E5%BF%AB%E8%A1%A8"><span class="toc-text">17.页表与快表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#18-%E5%9C%B0%E5%9D%80%E7%BF%BB%E8%AF%91%E8%BF%87%E7%A8%8B"><span class="toc-text">18.地址翻译过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#19-%E6%96%87%E4%BB%B6%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-text">19. 文件的基本操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#20-%E7%A3%81%E7%9B%98%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95"><span class="toc-text">20. 磁盘调度算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#21-I-O%E6%8E%A7%E5%88%B6%E6%96%B9%E5%BC%8F"><span class="toc-text">21. I&#x2F;O控制方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#22-%E6%96%87%E4%BB%B6%E5%AD%98%E5%82%A8%E7%9A%84%E6%96%B9%E5%BC%8F%E6%9C%89%E5%93%AA%E4%BA%9B"><span class="toc-text">22. 文件存储的方式有哪些</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AF%87"><span class="toc-text">计算机网络篇</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9A%84%E5%8A%9F%E8%83%BD"><span class="toc-text">1.计算机网络的功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%B8%BB%E6%9C%BA%E9%97%B4%E7%9A%84%E9%80%9A%E8%AE%AF%E6%96%B9%E5%BC%8F"><span class="toc-text">2.主机间的通讯方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87"><span class="toc-text">3. 计算机网络性能指标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%8F%90%E4%BE%9B%E7%9A%84%E6%9C%8D%E5%8A%A1"><span class="toc-text">4. 计算机网络提供的服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-OSI%E5%92%8CTCP%E6%A8%A1%E5%9E%8B"><span class="toc-text">5. OSI和TCP模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E5%90%8C%E6%AD%A5%E9%80%9A%E4%BF%A1%E5%92%8C%E5%BC%82%E6%AD%A5%E9%80%9A%E4%BF%A1"><span class="toc-text">6. 同步通信和异步通信</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E5%A4%8D%E7%94%A8%E6%8A%80%E6%9C%AF"><span class="toc-text">7. 复用技术</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-%E4%B8%89%E7%A7%8D%E4%BA%A4%E6%8D%A2%E6%96%B9%E5%BC%8F"><span class="toc-text">8.三种交换方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-%E6%B5%81%E9%87%8F%E6%8E%A7%E5%88%B6"><span class="toc-text">9.流量控制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-%E5%8F%AF%E9%9D%A0%E4%BC%A0%E8%BE%93%E6%9C%BA%E5%88%B6"><span class="toc-text">10.可靠传输机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-%E9%9A%8F%E6%9C%BA%E8%AE%BF%E9%97%AE%E4%BB%8B%E8%B4%A8%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6"><span class="toc-text">11.随机访问介质访问控制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-PPP%E5%8D%8F%E8%AE%AE"><span class="toc-text">12. PPP协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-HDLC%E5%8D%8F%E8%AE%AE"><span class="toc-text">12. HDLC协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-%E5%89%8D%E4%B8%89%E5%B1%82%E8%AE%BE%E5%A4%87"><span class="toc-text">13.前三层设备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-%E5%8A%A8%E6%80%81%E8%B7%AF%E7%94%B1%E7%AE%97%E6%B3%95"><span class="toc-text">14. 动态路由算法</span></a></li></ol></li></ol>
     </div>
   </section>
 
